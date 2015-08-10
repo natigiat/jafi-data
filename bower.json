@@ -1,0 +1,20 @@
+{
+  "name": "auth",
+  "version": "0.0.0",
+  "authors": [
+    "natigiat <natigiat@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick.js": "~1.5.8",
+    "rrssb": "~1.8.5"
+  }
+}
