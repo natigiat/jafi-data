@@ -11,6 +11,8 @@ html
     //- bower styles*********************************************
     link(rel='stylesheet', href='/bower/slick.js/slick/slick.css')
     link(rel='stylesheet', href='/bower/slick.js/slick/slick-theme.css')
+    //-font awesome  
+    link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
     //- share buttton
     link(rel='stylesheet', href='/bower/rrssb/css/rrssb.css')
 
@@ -32,11 +34,11 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='#') Landing Chat
+          a.navbar-brand(href='/') Landing Chat
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li(class=(title == 'Membres' ? 'active' : ''))
-              a(href='/') Members
+              a(href='/scanner') scanner
           ul.nav.navbar-nav.navbar-right
             - if (locals.user)
                 li

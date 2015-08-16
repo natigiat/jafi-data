@@ -15,6 +15,12 @@
   ],
   "dependencies": {
     "slick.js": "~1.5.8",
-    "rrssb": "~1.8.5"
+    "rrssb": "~1.8.5",
+    "fontawesome": "~4.4.0",
+    "jquery.ui": "~1.11.4",
+    "jquery.layout": "*",
+    "angular-ui-layout": "~1.0.5",
+    "ace-builds-bower-patched": "~1.2.2",
+    "CodeMirror": "~5.5.0"
   }
 }
