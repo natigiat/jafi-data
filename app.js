@@ -21,6 +21,7 @@ var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var account = require('./routes/account');
 var scanner = require('./routes/scanner');
 
 var app = express();
@@ -83,11 +84,16 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/scanner' , scanner);
+app.use('/account' , account); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

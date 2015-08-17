@@ -35,8 +35,8 @@ html
 
 
     
-  body
-    nav.navbar.scannerNav.navbar-static-top(role='navigation')
+  body.scanner
+    nav.navbar.scannerNav.scannerNav.navbar-static-top(role='navigation')
       // Brand and toggle get grouped for better mobile display
       .navbar-header
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-8')
@@ -87,5 +87,6 @@ html
     script(src="/bower/CodeMirror/addon/hint/javascript-hint.js" type="text/javascript" charset="utf-8")
 
     //- pages scripts
-    script(src="/javascripts/index.js")
+    script(src="/javascripts/scanner.js")
+    
 

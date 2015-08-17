@@ -6,7 +6,7 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css')
+    link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
     
     //- bower styles*********************************************
     link(rel='stylesheet', href='/bower/slick.js/slick/slick.css')
@@ -23,38 +23,125 @@ html
 
     //- pages scripts
     script(src="/javascripts/index.js")
+    script(src="/javascripts/account.js")
     
   body
     
-    nav.navbar-default.navbar.navbar-fixed-top
-      .container
-        .navbar-header
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='/') Landing Chat
-        #navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li(class=(title == 'Membres' ? 'active' : ''))
-              a(href='/scanner') scanner
-          ul.nav.navbar-nav.navbar-right
-            - if (locals.user)
-                li
-                  a(href='/users/logout') LogOUT
-            - else 
-                   a.btn.btn-success(href='/users/register') Sign up 
+    nav.navbar-default.navbar.navbar-static-top
+        .container
+          .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/') Landing Chat
+          #navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li(class=(title == 'Account' ? 'active' : ''))
+                a(href='/account/') My Sites
+              li(class=(title == 'Templates' ? 'active' : ''))
+                a(href='/templates') Templates
+              li(class=(title == 'Support' ? 'active' : ''))
+                a(href='/support') Support
 
-                   a.btn.btn-default(href='/users/login') Sign in
+            ul.nav.navbar-nav.navbar-right
+                if (user)
+                  .dropdown.userInfo
+                    img(src='/stylesheets/images/profile.png' class="profileImage")
 
+                    a.dropdown-toggle(href="#", data-toggle="dropdown")
+                      | Hi , #{email}
+                      b.caret
+                    ul.dropdown-menu(role="menu")
+                      li.arrowUp
+                        a(href='/users/logout') Account Settings
+                      li
+                        a(href='/users/logout') Billing & Payments
+                      li
+                        a(href='/users/logout') Logout
+                else 
+                     a.btn.btn-success(href='/users/register') Sign up 
 
-    block content
+                     a.btn.btn-default(href='/users/login') Sign in
 
     
-    footer
-        p &copy; 2015 All Right Reserved
+    .container
+      != messages()
+      block content
+      
+
+    
+    footer.footer
+      .container
+        .col-sm-3
+            h4 Product
+            ul
+              li
+                a(href="/features/") Features
+              li
+                a(href="/requirements/") Requirements
+              li
+                a(href="/demo/") Demo
+              li
+                a(href="/push/") Push Service
+              li
+                a(href="/store/") Store
+              li
+                a(href="/affiliates/?o=1") Affiliates
+              li
+                a(href="/trial/") Free Trial
+              li
+                a(href="/purchase/") Purchase
+        .col-sm-3
+            h4 Support
+            ul
+              li
+                a(href="/documentation/") Documentation
+              li
+                a(href="/members/") Client Area
+              li
+                a(href="/forum/") Forums
+              li
+                a(href="/support/faqs/") FAQs
+              li
+                a(href="/support/contact/") Open Ticket
+        .col-sm-3
+            h4 Company
+            ul
+              li
+                a(href="http://www.arrowsuites.com") About Us
+              li
+                a(href="http://www.arrowsuites.com/products/") Our Products
+              li
+                a(href="http://www.arrowchat.com/support/contact/") Contact Us
+              li &#160;
+              li
+                a(href="/license/") License Agreement
+              li
+                a(href="/privacy/") Privacy Policy
+        .col-sm-3
+          .footer-logo
+            img(src="http://static.arrowchat.com/images/logo-footer.png", alt="ArrowChat")
+          .footer-logo-subtext
+            | Part of the
+            a(href="http://www.arrowsuites.com") ArrowSuites Company
+            br
+            span Copyright (c) 2009-2015
+          ul
+            li
+              a(href="https://www.facebook.com/ArrowChat")
+                img(src="http://static.arrowchat.com/images/footer-facebook.png", alt="Like us on Facebook")
+            li
+              a(href="https://twitter.com/arrowchatteam")
+                img(src="http://static.arrowchat.com/images/footer-twitter.png", alt="Follow us on Twitter")
+            li
+              a(href="https://www.youtube.com/user/ArrowSuites")
+                img(src="http://static.arrowchat.com/images/footer-youtube.png", alt="Subscribe to us on YouTube")
+        .clearfix
+
 
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')
+

@@ -21,6 +21,7 @@
     "jquery.layout": "*",
     "angular-ui-layout": "~1.0.5",
     "ace-builds-bower-patched": "~1.2.2",
-    "CodeMirror": "~5.5.0"
+    "CodeMirror": "~5.5.0",
+    "bootstrap": "~3.3.5"
   }
 }
