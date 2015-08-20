@@ -10,6 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var bodyParser = require('body-parser');
 var multer  = require('multer');
 var flash = require('connect-flash');
+var toastr = require('express-toastr');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
@@ -23,6 +24,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var account = require('./routes/account');
 var scanner = require('./routes/scanner');
+var result = require('./routes/result');
 
 var app = express();
 
@@ -78,7 +80,12 @@ app.use(expressValidator({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//config messages
 app.use(flash());
+app.use(toastr({
+    closeButton: true
+}));
+
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
@@ -90,10 +97,22 @@ app.use(function(req, res, next) {
 });
 
 
+app.use('*' ,function (req, res, next)
+{
+    
+    res.locals.toasts = req.toastr.render()
+    console.log(res.locals.toasts);
+    next()
+});
+
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/scanner' , scanner);
 app.use('/account' , account); 
+app.use('/result' , result); 
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

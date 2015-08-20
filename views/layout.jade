@@ -15,11 +15,14 @@ html
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
     //- share buttton
     link(rel='stylesheet', href='/bower/rrssb/css/rrssb.css')
+    //- toaster
+    link(rel='stylesheet', href='/bower/toastr/toastr.css')
 
     //- bower scripts
     script(src='/bower/jquery/dist/jquery.min.js')
     script(src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
     script(src='/bower/slick.js/slick/slick.js')
+    script(src='/bower/toastr/toastr.js')
 
     //- pages scripts
     script(src="/javascripts/index.js")
@@ -45,6 +48,7 @@ html
               li(class=(title == 'Support' ? 'active' : ''))
                 a(href='/support') Support
 
+
             ul.nav.navbar-nav.navbar-right
                 if (user)
                   .dropdown.userInfo
@@ -68,6 +72,8 @@ html
     
     .container
       != messages()
+      != toasts
+
       block content
       
 

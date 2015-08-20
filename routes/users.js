@@ -23,20 +23,20 @@ router.get('/', function(req, res, next) {
 
 router.get('/register', function(req, res, next) {
   res.render('register' , {
-  	'title': 'Register'
+    'title': 'Register'
   });
 });
 
 router.get('/login', function(req, res, next) {
   res.render('login' , {
-  	'title': 'Login'
+    'title': 'Login'
   });
 });
 
 router.post('/register', function(req, res, next) {
- 	var email = req.body.email;
- 	var password = req.body.password;
- 	var password2 = req.body.password2;
+  var email = req.body.email;
+  var password = req.body.password;
+  var password2 = req.body.password2;
 
     req.checkBody('email', 'Email field is required').notEmpty();
     req.checkBody('email', 'Please enter valid email').isEmail();
@@ -46,25 +46,25 @@ router.post('/register', function(req, res, next) {
     //check for errors
     var errors = req.validationErrors();
     if (errors){
-    	res.render('register' , {
-    		errors: errors,
-    		email: email,
-    		password:password,
-    		password2:password2
-    	});
+      res.render('register' , {
+        errors: errors,
+        email: email,
+        password:password,
+        password2:password2
+      });
     }
     // newUser.save(function (err) {
     //     console.log(err);
     // });
     else{
-    	var newUser = new User ({
-    		email: email,
-    		password:bcrypt.hashSync(password)
-    	});
+      var newUser = new User ({
+        email: email,
+        password:bcrypt.hashSync(password)
+      });
       
-    	//create user
-    	User.createUser(newUser , function(err , user){
-    		if(err) throw err;
+      //create user
+      User.createUser(newUser , function(err , user){
+        if(err) throw err;
         
         //** option to make dir
         // mkdirp(appRoot + '/progects/' + user.email , function (err) { //appDir + '/progects/' + user.name
@@ -72,10 +72,10 @@ router.post('/register', function(req, res, next) {
         //     else console.log('pow!')
         // });
 
-    	});
+      });
 
-    	req.flash('success' , 'You are now registerd - Start your first progect');
-    	res.redirect('/account');
+      req.flash('success' , 'You are now registerd - Start your first progect');
+      res.redirect('/account');
 
     }
 
@@ -90,34 +90,32 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
     done(err, user);
-    console.log('wwwwwwwwwwwwwwww' + user);
   });
 });
 
 
 passport.use(new LocalStrategy(
   function(username , password , done) {
-		User.getUserByEmail(username , function(err , user){
-			if (err) { return done(err); }
-			if(!user){
-				console.log('unknoen user ' + user);
-				return done(null , user);
-			}else{
+    User.getUserByEmail(username , function(err , user){
+      if (err) { return done(err); }
+      if(!user){
+        console.log('unknoen user ' + user);
+        return done(null , user);
+      }else{
         console.log('loged in with ' + user);
       }
 
-			User.comparePassword(password , user.password  , function (err , isMatch){
-				if(err) throw err;
-				if(isMatch){
-					return done(null , user);
-          console.log(user);
-				}else{
-					console.log('invalid password');
-					return done(null , false , {message: "invalid password"});
-				}
-			})
-		});
-	}
+      User.comparePassword(password , user.password  , function (err , isMatch){
+        if(err) throw err;
+        if(isMatch){
+          return done(null , user);
+        }else{
+          console.log('invalid password');
+          return done(null , false , {message: "invalid password"});
+        }
+      })
+    });
+  }
 ));
 
 // router.post('/login' , passport.authenticate('local', function(err, user, info){
@@ -133,8 +131,8 @@ router.post('/login', function(req, res, next) {
     if (!user) { return res.redirect('/login'); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
-      console.log(req.user);
-
+      req.toastr.success('Successfully logged in.', "You're in!");
+      console.log( req.user);
       return res.redirect('/account');
     });
   })(req, res, next);
@@ -143,7 +141,7 @@ router.post('/login', function(req, res, next) {
 
 router.get('/logout' ,  function(req, res ) {
   req.logout();
-  req.flash('success' , 'You Have Logged Out' );
+  req.flash('success' , 'You Have Logged Out' ); 
   res.redirect('/');
 });
 

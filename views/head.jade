@@ -11,6 +11,7 @@ html
     //- bower styles*********************************************
     link(rel='stylesheet', href='/bower/slick.js/slick/slick.css')
     link(rel='stylesheet', href='/bower/slick.js/slick/slick-theme.css')
+    link(rel='stylesheet', href='/bower/animate.css/animate.css')
     
     //-jquery ui layout
     link(rel="stylesheet" href="/bower/jquery-ui/themes/smoothness/jquery-ui.css")
@@ -22,6 +23,7 @@ html
     link(rel="stylesheet" href="/bower/CodeMirror/theme/ambiance.css")
     link(rel="stylesheet" href="/bower/CodeMirror/addon/scroll/simplescrollbars.css")
     link(rel="stylesheet" href="/bower/CodeMirror/addon/hint/show-hint.css")        
+    link(rel="stylesheet" href="/bower/CodeMirror/addon/dialog/dialog.css")        
 
     //-font awesome  
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
@@ -36,7 +38,7 @@ html
 
     
   body.scanner
-    nav.navbar.scannerNav.scannerNav.navbar-static-top(role='navigation')
+    nav.navbar.scannerNav.navbar-static-top(role='navigation')
       // Brand and toggle get grouped for better mobile display
       .navbar-header
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-8')
@@ -57,16 +59,24 @@ html
           |                   
           li
             a(href='#') <i class="fa fa-mobile fa-2x"></i>
-          |                    
-         
-      // /.navbar-collapse
+          
+
+         ul.nav.navbar-nav.navbar-right.publishNav
+            li.styleB
+              a <i class="fa fa-file-image-o"></i>
+            li.codeB 
+              a <i class="fa fa-code"></i>
+            li.preview 
+              a Preview
+            li
+              a(href='/users/logout') Save
+            li
+              a(href='/users/logout') Publish             
 
 
     block content
 
     
-    footer
-        p &copy; 2015 All Right Reserved
 
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
@@ -85,6 +95,9 @@ html
     script(src="/bower/CodeMirror/addon/hint/html-hint.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/hint/css-hint.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/hint/javascript-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
 
     //- pages scripts
     script(src="/javascripts/scanner.js")

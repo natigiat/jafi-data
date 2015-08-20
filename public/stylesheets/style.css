@@ -45,6 +45,12 @@ nav.navbar-default.navbar.navbar-static-top li a {
 }
 
 
+/*toast*/
+
+.toast-top-right{
+    top:70px!important;
+}
+
 
 
 /*flages*/
@@ -102,10 +108,23 @@ nav.scannerNav.navbar-static-top {
     color: rgb(255, 255, 255);
 }
 
+.publishNav a{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 10px 16px!important;
+    background: url(http://static.parastorage.com/services/skins/2.1229.14/images/wysiwyg/core/themes/editor_web/maineditortabs/dark-divider.png) 0px 50% no-repeat;
+}
+
 .scannerNav a.navbar-brand {
     padding: 10px;
     color: rgb(255, 255, 255);
 }
+
+.publishNav a:hover {
+    background-color: #333!important;
+    color: #6BB0EC!important;
+}
+
 
 
 .dropdown.userInfo {
@@ -167,7 +186,7 @@ li.active{
         left: 0;
 }
 .editor {
-    width: 33.333%; 
+    width: 33%; 
     float: left;
     font-size: 14px;
 }
@@ -224,6 +243,49 @@ li.active {
 a.btn.buttonNewProgect {
     border: 1px solid #6EAAE2!important;;
 }
+
+.nopadding{
+    padding:0px!important;
+}
+
+i.fa.fa-plus.col-sm-2.faNewProgect {
+    padding: 0px 10px;
+    line-height: 1.5;
+}
+
+ul.nav.navbar-nav.navbar-right.publishNav {
+    margin: 0px!important;
+}
+
+
+.selected_div{
+     border: 1px dashed #3494E5;
+}
+
+.bactive{
+    color: #6BB0EC!important
+}
+
+.link-return{
+    position: absolute;
+    bottom: 0;
+    left: 50;
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#6BB0EC,#7B8791);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 60s infinite linear;
+    font-size: 20px;
+}
+
+.ui-layout-center.ui-layout-pane.ui-layout-pane-center {
+    padding: 0px;
+}
+
+.result {
+    margin: 0px!important;
+}
+
 
 footer{
     margin-top: 20px;
