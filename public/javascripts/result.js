@@ -1,9 +1,9 @@
 jQuery(document).ready(function($) {
 	if($('.result').get(0)){
 	  
-		// var a = $(".mainContainer", top.document).css('background', 'red');
+		var a = $(".ui-layout-pane-south", top.document);
 
-		$("html").on('click', function() {
+		a.on('keyup', function() {
 		//mirror valuses
 		(function (global) {
 		    var html = global.localStorage.getItem("html");
@@ -16,6 +16,16 @@ jQuery(document).ready(function($) {
 	    	$('.htmlcss').find('style').html(css);
 
 	    	$('.htmljs').find('script').html(js);
+
+	    	$( "h1 , h2 ,h3, h4 ,h5, h6, a , span, p" ).each(function() {
+			  $( this ).addClass('editable');
+			});
+
+			var elements = document.querySelectorAll('.editable'),
+    		editor = new MediumEditor(elements);
+
+    		var editor = new MediumEditor('.editable');
+
 		   
 		}(window));
 
