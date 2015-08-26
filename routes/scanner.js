@@ -18,12 +18,15 @@ router.get('/', ensureAuthenticated,  function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	
+	var html = req.body.html;
+	var css = req.body.css;
+	var js = req.body.js;
 	
 	// res.send({name:"nati" , lastname: "giat"});
 		var newProgect = new Progect ({
 		    name: 'name' ,
-			html: '<li>Offer users a way to register and pay for classes online</li><li>Establish a consistent brand for website and print materials</li>',
-			css: 'ol > li:before {background: #8da97d; color: white; content: counter(li); counter-increment:li; font-family: "Bree Serif", serif; font-size: 1.2em; line-height:1em; padding: .5em 0; position: absolute; top: .4em; left: -1.6em; text-align: center; width: 2em; }',
+			html: html,
+			css: css,
 		});
 
 	    // save the user

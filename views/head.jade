@@ -85,10 +85,9 @@ html
                             br 
                             span.textProgectTwo and to give your website a name
                           .col-sm-12
-                              form(action="/scanner" method="post" accept-charset="utf-8")
-                                 .col-sm-10
-                                   input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
-                                 button.btn.btnProgect(type='submit' class="col-sm-2") Success
+                            .col-sm-10
+                              input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
+                            button.btn.btnProgect(type='button' class="col-sm-2") Success
                             .col-sm-10
                               div.progectRow http://landing/#{name}/#[b.progectName]
                           hr
@@ -105,6 +104,11 @@ html
 
     block content
 
+
+    //- form(action="/scanner" method="post" accept-charset="utf-8")
+    //-                              .col-sm-10
+    //-                                input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
+    //-                              button.btn.btnProgect(type='submit' class="col-sm-2") Success
     
 
 

@@ -159,12 +159,16 @@ jQuery(document).ready(function($) {
 		$('.progectRow').find('b').text(progectName);
 	});
 
-	// $('.btnProgect').on('click',  function() {
-	// 	var parameters = { name: 'sdgdfg' };
-	// 	$.post( '/scanner', parameters, function(data) {
-	//        alert(data);
-	//     });
-	// });
+	$('.btnProgect').on('click',  function() {
+		var htmlValue = myCodeMirror.getValue('\n');
+    	var cssValue = myCodeMirrorCss.getValue('\n');
+    	var jsValue = myCodeMirrorJs.getValue('\n');
+
+		var parameters = { html: htmlValue , css: cssValue , js: jsValue};
+		$.post( '/scanner', parameters, function(data) {
+	       alert(data);
+	    });
+	});
 
 
 
