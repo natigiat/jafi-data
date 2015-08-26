@@ -9,8 +9,11 @@ block content
             li.alert.alert-danger #{error.msg}
      form(method='post' , action='/users/register', enctype="multipart/form-data")
           .form-group
+            label User Name
+            input.form-control(type='text' , name='name' , placeholder='Enter Your name')
+          .form-group
             label Email
-            input.form-control(type='email' , name='email' , placeholder='Enter email')
+            input.form-control(type='email' , name='username' , placeholder='Enter email')
           .form-group
             label Password
             input.form-control(name='password' , type='password'  ,placeholder='Enter password...')

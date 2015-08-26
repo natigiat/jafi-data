@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', ensureAuthenticated ,function(req, res, next) {
 
-  	res.render('account', {  title: 'Account' , email: req.user.email });
+  	res.render('account', {  title: 'Account' , name: req.user.name });
 });
 
 function ensureAuthenticated(req, res, next) {

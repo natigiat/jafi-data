@@ -1,0 +1,173 @@
+.modal-backdrop {
+  -webkit-backface-visibility: hidden;
+}
+.modal-backdrop.zoom,
+.modal-backdrop.newspaper,
+.modal-backdrop.move-horizontal,
+.modal-backdrop.move-from-top,
+.modal-backdrop.unfold-3d,
+.modal-backdrop.zoom-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+.modal-backdrop.unfold-3d {
+  perspective: 500;
+}
+.modal.zoom .modal-dialog {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.6);
+}
+.modal.in .modal-dialog {
+  opacity: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+}
+.modal.fade.newspaper .modal-dialog,
+.modal.newspaper .modal-dialog {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s;
+  transform: scale(0) rotate(500deg);
+}
+.modal.fade.newspaper.in .modal-dialog,
+.modal.in .modal-dialog {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+.modal.move-horizontal .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateX(-50px);
+}
+.modal.in .modal-dialog {
+  opacity: 1;
+  transform: translateX(0);
+}
+.modal.move-from-top .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateY(-100px);
+}
+.modal.in .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+.modal.unfold-3d .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  transform: rotateY(-60deg);
+}
+.modal.in .modal-dialog {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+.modal.fade.zoom-out .modal-dialog,
+.modal.zoom-out .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: scale(1.3);
+}
+.modal.fade.zoom-out.in .modal-dialog,
+.modal.in .modal-dialog {
+  opacity: 1;
+  transform: scale(1);
+}
+.csstransforms3d .modal.unfold-3d .modal-dialog {
+  transform: none;
+  transform-origin: 50% 100%;
+  transform: scale(0.7) rotate3d(-1, 1, 0, -60deg);
+}
+.csstransforms3d .modal.in .modal-dialog {
+  transform: scale(1) rotate3d(-1, 1, 0, 0deg);
+}
+
+.modal-backdrop {
+    z-index: 222;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.saveProgect{
+    float: left;
+    margin: 5px;
+    color: #6EAAE2;
+    font-size: 50px;
+}
+
+.textProgect{
+    float: left;
+    font-family: RobotoThin;
+}
+
+.textProgectOne , .textProgectTwo{
+    font-size: 20px;
+    float: left;
+    font-family: RobotoThin;
+}
+
+.textProgectOne {
+    font-size: 30px;
+}
+
+.textProgectTwo {
+    margin-bottom: 25px;
+}
+
+
+.scanner ol {
+  counter-reset:li;
+  margin: 0;
+  padding: 0;
+}
+.scanner ol > li {
+  font-family: "Lato", sans-serif;
+  text-align: left;
+  font-size: 1.3em;
+  list-style: none;
+  margin: 0 0 .5em 1.95em;
+  padding: .5em 1em;
+  position: relative;
+}
+.scanner ol > li:before {
+  background: #6EAAE2;
+  color: white;
+  content: counter(li);
+  counter-increment:li;
+  font-family: "Bree Serif", serif;
+  font-size: 1.2em;
+  line-height:1em;
+  padding: .5em 0;
+  position: absolute;
+    top: .4em;
+    left: -1.6em;
+  text-align: center;
+  width: 2em;
+}
+
+hr {
+    float: left;
+    color: red;
+    width: 100%;
+}
+
+.progectRow {
+    float: left;
+    font-size: 13px;
+    margin: 5px;
+}
+
+.modal-body {
+    padding: 30px;
+    height: 370px;
+}

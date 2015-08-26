@@ -6,7 +6,9 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css')
+    link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/modal.css')
+
     
     //- bower styles*********************************************
     link(rel='stylesheet', href='/bower/slick.js/slick/slick.css')
@@ -71,9 +73,34 @@ html
             li.preview 
               a Preview
             li
-              a(href='/users/logout') Save
+              a(data-toggle="modal" data-target="#myModal") Save
+              div#myModal.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
+                .modal-dialog(role='document')
+                  .modal-content 
+                    .modal-body
+                        .col-sm-12
+                          .col-sm-10.pull-left
+                            i(class="fa fa-database fa-4x saveProgect")
+                            span.textProgectOne It's time to save your work
+                            br 
+                            span.textProgectTwo and to give your website a name
+                          .col-sm-12
+                              form(action="/scanner" method="post" accept-charset="utf-8")
+                                 .col-sm-10
+                                   input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
+                                 button.btn.btnProgect(type='submit' class="col-sm-2") Success
+                            .col-sm-10
+                              div.progectRow http://landing/#{name}/#[b.progectName]
+                          hr
+                          .col-sm-12
+                            ol
+                              li You can change your site name later    
+
+                              li your site is private and will only be shown to the world with your approved 
+                                
+                              li You can publish your site
             li
-              a(href='/users/logout') Publish             
+              a Publish             
 
 
     block content

@@ -15,6 +15,10 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 
+mongoose.connect('mongodb://localhost/nodeauth');
+var uniqueValidator = require('mongoose-unique-validator');
+var db = mongoose.connection;
+
 
 
 
@@ -101,7 +105,6 @@ app.use('*' ,function (req, res, next)
 {
     
     res.locals.toasts = req.toastr.render()
-    console.log(res.locals.toasts);
     next()
 });
 

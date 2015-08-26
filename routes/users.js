@@ -4,6 +4,7 @@ var path = require('path');
 var multer  = require('multer');
 var bcrypt  = require('bcrypt-nodejs');
 var mkdirp = require('mkdirp');
+var nodemailer = require('nodemailer');
 
 var upload = multer({ dest: '../uploads/' });
 
@@ -25,6 +26,7 @@ router.get('/register', function(req, res, next) {
   res.render('register' , {
     'title': 'Register'
   });
+
 });
 
 router.get('/login', function(req, res, next) {
@@ -33,53 +35,55 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-router.post('/register', function(req, res, next) {
-  var email = req.body.email;
-  var password = req.body.password;
-  var password2 = req.body.password2;
 
-    req.checkBody('email', 'Email field is required').notEmpty();
-    req.checkBody('email', 'Please enter valid email').isEmail();
-    req.checkBody('password', 'password field is required').notEmpty();
-    req.checkBody('password2', 'Password do not match').equals(req.body.password);
 
-    //check for errors
-    var errors = req.validationErrors();
-    if (errors){
-      res.render('register' , {
-        errors: errors,
-        email: email,
-        password:password,
-        password2:password2
-      });
-    }
-    // newUser.save(function (err) {
-    //     console.log(err);
-    // });
-    else{
-      var newUser = new User ({
-        email: email,
-        password:bcrypt.hashSync(password)
-      });
+router.post('/register', passport.authenticate('local-signup', {
+        successRedirect : '/account', // redirect to the secure profile section
+        failureRedirect : '/users/register', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+}));
+
+// router.post('/register', function(req, res, next) {
+  
+//   var email = req.body.email;
+//   var password = req.body.password;
+//   var password2 = req.body.password2;
+
+//     req.checkBody('email', 'Email field is required').notEmpty();
+//     req.checkBody('email', 'Please enter valid email').isEmail();
+//     req.checkBody('password', 'password field is required').notEmpty();
+//     req.checkBody('password2', 'Password do not match').equals(req.body.password);
+
+//     //check for errors
+//     var errors = req.validationErrors();
+//     if (errors){
+//       res.render('register' , {
+//         errors: errors,
+//         email: email,
+//         password:password,
+//         password2:password2
+//       });
+//     }
+
+//     else{
+//       var newUser = new User ({
+//         email: email,
+//         password:bcrypt.hashSync(password)
+//       });
       
-      //create user
-      User.createUser(newUser , function(err , user){
-        if(err) throw err;
-        
-        //** option to make dir
-        // mkdirp(appRoot + '/progects/' + user.email , function (err) { //appDir + '/progects/' + user.name
-        //     if (err) console.error(err)
-        //     else console.log('pow!')
-        // });
+//       //create user
+//       User.createUser(newUser , function(err , user , done){
+//         if(err) throw err;
 
-      });
+//         req.flash('success' , 'You are now registerd - Start your first progect');
+//         passport.authenticate('local')(req, res, function () {
+//           res.redirect('/account');
+//         });
 
-      req.flash('success' , 'You are now registerd - Start your first progect');
-      res.redirect('/account');
+//       });
+//     }
 
-    }
-
-}); 
+// }); 
 
 
 //config serialize and deserialze
@@ -94,13 +98,78 @@ passport.deserializeUser(function(id, done) {
 });
 
 
+
+
+
+ passport.use('local-signup', new LocalStrategy({
+    passReqToCallback : true // allows us to pass back the entire request to the callback
+    },
+    function(req, username , password , done) {
+
+        // asynchronous
+        // User.findOne wont fire unless data is sent back
+        process.nextTick(function() {
+
+        var name = req.body.name;
+        User.getUserByName(name , function(err, user) {
+
+            if (err)
+                return done("error "  + err);
+
+            // check to see if theres already a user with that name
+            if (user) {
+                return done(null, false, req.flash('error', 'That User Name is already taken.'));
+            } 
+
+        });
+
+
+        // find a user whose email is the same as the forms email
+        // we are checking to see if the user trying to login already exists
+        User.getUserByEmail(username , function(err, user) {
+            // if there are any errors, return the error
+            
+
+            if (err)
+                return done("error "  + err);
+
+            // check to see if theres already a user with that email
+            if (user) {
+                return done(null, false, req.flash('error', 'That email is already taken.'));
+            } else {
+
+                // if there is no user with that email
+                // create the user
+                var newUser = new User ({
+                  name: name , 
+                  email: username,
+                  password:bcrypt.hashSync(password)
+                });
+
+                // save the user
+                newUser.save(function(err) {
+                    if (err)
+                        throw err;
+                    return done(null, newUser);
+                });
+            }
+
+        });    
+
+        });
+
+    }));
+
+
+
+// Use the LocalStrategy within Passport to login/”signin” users.
 passport.use(new LocalStrategy(
   function(username , password , done) {
     User.getUserByEmail(username , function(err , user){
       if (err) { return done(err); }
       if(!user){
         console.log('unknoen user ' + user);
-        return done(null , user);
+        return done(null, false);
       }else{
         console.log('loged in with ' + user);
       }
@@ -118,21 +187,20 @@ passport.use(new LocalStrategy(
   }
 ));
 
-// router.post('/login' , passport.authenticate('local', function(err, user, info){
-//   res.locals.user = req.user;
-//   req.flash('success' , 'You are loged in' );
-//   res.redirect('/account');
-// });
+
 
 
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }
-    if (!user) { return res.redirect('/login'); }
+    if (!user) { 
+      req.flash('error' , 'Invalid User Details' ); 
+      return res.redirect('/users/login'); 
+    }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
       req.toastr.success('Successfully logged in.', "You're in!");
-      console.log( req.user);
+      console.log('Successfully logged in with ' + req.user);
       return res.redirect('/account');
     });
   })(req, res, next);

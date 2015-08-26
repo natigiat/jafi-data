@@ -19,6 +19,12 @@ jQuery(document).ready(function($) {
 	});
 
 
+	//setup modal
+	$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').focus();
+	});
+
+
 	//close and open layouts from nav link
 	$('.styleB').on('click', function() {	
 		// $('.ui-layout-resizer').hide();
@@ -143,10 +149,22 @@ jQuery(document).ready(function($) {
 		$('.ui-layout-resizer-south').find(event.target).css('background' , 'red');
 	});
 
-	
 
+	//MANAGIN PUBLISING SITE
+	//check if website exsist
+	$('.progectInput').on('keyup' , function(event) {
+		var progectName = '';
+		var progectName = $(this).val();
+		// $('.progectName').text() = '';
+		$('.progectRow').find('b').text(progectName);
+	});
 
-
+	// $('.btnProgect').on('click',  function() {
+	// 	var parameters = { name: 'sdgdfg' };
+	// 	$.post( '/scanner', parameters, function(data) {
+	//        alert(data);
+	//     });
+	// });
 
 
 
