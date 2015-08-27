@@ -29,6 +29,7 @@ var users = require('./routes/users');
 var account = require('./routes/account');
 var scanner = require('./routes/scanner');
 var result = require('./routes/result');
+var proegct = require('./routes/proegct');
 
 var app = express();
 
@@ -114,6 +115,7 @@ app.use('/users', users);
 app.use('/scanner' , scanner);
 app.use('/account' , account); 
 app.use('/result' , result); 
+app.use('/progect' , proegct); 
 
 
 

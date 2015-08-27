@@ -18,26 +18,39 @@ router.get('/', ensureAuthenticated,  function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	
-	var html = req.body.html;
+	var userId = req.user.id;
+	var progectName = req.body.progectName;
 	var css = req.body.css;
+	var html = req.body.html;
 	var js = req.body.js;
-	
-	// res.send({name:"nati" , lastname: "giat"});
-		var newProgect = new Progect ({
-		    name: 'name' ,
-			html: html,
-			css: css,
-		});
 
-	    // save the user
-	    newProgect.save(function(err ,newProgect) {
-	        if(!err) {
-	            res.redirect('/scanner');
-	        }
-	        else {
-	            console.log(err);
-	        }
-	    });
+
+
+	//check if pogect exsist
+	Progect.checkProjectExsist(progectName , function(err , progect){
+		if(progect){
+			var satusProgect = "progect exsist";
+			return satusProgect;
+		}else{
+			var newProgect = new Progect ({
+			    userId: userId,
+			    name: progectName ,
+				html: html,
+				css: css,
+				js: js
+			});
+
+		    // save the user
+		    newProgect.save(function(err ,newProgect) {
+		        if(err) {
+		            console.log(err);
+		        }
+
+		    });
+		}
+	})
+	
+		
 });
 
 

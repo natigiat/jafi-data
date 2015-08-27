@@ -160,11 +160,12 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.btnProgect').on('click',  function() {
+		var progectName = $('.progectName').text();
 		var htmlValue = myCodeMirror.getValue('\n');
     	var cssValue = myCodeMirrorCss.getValue('\n');
     	var jsValue = myCodeMirrorJs.getValue('\n');
 
-		var parameters = { html: htmlValue , css: cssValue , js: jsValue};
+		var parameters = { progectName: progectName , html: htmlValue , css: cssValue , js: jsValue};
 		$.post( '/scanner', parameters, function(data) {
 	       alert(data);
 	    });

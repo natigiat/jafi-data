@@ -1,0 +1,1 @@
+1) url-to-image package must have phantomjs install in the machine

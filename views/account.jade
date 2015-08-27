@@ -21,8 +21,22 @@ block content
 
     hr
 
+    ul.col-sm-7.creteNewProgect
+      each val, index in progects
+        li
+          div.col-sm-4
+            img(src="//static.wixstatic.com/dicons/130e5f41-4538-4292-7794-2814e3969e2a_big.png" class="projectImage")
+          div.col-sm-8
+            div.progectName= val.name
+            p.progectLink= "Edit"
+            a(href="/"+name +"/" +val.name ).progectLink= "View"
+            p.progectLink= "Upgrade"
+
+
     div.col-sm-7.creteNewProgect
       div.text-center
         i(class="fa fa-folder-open-o fa-5x faNewProgect")
         span.h4.NewProgectTitle 
           a(href='/scanner') Create a new progect
+    div#more
+      != progects.name

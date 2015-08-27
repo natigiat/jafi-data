@@ -200,7 +200,7 @@ router.post('/login', function(req, res, next) {
     req.logIn(user, function(err) {
       if (err) { return next(err); }
       req.toastr.success('Successfully logged in.', "You're in!");
-      console.log('Successfully logged in with ' + req.user);
+      // console.log('Successfully logged in with ' + req.user);
       return res.redirect('/account');
     });
   })(req, res, next);

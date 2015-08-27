@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title #{title}: express web
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/bower/medium-editor/dist/css/medium-editor.css')
+
+    //- bower scripts
+    script(src='/bower/jquery/dist/jquery.min.js')
+    script(src="/javascripts/result.js")
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')
+    script(src="/bower/jquery-ui/jquery-ui.js")
+    script(src="/bower/jquery.layout/dist/jquery.layout-latest.js")
+    script(src="/bower/ace-builds-bower-patched/src/ace.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/lib/codemirror.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/xml/xml.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/htmlmixed/htmlmixed.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/css/css.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/javascript/javascript.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/scroll/simplescrollbars.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/show-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/xml-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/html-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/css-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/javascript-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
+    script(src='/bower/medium-editor/dist/js/medium-editor.js')
+
+    
+  body.result
+    div.htmlRow
+    div.htmlcss
+        style.
+    div.htmljs
+        script(type="text/javascript").
