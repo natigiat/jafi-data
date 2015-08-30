@@ -30,6 +30,7 @@ var account = require('./routes/account');
 var scanner = require('./routes/scanner');
 var result = require('./routes/result');
 var proegct = require('./routes/proegct');
+var templates = require('./routes/templates');
 
 var app = express();
 
@@ -116,6 +117,7 @@ app.use('/scanner' , scanner);
 app.use('/account' , account); 
 app.use('/result' , result); 
 app.use('/progect' , proegct); 
+app.use('/templates' , templates); 
 
 
 

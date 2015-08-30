@@ -1,0 +1,20 @@
+extends layout
+
+block content
+     
+     div.col-sm-3.searchTemplates
+     div.col-sm-9.pull-right.templateWrapper
+       ol.templatesOl
+        each val, index in progects
+          li.templateLi
+            div.col-sm-6.row.listProgect
+              div.text-center.col-sm-12progectName= val.name
+              div.col-sm-12
+                div(class="templatesWebsite")
+                img(src="http://static.wixstatic.com/media/387acdb3b6c44cf8bd404457948c41fe.jpg" class="projectImage")
+              div.col-sm-12
+                p.templatesPrice Price : Free
+              div.col-sm-12
+                a.btn(href="/scanner/"+name +"/" +val.name ).progectLink= "Edit"
+                a.btn(href="/progect/"+name +"/" +val.name ).progectLink= "View"
+               

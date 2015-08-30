@@ -7,12 +7,27 @@ var User = require('../modules/user.js');
 
 
 
-/* GET home page. */
+/* GET scanner page. */
 router.get('/', ensureAuthenticated,  function(req, res, next) {
   var userName =  req.user.name;
   userName = userName.replace(/\s/g, '');
 
   res.render('scanner', { title: 'Scanner' , user: req.user , name: userName }); //, name: req.user.name
+});
+
+
+/* GET scanner edit. */
+router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
+  var userId = req.user.id;
+  var username = req.params.user;
+  var progect = req.params.progect;
+
+  Progect.SelectProgect(userId , progect , function(err , progect){
+  	if(progect){
+	    console.log(typeof(progect));
+		res.render('scanner', {  title: 'Account' , progect:progect });
+	}
+  });
 });
 
 

@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 
+
+
 	//main layout page layouy ******************************************
 	var myLayout = $('body').layout();
 	$('body').layout({ applyDefaultStyles: true });
@@ -59,7 +61,14 @@ jQuery(document).ready(function($) {
 	});
 
 
-
+	//get data for edit scanner
+	$dataHtml = $('.dataHtml').val();
+	$dataCss = $('.dataCss').val();
+	$dataJs = $('.dataJs').val();
+	
+	if(!$dataHtml){ $dataHtml='';}
+	if(!$dataCss){ $dataCss='';}
+	if(!$dataJs){ $dataJs='';}
 	
 
 	// page editor  ******************************************
@@ -75,7 +84,7 @@ jQuery(document).ready(function($) {
 		   CodeMirror.showHint(e);
 		}
 	  },
-      // value: "sdfsdfsdfsd"
+      value: $dataHtml
 	});
 
 	var myCodeMirrorCss = CodeMirror(document.getElementById("template-css") , {
@@ -84,7 +93,8 @@ jQuery(document).ready(function($) {
 	  lineNumbers: true,
 	  scrollbarStyle: "simple",
 	  gutter: true,
-	  extraKeys: {"Ctrl-Space": "autocomplete"}
+	  extraKeys: {"Ctrl-Space": "autocomplete"},
+	  value: $dataCss
 
 	});
 
@@ -93,7 +103,8 @@ jQuery(document).ready(function($) {
 	  theme: "ambiance",
 	  lineNumbers: true,
 	  scrollbarStyle: "simple",
-	  extraKeys: {"Ctrl-Space": "autocomplete"}
+	  extraKeys: {"Ctrl-Space": "autocomplete"},
+	  value: $dataJs
 	});
 	
 	$('.editor').resizable({
@@ -102,6 +113,8 @@ jQuery(document).ready(function($) {
       minHeight: 150,
       minWidth: 200
 	});
+
+
 
  	
 
