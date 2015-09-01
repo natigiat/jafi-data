@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+var screenshotPromise = require('screenshot-promise');
 
 
 var Progect = require('../modules/progect.js');
@@ -31,6 +33,8 @@ router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
 });
 
 
+
+
 router.post('/', function(req, res, next) {
 	
 	var userId = req.user.id;
@@ -47,6 +51,7 @@ router.post('/', function(req, res, next) {
 			var satusProgect = "progect exsist";
 			return satusProgect;
 		}else{
+			
 			var newProgect = new Progect ({
 			    userId: userId,
 			    name: progectName ,
@@ -61,6 +66,12 @@ router.post('/', function(req, res, next) {
 		            console.log(err);
 		        }
 
+		    });
+
+		    
+		    screenshotPromise('http://localhost:3000/progect/'+userId+'/'+progectName, '1024x768', {crop: true})
+		    .then(function (buf) {
+		        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
 		    });
 		}
 	})

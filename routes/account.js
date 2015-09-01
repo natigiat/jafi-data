@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var screenshot = require('url-to-image');
 
 var Progect = require('../modules/progect.js');
 
@@ -14,7 +13,8 @@ var Progect = require('../modules/progect.js');
 	// });
 
 router.get('/', ensureAuthenticated ,function(req, res, next) {
-	var userName =  req.user.name;
+
+  var userName =  req.user.name;
     userName = userName.replace(/\s/g, '');
 
 

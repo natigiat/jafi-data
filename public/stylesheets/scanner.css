@@ -1,0 +1,80 @@
+.container {
+  margin:20px;
+  display:inline-block;
+  position: abslolute;
+}
+
+
+#add {
+  margin:10px;
+  top:20px;
+  left:560px;
+  /*width: 250px;
+  height: 500px;*/
+  display:block;
+  /*background:green;
+  color:white;*/
+  position: absolute;
+}
+
+.parent {
+  background: yellow;
+  width: 250px;
+  height: 1000px;
+  position: relative;
+}
+
+
+.child {
+  background: red;
+  width: 150px;
+  height: 80px;
+  position: absolute;
+}
+
+ .ui-resizable-ne,
+ .ui-resizable-se,
+ .ui-resizable-nw,
+ .ui-resizable-sw,
+ .ui-resizable-n,
+ .ui-resizable-s,
+ .ui-resizable-w,
+ .ui-resizable-e{
+	background: white;
+	border: 1px solid black;
+	width: 9px !important;
+	height: 9px !important;
+}
+
+.ui-resizable-se {
+	background-image: none !important;
+	right: -5px !important;
+	bottom: -5px !important;
+}
+
+.ui-resizable-n,
+.ui-resizable-s {
+	left: 50% !important;
+	margin-left: -6px !important;
+}
+
+.ui-resizable-e,
+.ui-resizable-w {
+	top: 50% !important;
+	margin-top: -6px !important;
+}
+
+
+div#drow {
+    position: absolute;
+    z-index: 22222;
+    top: 0;
+}
+
+.mobileView
+{
+    width: 30%;
+    border: 1px solid red;
+    display: block;
+    margin: 0 auto;
+}

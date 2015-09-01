@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
 
-
+	$('.zoomTarget').zoom();
 
 	//main layout page layouy ******************************************
 	var myLayout = $('body').layout();
 	$('body').layout({ applyDefaultStyles: true });
 	var state = myLayout.state;
-	console.log(state.west);
+	myLayout.sizePane("west", 900);
 
 
 	//navbar icone for code and style active
@@ -50,6 +50,23 @@ jQuery(document).ready(function($) {
 		$('.ui-layout-center').css('top', '20px!important');
 
 	});
+
+	$('.fa-mobile').on('click', function() {
+		// $('.ui-layout-resizer').hide();
+		myLayout.hide("south");
+		myLayout.hide("west");
+		myLayout.hide("north");
+		$('.scannerNav').hide();
+		$('.ui-layout-resizer').hide();
+		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">Editor</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#"><i class="fa fa-desktop fa-2x"></i></a></li> <li><a href="#"><i class="fa fa-mobile fa-2x"></i></a></li> </ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
+		$('.ui-layout-center').css('top', '20px!important');
+
+		$('iframe').addClass('mobileView');
+
+	});	
+
+
+	
 
 	$(document).on("click", '.editorBack',function(){
 		myLayout.show("south");

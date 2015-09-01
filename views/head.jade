@@ -6,6 +6,7 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/scanner.css')
     link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/modal.css')
 
@@ -40,6 +41,8 @@ html
     script(src='/bower/medium-editor/dist/js/medium-editor.js')
 
 
+
+
     
   body.scanner
     nav.navbar.scannerNav.navbar-static-top(role='navigation')
@@ -59,10 +62,11 @@ html
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
           li.active
-            a(href='#') <i class="fa fa-desktop fa-2x"></i>
-          |                   
+            a
+              i(class="fa fa-desktop fa-2x")                 
           li
-            a(href='#') <i class="fa fa-mobile fa-2x"></i>
+            a
+              i(class="fa fa-mobile fa-2x")
           
 
          ul.nav.navbar-nav.navbar-right.publishNav
@@ -112,8 +116,8 @@ html
     
 
 
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')
+    script(src='/bower/jquery/dist/jquery.min.js')
+    script(src='/bower/bootstrap/dist/js/bootstrap.min.js')
     script(src="/bower/jquery-ui/jquery-ui.js")
     script(src="/bower/jquery.layout/dist/jquery.layout-latest.js")
     script(src="/bower/ace-builds-bower-patched/src/ace.js" type="text/javascript" charset="utf-8")
@@ -131,8 +135,14 @@ html
     script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
+    script(src='/bower/jquery-zoom/jquery.zoom.js')
+    script(src='/javascripts/FlowType.JS-master/flowtype.js')
 
     //- pages scripts
     script(src="/javascripts/scanner.js")
+    script(src="/javascripts/scannerFunc.js")
+
+
+    
     
 

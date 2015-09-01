@@ -15,9 +15,10 @@ block content
 
 
         div.col-sm-2
-            a(href='/scanner' class="btn buttonNewProgect") 
-              span.col-sm-10 Create a new site
-              i(class="fa fa-plus col-sm-2  faNewProgect")
+            //- a(href='/scanner' class="btn buttonNewProgect") 
+            //-   span.col-sm-10 Create a new site
+            //-   i(class="fa fa-plus col-sm-2  faNewProgect")
+            a.buttonNewProgec(href="/scanner" title="Create a new site")<i class="fa fa-dribbble"></i> Create a new site
 
     hr
 
@@ -26,11 +27,11 @@ block content
         li.progectLi
           div.row.listProgect
             div.col-sm-4
-              img(src="//static.wixstatic.com/dicons/130e5f41-4538-4292-7794-2814e3969e2a_big.png" class="projectImage")
+              img(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
             div.col-sm-8
               div.progectName= val.name
-              a(href="/scanner/"+name +"/" +val.name ).progectLink= "Edit"
-              a(href="/progect/"+name +"/" +val.name ).progectLink= "View"
+              a(href="/scanner/"+val.userId +"/" +val.name ).progectLink= "Edit"
+              a(href="/progect/"+val.userId +"/" +val.name ).progectLink= "View"
               p.progectLink= "Upgrade"
 
 

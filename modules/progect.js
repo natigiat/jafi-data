@@ -16,6 +16,7 @@ var ProgectSchema = mongoose.Schema({
 	html: { type: String},
 	css: { type: String},
 	js: { type: String},
+	watch: { type: Number},
 	paid: { type: Boolean},
 	privateP: { type: Boolean},
 	uploadTime :  { type : Date, default: Date.now },
@@ -32,6 +33,12 @@ module.exports.checkProjectExsist = function(progetcName , callback){
 	Progect.findOne(query , callback);
 }
 
+//check if progect exsist by id
+module.exports.checkProjectExsistById = function(progetcId , callback){
+	var query = {name : progetcId};
+	Progect.findOne(query , callback);
+}
+
 //select all progect for account page
 module.exports.SelectAllProgectById = function(userId , callback){
 	var query = {"userId" : userId};
@@ -41,10 +48,10 @@ module.exports.SelectAllProgectById = function(userId , callback){
 //select all progect for templates page
 module.exports.SelectAllProgect = function(callback){ //
 	var query = Progect.find({});
-    query.paginate(options, function(err, res) {
-    		console.log(res); 
-	   }), callback);
-	// Progect.find({} , callback);
+    // query.paginate(options, function(err, res) {
+    // 		console.log(res); 
+	   // }), callback);
+	Progect.find({} , callback);
 }
 
 //select progect for progect page

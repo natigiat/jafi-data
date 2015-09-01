@@ -3,18 +3,24 @@ extends layout
 block content
      
      div.col-sm-3.searchTemplates
-     div.col-sm-9.pull-right.templateWrapper
+     div.col-sm-12.pull-right.templateWrapper
        ol.templatesOl
         each val, index in progects
           li.templateLi
-            div.col-sm-6.row.listProgect
+            div.col-sm-4.row.listProgect
               div.text-center.col-sm-12progectName= val.name
               div.col-sm-12
                 div(class="templatesWebsite")
-                img(src="http://static.wixstatic.com/media/387acdb3b6c44cf8bd404457948c41fe.jpg" class="projectImage")
-              div.col-sm-12
-                p.templatesPrice Price : Free
+                img.temImage(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
+              div.col-sm-12.ratingTemplates
+                div.col-sm-6
+                  p.templatesPrice Price : Free
+                div.col-sm-6.pull-right
+                   a.btn(class="watch" name="watch")<i class="fa fa-eye"></i>
+                     span.eyesValue(val="3") 3
+                   a.btn(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
               div.col-sm-12
                 a.btn(href="/scanner/"+name +"/" +val.name ).progectLink= "Edit"
-                a.btn(href="/progect/"+name +"/" +val.name ).progectLink= "View"
+                a.btn(href="/progect/"+val.userId +"/" +val.name ).progectLink= "View"
+              input(type="hidden" class="pr" value=val.id)
                
