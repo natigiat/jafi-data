@@ -58,9 +58,11 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.insperation').on('click', function() {
-		$('#drow').after("<article class='buttonBaners'> <nav class='btn-bar nav-dark'> <a href='#' class='btn btn-glass'> Default </a> <a href='#' class='btn btn-glass btn-primary'> <i class='fa fa-fw fa-lg fa-chevron-right'></i> Primary </a> <a href='#' class='btn btn-glass btn-success'> <i class='fa fa-fw fa-lg fa-check'></i> Success </a> <a href='#' class='btn btn-glass btn-warning'> <i class='fa fa-fw fa-lg fa-exclamation '></i> Warning </a> <a href='#' class='btn btn-glass btn-danger'> <i class='fa fa-fw fa-lg fa-times'></i> Danger </a> <a href='#' class='btn btn-glass btn-info'> <i class='fa fa-fw fa-lg fa-info '></i> Info </a> </nav> </article> "); 
+		// http://codepen.io/32bitkid/pen/VYqXZX
+		$('#drow').after("<article class='buttonBaners'> <nav class='btn-bar nav-dark'> <a href='#' class='btn btn-glass'> CodePen </a> <a href='#' class='btn btn-glass btn-primary'> <i class='fa fa-fw fa-lg fa-chevron-right'></i> CSS Deck </a> <a href='#' class='btn btn-glass btn-success'> <i class='fa fa-fw fa-lg fa-check'></i> JS Bin </a> <a href='#' class='btn btn-glass btn-warning'> <i class='fa fa-fw fa-lg fa-exclamation '></i> Dabblet </a> <a href='#' class='btn btn-glass btn-danger'> <i class='fa fa-fw fa-lg fa-times'></i> Tinkerbin </a> <a href='#' class='btn btn-glass btn-info'> <i class='fa fa-fw fa-lg fa-info '></i> Liveweave </a> </nav> </article> "); 
 		$('.buttonBaners').after("<iframe class='insperationIframe' src='http://www.w3schools.com'></iframe>");
 		$('.mainContainer').remove();
+		$('#drow').hide();
 	});		
 
 
