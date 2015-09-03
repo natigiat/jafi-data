@@ -1,18 +1,20 @@
 jQuery(document).ready(function($) {
 
-	$('.zoomTarget').zoom();
 
 	//main layout page layouy ******************************************
 	var myLayout = $('body').layout();
 	$('body').layout({ applyDefaultStyles: true });
 	var state = myLayout.state;
-	myLayout.sizePane("west", 900);
+	myLayout.sizePane("west", 600);
+    myLayout.close( "west");
+    myLayout.close( "south");
 
 
 	//navbar icone for code and style active
 	var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
 	var codeClick = state.west.isClosed ? $('.codeB').find('a').removeClass('bactive') : $('.codeB').find('a').addClass('bactive');
 
+	
 	$('.navbar').on('click', function() {
 		
 		var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
@@ -39,7 +41,7 @@ jQuery(document).ready(function($) {
 		myLayout.toggle("south");
 	});
 
-	$('.preview').on('click', function() {	
+	$(".preview , .fa-mobile , .insperation").on('click', function() {	
 		// $('.ui-layout-resizer').hide();
 		myLayout.hide("south");
 		myLayout.hide("west");
@@ -52,23 +54,19 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.fa-mobile').on('click', function() {
-		// $('.ui-layout-resizer').hide();
-		myLayout.hide("south");
-		myLayout.hide("west");
-		myLayout.hide("north");
-		$('.scannerNav').hide();
-		$('.ui-layout-resizer').hide();
-		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">Editor</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#"><i class="fa fa-desktop fa-2x"></i></a></li> <li><a href="#"><i class="fa fa-mobile fa-2x"></i></a></li> </ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
-		$('.ui-layout-center').css('top', '20px!important');
-
 		$('iframe').addClass('mobileView');
+	});
 
-	});	
+	$('.insperation').on('click', function() {
+		$('#drow').after("<article class='buttonBaners'> <nav class='btn-bar nav-dark'> <a href='#' class='btn btn-glass'> Default </a> <a href='#' class='btn btn-glass btn-primary'> <i class='fa fa-fw fa-lg fa-chevron-right'></i> Primary </a> <a href='#' class='btn btn-glass btn-success'> <i class='fa fa-fw fa-lg fa-check'></i> Success </a> <a href='#' class='btn btn-glass btn-warning'> <i class='fa fa-fw fa-lg fa-exclamation '></i> Warning </a> <a href='#' class='btn btn-glass btn-danger'> <i class='fa fa-fw fa-lg fa-times'></i> Danger </a> <a href='#' class='btn btn-glass btn-info'> <i class='fa fa-fw fa-lg fa-info '></i> Info </a> </nav> </article> "); 
+		$('.buttonBaners').after("<iframe class='insperationIframe' src='http://www.w3schools.com'></iframe>");
+		$('.mainContainer').remove();
+	});		
 
 
 	
 
-	$(document).on("click", '.editorBack',function(){
+	$(document).on("click", ".editorBack , .fa-desktop",function(){
 		myLayout.show("south");
 		myLayout.show("west");
 		myLayout.show("north");

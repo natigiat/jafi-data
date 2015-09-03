@@ -33,6 +33,8 @@ html
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
     //- share buttton
     link(rel='stylesheet', href='/bower/rrssb/css/rrssb.css')
+    //-intro js
+    link(rel='stylesheet', href='/bower/intro.js/introjs.css')
 
     //- bower scripts
     script(src='/bower/jquery/dist/jquery.min.js')
@@ -57,7 +59,7 @@ html
           |                  
           span.icon-bar
         |               
-        a.navbar-brand(href='/') Landing Chat
+        a.navbar-brand(href='/' data-intro='Hello step one!') Landing Chat
       // Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
@@ -67,6 +69,10 @@ html
           li
             a
               i(class="fa fa-mobile fa-2x")
+          li
+            a
+              i(class="fa fa-eye fa-2x insperation")
+
           
 
          ul.nav.navbar-nav.navbar-right.publishNav
@@ -135,8 +141,7 @@ html
     script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
-    script(src='/bower/jquery-zoom/jquery.zoom.js')
-    script(src='/javascripts/FlowType.JS-master/flowtype.js')
+    script(src='/bower/intro.js/intro.js')
 
     //- pages scripts
     script(src="/javascripts/scanner.js")

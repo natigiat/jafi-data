@@ -1,14 +1,10 @@
 jQuery(document).ready(function($) {
 	
-	var layotCenter =  $('.ui-layout-center').width();
-	$(".parent").css('width', layotCenter);
-	console.log(layotCenter);
-	
-	// $('body').on('click',  function() {
-	// 	var layotCenter =  $('.ui-layout-center').width();
-	// 	$(".parent").css('width', layotCenter);
-	// });
-	
+
+   
+
+    //add intro 
+	// introJs().start();
 	
 
 	foo();
@@ -106,5 +102,24 @@ jQuery(document).ready(function($) {
 	  foo();
 	  
 	});
+
+
+	//*********************************plate start************************
+
+     $('body').on('click', function(event) {
+     	event.preventDefault();
+     	var box =  $('.child');
+
+     	box.each(function() {
+     		var boxHeight = $(this).height();
+     	    console.log(boxHeight);
+
+     	    $(this).find(".boxHeight").remove();
+     	    $(this).append("<div class='boxHeight'>" + boxHeight +"</>");
+     	});
+     	
+     	
+     });
+	
 	
 });

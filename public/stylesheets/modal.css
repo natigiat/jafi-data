@@ -125,12 +125,12 @@
 }
 
 
-.scanner ol {
+.modal-body .scanner ol {
   counter-reset:li;
   margin: 0;
   padding: 0;
 }
-.scanner ol > li {
+.modal-body .scanner ol > li {
   font-family: "Lato", sans-serif;
   text-align: left;
   font-size: 1.3em;
@@ -139,7 +139,7 @@
   padding: .5em 1em;
   position: relative;
 }
-.scanner ol > li:before {
+.modal-body .modal-body .scanner ol > li:before {
   background: #6EAAE2;
   color: white;
   content: counter(li);
