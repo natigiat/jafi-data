@@ -5,7 +5,8 @@ jQuery(document).ready(function($) {
 
     //add intro 
 	// introJs().start();
-	
+	$( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
 
 	foo();
 	
@@ -22,6 +23,8 @@ jQuery(document).ready(function($) {
 	    containment: "parent",
 	    cursor: "move"
 	});
+
+
 
 	var geklikt = false;
 	$(".child").click(function () {
@@ -98,18 +101,30 @@ jQuery(document).ready(function($) {
 	/*als je klikt op knop div toevoegen */
 
 	//style selected div with border layout 
-	$('.ui-layout-center').on('click', function() {	
-		var current = $('.ui-layout-center').find(event.target).addClass('selected_div');
+	// $('.ui-layout-center').on('click', function() {	
+	// 	var current = $('.ui-layout-center').find(event.target).addClass('selected_div');
 
-		//Remove all
-   		$('.selected_div').removeClass('selected_div');
-   		current.addClass("selected_div");
+	// 	//Remove all
+ //   		$('.selected_div').removeClass('selected_div');
+ //   		current.addClass("selected_div");
 		
 		
-	});
+	// });
 
 
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
+	
+
+    //pallate bottons
+
+
+    //remove
+ //    $('.remove').click(function() {
+	//   $('layer-item')
+	// });
+
+
+    //add
 	$('.add').click(function() {
 	  
 	  $('.parent').append('<div class="child layer"></div>');
@@ -118,13 +133,25 @@ jQuery(document).ready(function($) {
 	  
 	});
 
-    $('.layer').on('click' ,function() {
+	
+
+	
+	$('.ui-layout-center').on('click' , 'layer-item' , function() {
+		var layerIndex = $(this).index();
+		console.log(layerIndex);
+		//Remove all
+   		$('.selected_div').removeClass('selected_div');
+		$('.child:eq('+ layerIndex+' )').addClass('selected_div');
+	});
+
+    $('.layer').bind('click' ,function() {
     	alert(22);
     	$(this).each(function(index, el) {
 	    	console.log(this.index);
 	    	console.log(this.el);
 	    });
     });
+
     
 
 

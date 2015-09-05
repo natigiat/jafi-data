@@ -35,6 +35,8 @@
 .child {
   height: 80px;
   position: absolute;
+  background-color: #6BB0EC;
+  opacity: 0.2;
 }
 
  .ui-resizable-ne,
@@ -89,6 +91,7 @@ div#drow {
 #selectable .selected_div {
     border: 1px dashed #6BB0EC!important;
     cursor: move;
+    background: red;
 }
 
 .selected_div:hover {
@@ -1152,17 +1155,22 @@ layer-item input {
 layer-item:not(:last-child) {
     border-bottom: 1px solid #333
 }
-layer-item.selected:after,
-layer-item.selected:before {
+layer-item.selected_div:after,
+layer-item.selected_div:before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     top: 0
 }
-layer-item.selected:after {
-    border-left: 4px solid rgba(67, 255, 0, 0.4)
+layer-item.selected_div:after {
+    border-left: 4px solid rgb(107, 176, 236);
 }
-layer-item.selected:before {
+layer-item.selected_div:before {
     border-left: 2px solid rgba(67, 255, 0, 0.75)
+}
+
+
+ul#sortable {
+    padding: 0px;
 }
