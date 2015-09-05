@@ -12,8 +12,8 @@ jQuery(document).ready(function($) {
 	function foo() {
 	$(".child").resizable({
 	    /*aspectRatio:true,*/
-	    minWidth: 25,
-	    minHeight: 25,
+	    minWidth: 2,
+	    minHeight: 2,
 	    maxWidth: $(".parent").width(),
 	    containment: "parent",
 	    handles: "ne,nw,se,sw,n,w,e,s"
@@ -64,62 +64,86 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	function rotate() {
-	    var RAD2DEG = 180 / Math.PI;
-	    var dial = $(".child");
-	    dial.centerX = dial.offset().left + dial.width() / 2;
-	    dial.centerY = dial.offset().top + dial.height() / 2;
-	    var offset, dragging = false;
-	    dial.mousedown(function (e) {
-	        dragging = true;
-	        offset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
-	    })
-	    $(document).mouseup(function () {
-	        dragging = false;
-	    })
-	    $(document).mousemove(function (e) {
-	        if (dragging) {
-	            var newOffset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
-	            var r = (offset - newOffset) * RAD2DEG;
-	            dial.css('-webkit-transform', 'rotate(' + r + 'deg)');
-	            dial.css('-moz-transform', 'rotate(' + r + 'deg)');
-	            dial.css('-o-transform', 'rotate(' + r + 'deg)');
-	            dial.css('-ms-transform', 'rotate(' + r + 'deg)');
-	            var originanchor = '50% 50%';
-	            dial.css('-moz-transform-origin', originanchor);
-	            dial.css('-webkit-transform-origin', originanchor);
-	            dial.css('-o-transform-origin', originanchor);
-	            dial.css('-ms-transform-origin', originanchor);
-	        }
-	    })
-	};
+	// function rotate() {
+	//     var RAD2DEG = 180 / Math.PI;
+	//     var dial = $(".child");
+	//     dial.centerX = dial.offset().left + dial.width() / 2;
+	//     dial.centerY = dial.offset().top + dial.height() / 2;
+	//     var offset, dragging = false;
+	//     dial.mousedown(function (e) {
+	//         dragging = true;
+	//         offset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
+	//     })
+	//     $(document).mouseup(function () {
+	//         dragging = false;
+	//     })
+	//     $(document).mousemove(function (e) {
+	//         if (dragging) {
+	//             var newOffset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
+	//             var r = (offset - newOffset) * RAD2DEG;
+	//             dial.css('-webkit-transform', 'rotate(' + r + 'deg)');
+	//             dial.css('-moz-transform', 'rotate(' + r + 'deg)');
+	//             dial.css('-o-transform', 'rotate(' + r + 'deg)');
+	//             dial.css('-ms-transform', 'rotate(' + r + 'deg)');
+	//             var originanchor = '50% 50%';
+	//             dial.css('-moz-transform-origin', originanchor);
+	//             dial.css('-webkit-transform-origin', originanchor);
+	//             dial.css('-o-transform-origin', originanchor);
+	//             dial.css('-ms-transform-origin', originanchor);
+	//         }
+	//     })
+	// };
 
 	}
 	/*als je klikt op knop div toevoegen */
-	$('button').click(function() {
+
+	//style selected div with border layout 
+	$('.ui-layout-center').on('click', function() {	
+		var current = $('.ui-layout-center').find(event.target).addClass('selected_div');
+
+		//Remove all
+   		$('.selected_div').removeClass('selected_div');
+   		current.addClass("selected_div");
+		
+		
+	});
+
+
+	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
+	$('.add').click(function() {
 	  
-	  $('.parent').append('<div class="child"></div>');
+	  $('.parent').append('<div class="child layer"></div>');
+	  $('layer-item:last-child').after(layer);
 	  foo();
 	  
 	});
 
+    $('.layer').on('click' ,function() {
+    	alert(22);
+    	$(this).each(function(index, el) {
+	    	console.log(this.index);
+	    	console.log(this.el);
+	    });
+    });
+    
+
 
 	//*********************************plate start************************
 
-     $('body').on('click', function(event) {
-     	event.preventDefault();
-     	var box =  $('.child');
+     // $('body').on('click', function(event) {
+     // 	event.preventDefault();
+     // 	var box =  $('.child');
 
-     	box.each(function() {
-     		var boxHeight = $(this).height();
-     	    console.log(boxHeight);
+     // 	box.each(function() {
+     // 		var boxHeight = $(this).height();
+     // 	    console.log(boxHeight);
 
-     	    $(this).find(".boxHeight").remove();
-     	    $(this).append("<div class='boxHeight'>" + boxHeight +"</>");
-     	});
+     // 	    $(this).find(".boxHeight").remove();
+     // 	    $(this).append("<div class='boxHeight'>" + boxHeight +"</>");
+     // 	});
      	
      	
-     });
+     // });
 	
 	
 });

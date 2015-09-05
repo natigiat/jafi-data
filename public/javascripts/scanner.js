@@ -10,6 +10,17 @@ jQuery(document).ready(function($) {
     myLayout.close( "south");
 
 
+    //hide drow pallte
+    $('#drow').hide();
+
+    $('.drowB').click(function(event) {
+    	$('#drow').show();
+    	$('.mainContainer').hide();
+    });
+
+   
+
+
 	//navbar icone for code and style active
 	var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
 	var codeClick = state.west.isClosed ? $('.codeB').find('a').removeClass('bactive') : $('.codeB').find('a').addClass('bactive');
@@ -37,8 +48,10 @@ jQuery(document).ready(function($) {
 
 
 	$('.codeB').on('click', function() {	
-		// $('.ui-layout-resizer').hide();
 		myLayout.toggle("south");
+		$('.mainContainer').show();
+    	$('#drow').hide();
+
 	});
 
 	$(".preview , .fa-mobile , .insperation").on('click', function() {	
@@ -56,6 +69,7 @@ jQuery(document).ready(function($) {
 	$('.fa-mobile').on('click', function() {
 		$('iframe').addClass('mobileView');
 	});
+
 
 	$('.insperation').on('click', function() {
 		// http://codepen.io/32bitkid/pen/VYqXZX
@@ -168,16 +182,7 @@ jQuery(document).ready(function($) {
 	
 
 
-	//style selected div with border layout 
-	$('.ui-layout-center').on('click', function() {	
-		var current = $('.ui-layout-center').find(event.target).addClass('selected_div');
 
-		//Remove all
-   		$('.selected_div').removeClass('selected_div');
-   		current.addClass("selected_div");
-		
-		$('.ui-layout-resizer-south').find(event.target).css('background' , 'red');
-	});
 
 
 	//MANAGIN PUBLISING SITE
