@@ -36,6 +36,8 @@ html
     link(rel='stylesheet', href='/bower/rrssb/css/rrssb.css')
     //-intro js
     link(rel='stylesheet', href='/bower/intro.js/introjs.css')
+    //-quill editor
+    link(rel='stylesheet', href='/bower/quill/dist/quill.snow.css')
 
     //- bower scripts
     script(src='/bower/jquery/dist/jquery.min.js')
@@ -147,11 +149,17 @@ html
     script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
     script(src='/bower/intro.js/intro.js')
+    script(src='/bower/quill/dist/quill.js')
 
     //- pages scripts
     script(src="/javascripts/scanner.js")
-    script(src="/javascripts/scannerFunc.js")
     script(src="/javascripts/sidebarScanner.js")
+    script(src="/javascripts/scannerFunc.js")
+    script.
+      var editor = new Quill('#editor');
+      editor.addModule('toolbar', { container: '#toolbar' });
+
+    
 
      
 

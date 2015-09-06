@@ -67,68 +67,24 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// function rotate() {
-	//     var RAD2DEG = 180 / Math.PI;
-	//     var dial = $(".child");
-	//     dial.centerX = dial.offset().left + dial.width() / 2;
-	//     dial.centerY = dial.offset().top + dial.height() / 2;
-	//     var offset, dragging = false;
-	//     dial.mousedown(function (e) {
-	//         dragging = true;
-	//         offset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
-	//     })
-	//     $(document).mouseup(function () {
-	//         dragging = false;
-	//     })
-	//     $(document).mousemove(function (e) {
-	//         if (dragging) {
-	//             var newOffset = Math.atan2(dial.centerY - e.pageY, e.pageX - dial.centerX);
-	//             var r = (offset - newOffset) * RAD2DEG;
-	//             dial.css('-webkit-transform', 'rotate(' + r + 'deg)');
-	//             dial.css('-moz-transform', 'rotate(' + r + 'deg)');
-	//             dial.css('-o-transform', 'rotate(' + r + 'deg)');
-	//             dial.css('-ms-transform', 'rotate(' + r + 'deg)');
-	//             var originanchor = '50% 50%';
-	//             dial.css('-moz-transform-origin', originanchor);
-	//             dial.css('-webkit-transform-origin', originanchor);
-	//             dial.css('-o-transform-origin', originanchor);
-	//             dial.css('-ms-transform-origin', originanchor);
-	//         }
-	//     })
-	// };
-
 	}
-	/*als je klikt op knop div toevoegen */
 
-	//style selected div with border layout 
-	// $('.ui-layout-center').on('click', function() {	
-	// 	var current = $('.ui-layout-center').find(event.target).addClass('selected_div');
-
-	// 	//Remove all
- //   		$('.selected_div').removeClass('selected_div');
- //   		current.addClass("selected_div");
-		
-		
-	// });
 
 
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
-	var add = "<ol class='menuAdd' id='selectable'> 
-	<li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li>
-	 <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li>
-	  <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> 
-	  <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li>
-	   <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li>
-	    <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
+	var add = "<ol class='menuAdd' id='selectable'> <li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li> <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li> <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li> <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li> <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
 
-
-    //remove
- //    $('.remove').click(function() {
-	//   $('layer-item')
-	// });
 
 
     //add
+    $('.ui-layout-center').on('click' , 'layer-item' , function() {
+		var layerIndex = $(this).index();
+		console.log(layerIndex);
+		//Remove all
+   		$('.selected_div').removeClass('selected_div');
+		$('.child:eq('+ layerIndex+' )').addClass('selected_div');
+	});
+
 	$('.add').one('click' , function(event ) {
 	  
 	  event.preventDefault();
@@ -142,16 +98,16 @@ jQuery(document).ready(function($) {
 	  
 	});
 
-	
+    
+    var editor = "<div id='toolbar'> <button class='ql-bold'>Bold</button> <button class='ql-italic'>Italic</button> </div> <div id='editor'> <div>Hello World!</div> <div>Some initial <b>bold</b> text</div> <div><br></div> </div>";
+    $('.ui-layout-center').on('click' , '.itemText' , function() {
+		
+		$('.parent').append('<div class="child layer">' + editor + '</div>'); 
+		$('layer-item:last-child').after(layer);
+	    foo();
 
-	
-	$('.ui-layout-center').on('click' , 'layer-item' , function() {
-		var layerIndex = $(this).index();
-		console.log(layerIndex);
-		//Remove all
-   		$('.selected_div').removeClass('selected_div');
-		$('.child:eq('+ layerIndex+' )').addClass('selected_div');
 	});
+
 
     $('.layer').bind('click' ,function() {
     	alert(22);
@@ -164,22 +120,5 @@ jQuery(document).ready(function($) {
     
 
 
-	//*********************************plate start************************
-
-     // $('body').on('click', function(event) {
-     // 	event.preventDefault();
-     // 	var box =  $('.child');
-
-     // 	box.each(function() {
-     // 		var boxHeight = $(this).height();
-     // 	    console.log(boxHeight);
-
-     // 	    $(this).find(".boxHeight").remove();
-     // 	    $(this).append("<div class='boxHeight'>" + boxHeight +"</>");
-     // 	});
-     	
-     	
-     // });
-	
 	
 });
