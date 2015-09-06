@@ -113,9 +113,13 @@ jQuery(document).ready(function($) {
 
 
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
-	
-
-    //pallate bottons
+	var add = "<ol class='menuAdd' id='selectable'> 
+	<li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li>
+	 <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li>
+	  <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> 
+	  <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li>
+	   <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li>
+	    <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
 
 
     //remove
@@ -125,8 +129,13 @@ jQuery(document).ready(function($) {
 
 
     //add
-	$('.add').click(function() {
+	$('.add').one('click' , function(event ) {
 	  
+	  event.preventDefault();
+	  $(this).attr("disabled", true );
+	  $('side-bar').find('menu').after(add);
+	  
+
 	  $('.parent').append('<div class="child layer"></div>');
 	  $('layer-item:last-child').after(layer);
 	  foo();

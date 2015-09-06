@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
     $('#drow').hide();
 
     $('.drowB').click(function(event) {
-    	$('#drow').show();
+    	$('#drow').show('slide');
     	$('.mainContainer').hide();
     });
 
@@ -42,7 +42,6 @@ jQuery(document).ready(function($) {
 
 	//close and open layouts from nav link
 	$('.styleB').on('click', function() {	
-		// $('.ui-layout-resizer').hide();
 		myLayout.toggle("west");
 	});
 
@@ -54,19 +53,19 @@ jQuery(document).ready(function($) {
 
 	});
 
-	$(".preview , .fa-mobile , .insperation").on('click', function() {	
+	$(".preview , .mobile , .insperation").on('click', function() {	
 		// $('.ui-layout-resizer').hide();
 		myLayout.hide("south");
 		myLayout.hide("west");
 		myLayout.hide("north");
 		$('.scannerNav').hide();
 		$('.ui-layout-resizer').hide();
-		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">Editor</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#"><i class="fa fa-desktop fa-2x"></i></a></li> <li><a href="#"><i class="fa fa-mobile fa-2x"></i></a></li> </ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
+		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">Editor</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#" class="desktop"><span class="icon-desktop fs1"></a> </ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
 		$('.ui-layout-center').css('top', '20px!important');
 
 	});
 
-	$('.fa-mobile').on('click', function() {
+	$('.mobile').on('click', function() {
 		$('iframe').addClass('mobileView');
 	});
 
@@ -82,10 +81,9 @@ jQuery(document).ready(function($) {
 
 	
 
-	$(document).on("click", ".editorBack , .fa-desktop",function(){
-		myLayout.show("south");
-		myLayout.show("west");
+	$(document).on("click", ".editorBack , .desktop",function(){
 		myLayout.show("north");
+		$('iframe').removeClass('mobileView');
 		$('.scannerNav').show();
 		$('.ui-layout-resizer').show();
 		$('.previewModeNav').remove();

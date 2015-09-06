@@ -1174,3 +1174,29 @@ layer-item.selected_div:before {
 ul#sortable {
     padding: 0px;
 }
+
+menu-item{
+    background: linear-gradient(#262626, #222);
+    padding: 10px;
+}
+
+ol.menuAdd {
+    list-style: none;
+    padding: 0px;
+}
+
+li.addItem {
+    background: linear-gradient(#262626, #222);
+    padding: 10px;
+    cursor: pointer;
+}
+
+li.addItem:hover {
+    color: #338CCC;
+}
+
+
+span.addItemText {
+    font-size: 20px;
+    padding-left: 10%;
+}

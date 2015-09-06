@@ -6,6 +6,7 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/icons.css')
     link(rel='stylesheet', href='/stylesheets/scanner.css')
     link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/modal.css')
@@ -63,12 +64,14 @@ html
       // Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active
+          li.active.desktop
             a
-              i(class="fa fa-desktop fa-2x")                 
+              //- i(class="fa fa-desktop fa-2x")
+              span.icon-desktop.fs1            
           li
-            a
-              i(class="fa fa-mobile fa-2x")
+            a.mobile
+              //- i(class="fa fa-mobile fa-2x")
+              span.icon-tablet.fs1         
           li
             a
               i(class="fa fa-eye fa-2x insperation")
