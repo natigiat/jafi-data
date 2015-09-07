@@ -43,7 +43,8 @@ block content
 
               //-layers
               tab.active(name='layers')
-                panel(name='layers' style="display:none;")
+                
+                panel(name='layers')
                     legend Layers
                     menu
                       menu-item(action='up')
@@ -60,12 +61,19 @@ block content
 
                 panel(name='basic' style="display:none;")
                     legend Basic
-                    menu
-                      menu-item(action='up')
-                      menu-item(action='down')
-                      menu-item(action='remove')
-                      menu-item.add(action='add')
-                      menu-item(action='clone')
+                    field(type='input')
+                        input-number(class="inputWidth" label='width:',  uid='width', style='') 
+                    
+                    field(type='input')
+                        input-number( class="inputheight" label='Height:',  uid='height', style='') 
+                    
+                    legend Background
+
+                    field(type='input')
+                        input-number(contenteditable='true', label='background:', affix='mm', touch-action='none', uid='hieght', style='') 1048
+                    field(type='input')
+                        input-number(contenteditable='true', label='background image:', affix='mm', touch-action='none', uid='hieght', style='') 1048
+
                 
                 panel(name='border' style="display:none;")
                     legend Border

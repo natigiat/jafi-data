@@ -41,8 +41,13 @@
 }
 
 .fsLayersMenuAdd {
-    font-size: 26px;
+    font-size: 22px;
     background: linear-gradient(#262626, #222);
+}
+
+.fsLayersMenuSubAdd {
+    font-size: 22px;
+    background: transparent;
 }
 
 .icon-mobile:before {

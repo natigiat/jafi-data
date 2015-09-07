@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 	    /*aspectRatio:true,*/
 	    minWidth: 2,
 	    minHeight: 2,
-	    maxWidth: $(".parent").width(),
+	    // maxWidth: $(".parent").width(),
 	    containment: "parent",
 	    handles: "ne,nw,se,sw,n,w,e,s"
 	});
@@ -88,7 +88,11 @@ jQuery(document).ready(function($) {
        
        var className = this.className;
        var panel = $("panel[name='" +className+ "']");
+       
        $(panel).siblings().hide(1200);
+       if(className == 'layers'){
+          $(panel).show(1200)
+       }
 
 
 	});
@@ -101,51 +105,131 @@ jQuery(document).ready(function($) {
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
 	var add = "<ol class='menuAdd' id='selectable'> <li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li> <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li> <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li> <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li> <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
 
-
-
     //add
     $('.ui-layout-center').on('click' , 'layer-item' , function() {
 		var layerIndex = $(this).index();
-		console.log(layerIndex);
 		//Remove all
    		$('.selected_div').removeClass('selected_div');
 		$('.child:eq('+ layerIndex+' )').addClass('selected_div');
 	});
 
-	$('.add').one('click' , function(event ) {
-	  
-	  event.preventDefault();
-	  $(this).attr("disabled", true );
-	  $('side-bar').find('menu').after(add);
-	  
-
-	  $('.parent').append('<div class="child layer"></div>');
-	  $('layer-item:last-child').after(layer);
-	  foo();
-	  
+	$('.add').one('click' , function( ) {
+ 	 
+		  $('side-bar').find('menu').after(add);
+		  foo();
 	});
 
     
     //add text area 
     $('.ui-layout-center').on('click' , '.itemText' , function() {
 
-		$('.parent').append('<form method="post" action="dump.php" class="child layer"> <textarea name="content"></textarea> </form>');
-	    $('layer-item:last-child').after(layer);
-	    foo();
-
+		 if($('.itemSubText').length > 0 ){
+           $('.itemSubText').remove();
+           $(this).removeClass('selected_item');
+        }else{
+          $(this).addClass('selected_item');
+		  $(this).after('<li class="addSubItem itemSubText"><span class="icon-format_color_text fsLayersMenuSubAdd"></span><span class="addItemSubText">title</span></li><li class="addSubItem itemSubText"><span class="icon-format_color_text fsLayersMenuSubAdd"></span><span class="addItemSubText">paragraph</span></li>');
+        }
 	});
+
+	$('.ui-layout-center').on('click' , '.itemSubText' , function() {
+        
+     
+        	$('.parent').append('<form method="post" action="dump.php" class="child layer"> <textarea name="content"></textarea> </form>');
+		    $('layer-item:last-child').after(layer);
+		    foo();	
+	});
+
+
+
+	 //add shapes
+    $('.ui-layout-center').on('click' , '.itemShapes' , function() {
+
+		 if($('.itemSubitemShapes').length > 0 ){
+           $('.itemSubitemShapes').remove();
+           $(this).removeClass('selected_item');
+        }else{
+          $(this).addClass('selected_item');
+		  $(this).after('<li class="addSubItem itemSubitemShapes addBox"><span class="icon-format_color_itemShapes fsLayersMenuSubAdd"></span><span class="addItemSubitemShapes">box</span></li> <li class="addSubItem itemSubitemShapes addStrip"><span class="icon-format_color_itemShapes fsLayersMenuSubAdd"></span><span class="addItemSubitemShapes">strip</span></li> <li class="addSubItem itemSubitemShapes addLine"><span class="icon-format_color_itemShapes fsLayersMenuSubAdd"></span><span class="addItemSubitemShapes">line</span></li> <li class="addSubItem itemSubitemShapes addShapes"><span class="icon-format_color_itemShapes fsLayersMenuSubAdd"></span><span class="addItemSubitemShapes">shapes</span></li>'); 
+		}
+	});
+
+	$('.ui-layout-center').on('click' , '.itemSubitemShapes' , function() {
+            
+         if($(this).hasClass('addBox')){
+         	$('.parent').append('<div class="child layer" style="width:30%; height:200px;"> </div>');
+		    $('layer-item:last-child').after(layer);
+		    foo();	
+         }
+
+         if($(this).hasClass('addStrip')){
+         	$('.parent').append('<div class="child layer" style="width:80%; height:50px;"> </div>');
+		    $('layer-item:last-child').after(layer);
+		    foo();	
+         }
+
+         if($(this).hasClass('addLine')){
+         	$('.parent').append('<div class="child layer" style="width:40%; height:1px;"> </div>');
+		    $('layer-item:last-child').after(layer);
+		    foo();	
+         }
+            
+        	
+	});
+
+
+
 
 
 
     //basic*********************************************
+    $.fn.getStyleObject = function(){
+        var dom = this.get(0);
+        var style;
+        var returns = {};
+        if(window.getComputedStyle){
+            var camelize = function(a,b){
+                return b.toUpperCase();
+            }
+            style = window.getComputedStyle(dom, null);
+            for(var i=0;i<style.length;i++){
+                var prop = style[i];
+                var camel = prop.replace(/\-([a-z])/g, camelize);
+                var val = style.getPropertyValue(prop);
+                returns[camel] = val;
+            }
+            return returns;
+        }
+        if(dom.currentStyle){
+            style = dom.currentStyle;
+            for(var prop in style){
+                returns[prop] = style[prop];
+            }
+            return returns;
+        }
+        return this.css();
+    }
+
+    $('.ui-layout-center').on('click' , '#drow' , function() {
+	    
+	    var item = $('#drow').find('.selected_div');
+	    if(item.length){
+		    var style = item.getStyleObject();
+		    console.log(style);
+
+		    $('.inputWidth').text(style.width);
+		    $('.inputheight').text(style.height);
+	    }
+
+    });
 
     $('.ui-layout-center').on('click' , ".basic , .border"  , function() {
-       
        var className = this.className;
        $("panel[name='" +className+ "']").show();
-
-
 	});
+
+
+
 
     $('.layer').bind('click' ,function() {
     	alert(22);

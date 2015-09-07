@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   
 
 
-	$('body').on('click',  '.itemText' , function() {
+	$('body').on('click',  '.itemSubText' , function() {
 		tinymce.init({
 	    selector: "textarea",
 	    statusbar: false,
