@@ -41,8 +41,9 @@ block content
                 tab.settings(target='settings', touch-action='none')
 
 
+              //-layers
               tab.active(name='layers')
-                panel(name='layers')
+                panel(name='layers' style="display:none;")
                     legend Layers
                     menu
                       menu-item(action='up')
@@ -56,6 +57,25 @@ block content
                         icon.eye.selected.active
                         icon.lock
                         input(spellcheck='false')
+
+                panel(name='basic' style="display:none;")
+                    legend Basic
+                    menu
+                      menu-item(action='up')
+                      menu-item(action='down')
+                      menu-item(action='remove')
+                      menu-item.add(action='add')
+                      menu-item(action='clone')
+                
+                panel(name='border' style="display:none;")
+                    legend Border
+                    menu
+                      menu-item(action='up')
+                      menu-item(action='down')
+                      menu-item(action='remove')
+                      menu-item.add(action='add')
+                      menu-item(action='clone')
+                   
 
 
 

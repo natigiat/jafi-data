@@ -1,8 +1,17 @@
 jQuery(document).ready(function($) {
 	
+	tinymce.init({
+	    selector: "textarea",
+	    plugins: [
+	        "advlist autolink lists link image charmap print preview anchor",
+	        "searchreplace visualblocks code fullscreen",
+	        "insertdatetime media table contextmenu paste"
+	    ],
+	    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
 
    
-
+    
     //add intro 
 	// introJs().start();
 	$( "#sortable" ).sortable();
@@ -70,6 +79,24 @@ jQuery(document).ready(function($) {
 	}
 
 
+    //panels start
+
+    
+
+    //change layer dinameclly
+    $('.ui-layout-center').on('click' , ".layers , .basic , .border"  , function() {
+       
+       var className = this.className;
+       var panel = $("panel[name='" +className+ "']");
+       $(panel).siblings().hide(1200);
+
+
+	});
+    
+
+
+    //layers*********************************************
+
 
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
 	var add = "<ol class='menuAdd' id='selectable'> <li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li> <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li> <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li> <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li> <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
@@ -99,15 +126,26 @@ jQuery(document).ready(function($) {
 	});
 
     
-    var editor = "<div id='toolbar'> <button class='ql-bold'>Bold</button> <button class='ql-italic'>Italic</button> </div> <div id='editor'> <div>Hello World!</div> <div>Some initial <b>bold</b> text</div> <div><br></div> </div>";
+    //add text area 
     $('.ui-layout-center').on('click' , '.itemText' , function() {
-		
-		$('.parent').append('<div class="child layer">' + editor + '</div>'); 
-		$('layer-item:last-child').after(layer);
+
+		$('.parent').append('<form method="post" action="dump.php" class="child layer"> <textarea name="content"></textarea> </form>');
+	    $('layer-item:last-child').after(layer);
 	    foo();
 
 	});
 
+
+
+    //basic*********************************************
+
+    $('.ui-layout-center').on('click' , ".basic , .border"  , function() {
+       
+       var className = this.className;
+       $("panel[name='" +className+ "']").show();
+
+
+	});
 
     $('.layer').bind('click' ,function() {
     	alert(22);
