@@ -34,4 +34,14 @@ jQuery(document).ready(function($) {
 
 	});
 	});
+
+ //    sourceImage = $('.imageBlock').find('img');
+ //    var colorThief = new ColorThief();
+ //    var color = colorThief.getColor(sourceImage);
+    
+	// // dominantColor = getDominantColor(myImage);
+	// // paletteArray = createPalette(myImage, 10);
+
+ //    console.log(color);
+
 });

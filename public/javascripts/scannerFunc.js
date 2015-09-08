@@ -111,7 +111,40 @@ jQuery(document).ready(function($) {
 		//Remove all
    		$('.selected_div').removeClass('selected_div');
 		$('.child:eq('+ layerIndex+' )').addClass('selected_div');
+
 	});
+
+
+    //eye click hide item
+	$('.ui-layout-center').on('click' , '.eye' , function() {
+           var layerIndex = $(this).parent().index();
+           $(this).toggleClass( "active" );
+           
+           var element =  $('.child:eq('+ layerIndex+' )');
+           if((element).is(':visible')){
+              element.hide();
+             
+           }else{
+           	  element.show();
+           }
+	});
+
+	//lock item
+	$('.ui-layout-center').on('click' , '.lock' , function() {
+           var layerIndex = $(this).parent().index();
+           $(this).toggleClass( "active" );
+           
+           var element =  $('.child:eq('+ layerIndex+' )');
+           if((element).hasClass('child')){
+              console.log(1);
+              // element.find(".ui-resizable-handle").hide();
+              element.removeClass("child");
+              
+           }else{
+           	  element.addClass('child')
+           }
+	});
+
 
 	$('.add').one('click' , function( ) {
  	 
@@ -210,34 +243,32 @@ jQuery(document).ready(function($) {
         return this.css();
     }
 
-    $('.ui-layout-center').on('click' , '#drow' , function() {
+    $('.ui-layout-center').on('mousemove' , '#drow' , function() {
 	    
 	    var item = $('#drow').find('.selected_div');
 	    if(item.length){
 		    var style = item.getStyleObject();
 		    console.log(style);
-
+            
+            //get element with by precent
+   //          var width = style.width;
+			// var parentWidth = item.offsetParent().width();
+			// var percent = 100*width/parentWidth;   
+		  
+            // console.log(percent);
 		    $('.inputWidth').text(style.width);
 		    $('.inputheight').text(style.height);
 	    }
 
     });
 
+
+
     $('.ui-layout-center').on('click' , ".basic , .border"  , function() {
        var className = this.className;
        $("panel[name='" +className+ "']").show();
 	});
 
-
-
-
-    $('.layer').bind('click' ,function() {
-    	alert(22);
-    	$(this).each(function(index, el) {
-	    	console.log(this.index);
-	    	console.log(this.el);
-	    });
-    });
 
     
 

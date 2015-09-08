@@ -1,5 +1,7 @@
 {
   "directory": "public/bower",
   "registry": "http://bower.herokuapp.com",
+  "proxy":"http://192.168.174.80:8080/",
+  "https-proxy":"http://192.168.174.80:8080/",
   "strict-ssl": false
 }
