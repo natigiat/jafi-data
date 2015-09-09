@@ -29,6 +29,7 @@
     "intro.js": "~1.1.0",
     "quill": "~0.20.0",
     "bower-tinymce-amd": "*",
-    "color-thief": "*"
+    "color-thief": "*",
+    "RulersGuides.js": "~0.8.0"
   }
 }

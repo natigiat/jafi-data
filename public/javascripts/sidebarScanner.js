@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
   
 
+var evt         = new Event(),
+    dragdrop    = new Dragdrop(evt),
+    rg          = new RulersGuides(evt, dragdrop);
 
 	$('body').on('click',  '.itemSubText' , function() {
 		tinymce.init({
