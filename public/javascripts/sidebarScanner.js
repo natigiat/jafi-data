@@ -1,9 +1,13 @@
 jQuery(document).ready(function($) {
   
+var $box = $('#colorPicker');
+$box.tinycolorpicker();
+var box = $box.data("plugin_tinycolorpicker")
 
-var evt         = new Event(),
-    dragdrop    = new Dragdrop(evt),
-    rg          = new RulersGuides(evt, dragdrop);
+box.setColor("#ff0000");
+
+
+
 
 	$('body').on('click',  '.itemSubText' , function() {
 		tinymce.init({
@@ -38,13 +42,5 @@ var evt         = new Event(),
 	});
 	});
 
- //    sourceImage = $('.imageBlock').find('img');
- //    var colorThief = new ColorThief();
- //    var color = colorThief.getColor(sourceImage);
-    
-	// // dominantColor = getDominantColor(myImage);
-	// // paletteArray = createPalette(myImage, 10);
-
- //    console.log(color);
 
 });

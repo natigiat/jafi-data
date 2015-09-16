@@ -62,19 +62,43 @@ block content
                 panel(name='basic' style="display:none;")
                     legend Basic
                     field(type='input')
-                        input-number(class="inputWidth" label='width:',  uid='width', style='') 
-                    
+                        input-number(class="inputwidth" , label='width:') 
                     field(type='input')
-                        input-number( class="inputheight" label='Height:',  uid='height', style='') 
+                        input-number( class="inputheight" , label='Height:') 
+                    field(type='input')
+                        input-number(class="inputfillOpacity" , label='opacity:') 
+                    field(type="select")
+                      label overflow
+                      select 
+                        option(value="visible") visible
+                        option(value="hidden") hidden
+                        option(value="scroll") scroll
+                        option(value="auto") auto
+
                     
                     legend Background
 
                     field(type='input')
-                        input-number(contenteditable='true', label='background:', affix='mm', touch-action='none', uid='hieght', style='') 1048
+                        input-number(class="inputbsckgroundColor" ,label='bg:')
                     field(type='input')
-                        input-number(contenteditable='true', label='background image:', affix='mm', touch-action='none', uid='hieght', style='') 1048
+                        input-number(class="inputbsckgroundImage" ,label='bg image:')
+                    field(type='input')
+                        input-number(class="inputbackgroundSize" ,label='bg size:')
+                    field(type='input')
+                        input-number(class="inputbackgroundRepeat" ,label='bg repeat:')
+
+                   div#colorPicker
+                    a.color
+                      div.colorInner
+                    div.track
+                    ul.dropdown
+                    input(type="hidden" class="colorInput")
+            
+                         
+
 
                 
+
                 panel(name='border' style="display:none;")
                     legend Border
                     menu
@@ -104,7 +128,8 @@ block content
     //-************************left******************************* 
     .ui-layout-west
       div.imageBlock
-        img.img-responsive.zoomTarget(src='/images/landing.png')
+        img.img-responsive.zoomTarget(src='/images/landing.png' , id="canvas")
+        
         form(action="...", method="post", enctype="multipart/form-data")
           input(type="file", name="displayImage")
 

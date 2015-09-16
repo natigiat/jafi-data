@@ -256,8 +256,23 @@ jQuery(document).ready(function($) {
 			// var percent = 100*width/parentWidth;   
 		  
             // console.log(percent);
-		    $('.inputWidth').text(style.width);
+            $("#canvas").ImageColorPicker({
+				afterColorSelected: function(event, color){
+				 $(item).css("background" , color); 
+				}
+			});
+
+
+		    $('.inputwidth').text(style.width);
 		    $('.inputheight').text(style.height);
+		    $('.inputfillOpacity').text(style.fillOpacity);
+
+		    
+		    $('.inputbsckgroundColor').text(style.backgroundColor);
+		    $('.inputbsckgroundImage').text(style.height);
+		    $('.inputbackgroundSize').text(style.backgroundSize);
+		    $('.inputbackgroundRepeat').text(style.backgroundRepeat);
+
 	    }
 
     });
@@ -268,6 +283,9 @@ jQuery(document).ready(function($) {
        var className = this.className;
        $("panel[name='" +className+ "']").show();
 	});
+
+
+
 
 
     

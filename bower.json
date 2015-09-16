@@ -30,6 +30,7 @@
     "quill": "~0.20.0",
     "bower-tinymce-amd": "*",
     "color-thief": "*",
-    "RulersGuides.js": "~0.8.0"
+    "RulersGuides.js": "~0.8.0",
+    "tinycolorpicker": "~0.9.1"
   }
 }

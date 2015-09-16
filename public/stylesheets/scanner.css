@@ -186,7 +186,7 @@ panel field {
     background: linear-gradient(#555, #505050);
     position: relative;
     font-family: Source Sans Pro, sans;
-    font-size: 16px;
+    font-size: 1.5rem;
     display: block;
     text-shadow: 0 -1px 1px #222
 }
@@ -315,13 +315,17 @@ panel field[type=file] div {
     width: 128px;
     height: 34px;
     margin: 0;
-    text-shadow: 0 -1px 1px #222
 }
 panel field select option,
 panel field input option,
 panel field[type=file] div option {
     background: #333
 }
+
+side-bar select {
+    background-color: #545454;
+}
+
 panel field[type=file] input {
     position: absolute;
     cursor: pointer;
@@ -1173,7 +1177,6 @@ layer-item.selected_div:before {
     border-left: 2px solid rgba(67, 255, 0, 0.75)
 }
 
-
 ul#sortable {
     padding: 0px;
 }
@@ -1264,5 +1267,18 @@ panel field input-number {
 .body.mce-content-body{
   background-color: transparent!important;
 }
+
+
+.currentColor, .selectedColor {
+  border: 2px solid #000;
+  background-color: #fff;
+  width:30px;
+  height:30px;
+}
+
+.ImageColorPickerCanvas {
+  cursor:crosshair;
+}
+
 
 
