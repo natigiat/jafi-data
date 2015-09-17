@@ -1,16 +1,6 @@
 jQuery(document).ready(function($) {
 	
-	tinymce.init({
-	    selector: "textarea",
-	    plugins: [
-	        "advlist autolink lists link image charmap print preview anchor",
-	        "searchreplace visualblocks code fullscreen",
-	        "insertdatetime media table contextmenu paste"
-	    ],
-	    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-	});
 
-   
     
     //add intro 
 	// introJs().start();
@@ -103,7 +93,7 @@ jQuery(document).ready(function($) {
 
 
 	var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
-	var add = "<ol class='menuAdd' id='selectable'> <li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li> <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'>Image</span></li> <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li> <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li> <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
+	var add = "<ol class='menuAdd' id='selectable'> <li class='addItem itemText'><span class='icon-format_color_text fsLayersMenuAdd'></span><span class='addItemText'>Text</span></li> <li class='addItem itemImage'><span class='icon-image3 fsLayersMenuAdd'></span><span class='addItemText'><a data-toggle='modal' data-target='#upload'>Image</a></span></li> <li class='addItem itemImages'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Images</span></li> <li class='addItem itemMedia'><span class='icon-now_wallpaper fsLayersMenuAdd'></span><span class='addItemText'>Media</span></li> <li class='addItem itemShapes'><span class='icon-now_widgets fsLayersMenuAdd'></span><span class='addItemText'>Shapes</span></li> <li class='addItem itemText'><span class='icon-images fsLayersMenuAdd'></span><span class='addItemText'>Buttons</span></li> </ol>"; //pallate bottons
 
     //add
     $('.ui-layout-center').on('click' , 'layer-item' , function() {
@@ -169,6 +159,18 @@ jQuery(document).ready(function($) {
         
      
         	$('.parent').append('<form method="post" action="dump.php" class="child layer"> <textarea name="content"></textarea> </form>');
+		    $(".child").resizable({
+	        /*aspectRatio:true,*/
+			    minWidth: 2,
+			    minHeight: 2,
+			    // maxWidth: $(".parent").width(),
+			    containment: "parent",
+			    handles: "ne,nw,se,sw,n,w,e,s"
+			});
+			$(".child").draggable({
+			    containment: "parent",
+			    cursor: "move"
+			});
 		    $('layer-item:last-child').after(layer);
 		    foo();	
 	});

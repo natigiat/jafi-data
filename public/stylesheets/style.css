@@ -13,7 +13,12 @@
     src: url(fonts/Roboto-Lig//cdn2.hubspot.net/hub/53/file-581676469-png/Blog-Related_Images/unbounce_landing_page.png?t=1441029868483&width=669ht.ttf);;
 }
 
-
+.Navbar-brand {
+    padding: 10px 10px!important;
+    width: 10%!important;
+    float: left;
+    cursor: pointer;
+}
 
 .ui-layout-west.ui-layout-pane.ui-layout-pane-west {
     padding: 0px;
@@ -28,7 +33,8 @@ a {
 }
 
 .slider img{
-	width: 100%;
+  width: 100%;
+  padding: 48px;
 }
 
 
@@ -41,6 +47,13 @@ ul.rrssb-buttons.clearfix {
     position: relative;
     top: 464px;
     z-index: 22;
+}
+
+
+
+.slick-slider{
+  background: url(/images/slider/com.png) no-repeat;
+  background-size: 100%;
 }
 
 
@@ -174,7 +187,7 @@ button.btn.btn-default.btn-primary {
 }
 
 li.active{
-	
+  
     background-color: #3494E5;
     height: 40px;
 }
@@ -398,14 +411,192 @@ li.progectLi {
 }
 
 footer{
-    margin-top: 20px;
-    -moz-box-shadow: 0 2px 4px rgba(50,50,50,0.3) inset;
-    -webkit-box-shadow: 0 2px 4px rgba(50,50,50,0.3) inset;
-    box-shadow: 0 2px 4px rgba(50,50,50,0.3) inset;
-    padding: 40px 0 60px;
-    background: #2C2C2E url(/stylesheets/images/footer-bg.png) repeat top left;
+    background-color: #181a1a;
+    display: block;
+    font-size: 1.875rem;
+    height: 320px;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
     
+}
+
+#content-root-footer footer {
+    background-color: #181a1a;
 }
 
 
 
+footer .links {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 46px 30px 35px 35px;
+
+}
+
+
+
+
+footer .links>div {
+    float: left;
+    margin: 0;
+    width: 18%;
+}
+
+
+footer .footer-metadata {
+    background-color: #0c0d0d;
+    bottom: 0;
+    display: block;
+    height: 75px;
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+}
+
+.plans-and-pricing-ribbon {
+    background-color: #0c0d0d;
+    color: white;
+    font-size: 2.5625rem;
+    line-height: 30px;
+    padding: 42px 3%;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer-category-title {
+    color: rgba(255,255,255,0.6);
+    font-size: 2.125rem;
+}
+
+footer .languages {
+    position: relative;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 25%;
+    left: 75%;
+    right: auto;
+    float: left;
+    color: rgba(255,255,255,0.6);
+    line-height: 75px;
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+
+footer ul {
+    margin-left: 0px;
+}
+
+footer ul li {
+    color: rgba(255,255,255,0.4);
+    display: block;
+    font-size: 1.2rem;
+    margin-left: 0px;
+}
+
+footer .footer-metadata .social-links {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 25%;
+    float: left;
+    line-height: 75px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+
+footer ul li a{
+    color: rgba(255,255,255,0.4);
+}
+
+footer .footer-metadata .legal-links {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 50%;
+    float: left;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+section.headline {
+    background-color: #E8EDED;
+}
+
+
+
+h1.header.container {
+    margin: 0px;
+    text-align: center;
+    padding: 50px;
+    font-size: 2.8rem;
+    font-family: RobotoThin;
+}
+
+#category-tiles {
+    background-color: #E8EDED;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+#category-tiles .col>div {
+    margin: 6px;
+}
+
+#category-tiles .col .tile {
+    background-color: white;
+    border: 1px solid #dae8e7;
+    margin-bottom: 12px;
+    padding: 22px 25px;
+    position: relative;
+}
+
+#category-tiles .col .tile .img-zoom {
+    transition: all 0.25s ease-in;
+    display: block;
+    position: relative;
+}
+
+#category-tiles .col .tile .img-zoom .img, #category-tiles .col .tile .img-zoom img {
+    transition: all 0.25s ease-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#category-tiles .col .tile img {
+    display: block;
+    width: 100%;
+}
+
+#category-tiles .col .tile .tile-info {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    background: white;
+    color: #a8b2b1;
+    font-size: 0.8125rem;
+    padding: 0 8px 8px 0;
+    position: absolute;
+    top: 8px;
+    z-index: 1;
+}
+
+#category-tiles .col .tile h5 {
+    margin: 12px 0 5px;
+    text-align: center;
+}

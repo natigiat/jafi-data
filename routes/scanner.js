@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var screenshotPromise = require('screenshot-promise');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/drowrow/' })
 
 
 var Progect = require('../modules/progect.js');
@@ -83,6 +85,18 @@ router.post('/', function(req, res, next) {
 	
 		
 });
+
+
+
+router.post('/upload', upload.single('onixfile'), function(req, res, next) {
+  if(done==true){
+    console.dir(req.file);
+    res.redirect("/upload");
+  }
+    
+});
+
+
 
 
 

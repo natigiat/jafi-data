@@ -69,17 +69,6 @@ jQuery(document).ready(function($) {
 	$('.fa-mobile').on('click', function() {
 		$('iframe').addClass('mobileView');
 	});
-
-
-	$('.insperation').on('click', function() {
-		// http://codepen.io/32bitkid/pen/VYqXZX
-		$('#drow').after("<article class='buttonBaners'> <nav class='btn-bar nav-dark'> <a href='#' class='btn btn-glass'> CodePen </a> <a href='#' class='btn btn-glass btn-primary'> <i class='fa fa-fw fa-lg fa-chevron-right'></i> CSS Deck </a> <a href='#' class='btn btn-glass btn-success'> <i class='fa fa-fw fa-lg fa-check'></i> JS Bin </a> <a href='#' class='btn btn-glass btn-warning'> <i class='fa fa-fw fa-lg fa-exclamation '></i> Dabblet </a> <a href='#' class='btn btn-glass btn-danger'> <i class='fa fa-fw fa-lg fa-times'></i> Tinkerbin </a> <a href='#' class='btn btn-glass btn-info'> <i class='fa fa-fw fa-lg fa-info '></i> Liveweave </a> </nav> </article> "); 
-		$('.buttonBaners').after("<iframe class='insperationIframe' src='http://www.w3schools.com'></iframe>");
-		$('.mainContainer').remove();
-		$('#drow').hide();
-	});		
-
-
 	
 
 	$(document).on("click", ".editorBack , .fa-desktop",function(){

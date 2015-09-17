@@ -15,6 +15,14 @@
     background-color: #2E82C9!important;
 }
 
+
+.scanner .Navbar-brand {
+    padding: 6px 10px!important;
+    width: 10%!important;
+    float: left;
+    cursor: pointer;
+}
+
 #add {
   margin:10px;
   top:20px;

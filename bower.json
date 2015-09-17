@@ -31,6 +31,7 @@
     "bower-tinymce-amd": "*",
     "color-thief": "*",
     "RulersGuides.js": "~0.8.0",
-    "tinycolorpicker": "~0.9.1"
+    "tinycolorpicker": "~0.9.1",
+    "bootstrap-modal": "~2.2.6"
   }
 }

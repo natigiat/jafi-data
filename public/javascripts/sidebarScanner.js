@@ -9,9 +9,10 @@ box.setColor("#ff0000");
 
 
 
+
 	$('body').on('click',  '.itemSubText' , function() {
 		tinymce.init({
-	    selector: "textarea",
+	    selector: ".moveText",
 	    statusbar: false,
 	    plugins: [
 	        "advlist autolink lists link image charmap print preview anchor",

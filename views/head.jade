@@ -41,6 +41,7 @@ html
     //-ruler
     link(rel='stylesheet', href='/bower/RulersGuides.js/RulersGuides.js')
 
+
       
 
 
@@ -57,7 +58,7 @@ html
   body.scanner
     nav.navbar.scannerNav.navbar-static-top(role='navigation')
       // Brand and toggle get grouped for better mobile display
-      .navbar-header
+      div
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-8')
           span.sr-only Toggle navigation
           |                  
@@ -67,7 +68,8 @@ html
           |                  
           span.icon-bar
         |               
-        a.navbar-brand(href='/' data-intro='Hello step one!') Landing Chat
+        a(href='/')
+          img.Navbar-brand(src='/images/4444.png')
       // Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
@@ -79,9 +81,7 @@ html
             a.mobile
               //- i(class="fa fa-mobile fa-2x")
               span.icon-tablet.fs1         
-          li
-            a
-              i(class="fa fa-eye fa-2x insperation")
+          
 
           
 
@@ -121,16 +121,43 @@ html
                                 
                               li You can publish your site
             li
-              a Publish             
+              a Publish 
+
+            //-fileupload 
+            div#upload.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , aria-labelledby='myModalLabel' ,aria-hidden="true")
+                .modal-dialog(role='document')
+                  .modal-header
+                    .col-sm-9
+                      h3 Responsive
+                    .col-sm-3
+                      button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+                    
+                  .modal-content 
+                    .modal-body
+                        .col-sm-12
+                            ul.nav.nav-tabs
+                                li.active
+                                    a(href='#tab1', data-toggle='tab') Tab 1
+                                      
+                                  li
+                                    a(href='#tab2', data-toggle='tab') Tab 2
+                                  
+                                .tab-content
+                                  #tab1.tab-pane.active
+                                    p This modal was loaded in via ajax This modal was loaded in via ajaxThis modal was loaded in via ajaxThis modal was loaded in via ajax
+                                    form(method='post', enctype='multipart/form-data', action='/scanner/upload') 
+                                      input(type="file", name="onixfile", id="onixfile")    
+                                      input(type='submit')
+                                      
+                                  #tab2.tab-pane
+                                    p This is some other tab contentThis modal was loaded in via ajaxThis modal was loaded in via ajaxThis modal was loaded in via ajax
+     
 
 
     block content
 
 
-    //- form(action="/scanner" method="post" accept-charset="utf-8")
-    //-                              .col-sm-10
-    //-                                input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
-    //-                              button.btn.btnProgect(type='submit' class="col-sm-2") Success
+      
     
 
 
@@ -157,6 +184,7 @@ html
     script(src='/bower/bower-tinymce-amd/tinymce/tinymce.js')
     script(src='/bower/tinycolorpicker/lib/jquery.tinycolorpicker.js')
     script(src='/javascripts/ImageColorPicker/dist/jquery.ImageColorPicker.min.js')
+    script(src='/bower/bootstrap-modal/js/bootstrap-modalmanager.js')
       
 
     

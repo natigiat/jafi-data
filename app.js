@@ -39,7 +39,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //Handel file upload
-app.use(multer({dest:'./uploads/'}).single('profileimage'));
+app.use(multer({dest:'./uploads/drowrow/'}).single('onixfile'));
 
 
 

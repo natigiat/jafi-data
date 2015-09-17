@@ -32,26 +32,88 @@ block content
 
 
 
- .slider
+ .slider.container
       div 
-        img(src='http://static.parastorage.com/services/html-landing/hp/brazil/source/jamaica/images/set_1/1920/6.jpg')
+        img(src='/images/slider/3.PNG')
       |   
       div 
-        img(src='http://static.parastorage.com/services/html-landing/hp/brazil/source/jamaica/images/set_1/1920/7.jpg')
+        img(src='/images/slider/2.PNG')
       |   
       div 
-        img(src='http://static.parastorage.com/services/html-landing/hp/brazil/source/jamaica/images/set_1/1920/13.jpg')
+        img(src='/images/slider/1.PNG')
+      |   
+      div 
+        img(src='/images/slider/4.PNG')
+
 
  
 
- .container.index
-    .jumbotron
-        .container
-            h1 How may I Help You?
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quidem ex temporibus, amet facilis illo ratione quis omnis nihil, numquam corporis quia dolorum dolorem quisquam tempora beatae repudiandae fugit, non!
-            a.btn.btn-primary.btn-lg(href='#') Learn More &raquo;
+ .index
+    section.headline
+        h1.header.container
+            | Explore millions of royalty-free images, illustrations, videos, and music clips at ridiculously great prices
+            br
+
+
+    section#category-tiles
+      .container
+        .col.col1.col-sm-4
+            
+            div
+              .tile(data-isource-track='enus_Homepage_TileTopLeft_SignatureSelfie')
+                a.img-zoom(href='/royalty-free/selfie?facets={%223005%22:[%222%22],%2234%22:[%221%22],%2235%22:[%22selfie%22]}', target='_self')
+                  div
+                    img(alt='Signature images. Unparalleled quality.', src='http://i.istockimg.com/cms/resources/images/HomePage/Tiles/US Sept 2015/Selfie_46635472.jpg')
+                  h5 Signature images. Unparalleled quality.
+                a.tile-info(href='/photo/selfie-46635472', title='Signature images. Unparalleled quality. #46635472', target='_self')
+                  span.camera
+                  | #46635472
+          
+          
+            div
+              .tile(data-isource-track='enus_Homepage_TileBottomLeft_Oktoberfest')
+                a.img-zoom(href='/search/lightbox/18834731', target='_self')
+                  div
+                    img(alt='Oktoberfest', src='http://i.istockimg.com/cms/resources/images/HomePage/Tiles/US Sept 2015/Oktoberfest_13229794.jpg')
+                  h5 Oktoberfest
+                a.tile-info(href='/photo-13229794-cheers.php', title='Oktoberfest #13229794', target='_self')
+                  span.camera
+                  | #13229794
+         
+          .col.col2.col-sm-4
+          
+            div
+              .tile(data-isource-track='enus_Homepage_TileTopMiddle_EssentialsCoffee')
+                a.img-zoom(href='/search/lightbox/18833471', target='_self')
+                  div
+                    img(alt='Essential images. Unbelievable prices.', src='http://i.istockimg.com/cms/resources/images/HomePage/Tiles/US Sept 2015/Essentials_39411846.jpg')
+                  h5 Essential images. Unbelievable prices.
+                a.tile-info(href='/photo/female-hands-holding-cup-of-coffee-39411846', title='Essential images. Unbelievable prices. #39411846', target='_self')
+                  span.camera
+                  | #39411846
+            div
+              .tile(data-isource-track='enus_Homepage_TileBottomMiddle_BackToSchool')
+                a.img-zoom(href='/royalty-free/back+to+school?facets={%2234%22:[%221%22,%227%22],%2235%22:[%22Back,to,school%22]}', target='_self')
+                  div
+                    img(alt='Back to school', src='http://i.istockimg.com/cms/resources/images/HomePage/Tiles/US Sept 2015/BackToSchool_70310917.jpg')
+                  h5 Back to school
+                a.tile-info(href='/photo/kids-running-in-mediterranean-street-70310917', title='Back to school #70310917', target='_self')
+                  span.camera
+                  | #70310917
+          .col.col3.col-sm-4
+            div
+              .tile(data-isource-track='enus_Homepage_TileRightDoubleTall_Curiosity')
+                a.img-zoom(href='/search/lightbox/18835181', target='_self')
+                  div
+                    .img(style='height: 567px;')
+                      img(alt='Curiosity', src='http://i.istockimg.com/cms/resources/images/HomePage/Tiles/US Sept 2015/Curiosity_17773224.jpg')
+                  h5 Curiosity
+                a.tile-info(href='/illustration-17773224-schoolgirl-on-pile-of-books-looking-over-fence.php', title='Curiosity #17773224', target='_self')
+                  span.camera
+                  | #17773224
+    .clearfix
+
     .container
-        .row
             .col-md-4
                 h2 About Us
                 p Lorem ipsum dolor sit amet, consectetur adipisicing 
