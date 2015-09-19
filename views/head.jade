@@ -40,6 +40,8 @@ html
     link(rel='stylesheet', href='/bower/quill/dist/quill.snow.css')
     //-ruler
     link(rel='stylesheet', href='/bower/RulersGuides.js/RulersGuides.js')
+    //-autocomlete fields
+    link(rel='stylesheet', href='/javascripts/folders/autocomplete-0.3.0.min.css')
 
 
       
@@ -109,6 +111,7 @@ html
                           .col-sm-12
                             .col-sm-10
                               input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
+                              div#search_bar
                             button.btn.btnProgect(type='button' class="col-sm-2") Success
                             .col-sm-10
                               div.progectRow http://landing/#{name}/#[b.progectName]
@@ -185,6 +188,7 @@ html
     script(src='/bower/tinycolorpicker/lib/jquery.tinycolorpicker.js')
     script(src='/javascripts/ImageColorPicker/dist/jquery.ImageColorPicker.min.js')
     script(src='/bower/bootstrap-modal/js/bootstrap-modalmanager.js')
+    script(src='/javascripts/folders/autocomplete-0.3.0.min.js')
       
 
     

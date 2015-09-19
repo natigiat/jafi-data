@@ -177,6 +177,50 @@ jQuery(document).ready(function($) {
 		// $('.progectName').text() = '';
 		$('.progectRow').find('b').text(progectName);
 	});
+    
+
+    //field autocomltet
+    var config = {
+	  initialList: 'foods',
+	  maxTokenGroups: 1,
+	  lists: {
+	    foods: [
+	      { value: 'Business & Services', children: 'Business' },
+	      { value: 'Blog', children: 'Blog' },
+	      { value: 'Hotel & travels', children: 'Hotel' },
+	      { value: 'Music', children: 'Music' },
+	      { value: 'Online Store', children: 'Store' },
+	      { value: 'Entertainment', children: 'Entertainment' },
+	      { value: 'Restaurant & Hospitality', children: 'Restaurant' },
+	      { value: 'Photography', children: 'Photography' },
+	      { value: 'Creative Arts', children: 'Creative' },
+	      { value: 'Design', children: 'Design' },
+	      { value: 'Fashion', children: 'Fashion' },
+
+
+	      
+     
+
+	    ],
+	    Business: ['Advertising & Marketing','Cars & Transportation','Community & Education','Computing & Apps','Consulting & Coaching','Finance & Law','Games & Toys','Health & Beauty','Home & Garden','Hotel & Travel','Maintenance Services','Online Store'],
+	    Blog: ['Business','Personal','Reviews'],
+	    Hotel: ['Hotel','Travel'],
+	    Music: ['Band','DJ','Music Production','Musicians','Singer / Songwriter'],
+	    Store: [ 'Clothing & Accessories' ,'Health & Beauty','Other'],
+	    Entertainment: ['Actors & Theater','Dance','Event Production','Film' ,'Nightlife','Performing Arts'],
+	    Restaurant: ['Bar & Club','Cafe & Restaurant','Catering & Entertaining','Food & Drink','Hotel'],
+	    Photography: ['Event Photographer','Pro Photographer','Sport Photographer','Travel Photographer','Wedding Photographer'],
+        Creative: ['Actors & Theater','Artist','Author & Writer','Handicraft','Painter & Illustrator','Portfolio'],
+	    Design: [ 'Architect & Interiors','Design Agency','Designer','Fashion Designer','Portfolios','Web Designer'],
+        Fashion: [ 'Accessories & Jewelry','Clothing','Electronics','Hair & Beauty','Model','Stylist'],
+       
+	  }
+	};
+	var widget = new AutoComplete('search_bar', config);
+
+
+
+
 
 	$('.btnProgect').on('click',  function() {
 		var progectName = $('.progectName').text();
@@ -184,7 +228,17 @@ jQuery(document).ready(function($) {
     	var cssValue = myCodeMirrorCss.getValue('\n');
     	var jsValue = myCodeMirrorJs.getValue('\n');
 
-		var parameters = { progectName: progectName , html: htmlValue , css: cssValue , js: jsValue};
+
+        var cinds = widget.getValue();
+	    console.log(cinds);
+	        var Fil = cinds[0][0].value;
+	        var Fil_c = cinds[0][1].value;
+
+
+        var filter = Fil;
+	    var filter_child = Fil_c;
+
+		var parameters = { progectName: progectName ,filter:filter ,filter_child:filter_child,  html: htmlValue , css: cssValue , js: jsValue};
 		$.post( '/scanner', parameters, function(data) {
 	       alert(data);
 	    });

@@ -2,10 +2,11 @@ var mongoose =require('mongoose');
 var bcrypt  = require('bcrypt-nodejs');
 var uniqueValidator = require('mongoose-unique-validator');
 
+
 require('mongoose-query-paginate');
 
 var options = {
-  perPage: 10,
+  perPage: 3,
   delta  : 3
 };
 
@@ -13,6 +14,8 @@ var options = {
 var ProgectSchema = mongoose.Schema({
 	userId: { type: String , required: true},
 	name  : { type: String},
+	filter  : { type: String},
+	filter_child  : { type: String},
 	html: { type: String},
 	css: { type: String},
 	js: { type: String},
@@ -47,15 +50,24 @@ module.exports.SelectAllProgectById = function(userId , callback){
 
 //select all progect for templates page
 module.exports.SelectAllProgect = function(callback){ //
-	var query = Progect.find({});
-    // query.paginate(options, function(err, res) {
-    // 		console.log(res); 
-	   // }), callback);
-	Progect.find({} , callback);
+	var query = {};
+  
+	// Progect.find(query, callback).paginate(options, function(err, res) {
+	// 		// console.log(res);
+	// 		res.abba = res;
+			
+	// }); 
+    Progect.find(query, callback);
 }
 
 //select progect for progect page
 module.exports.SelectProgect = function(userId , progect , callback){
 	var query = {"userId" : userId , "name" : progect};
+	Progect.find(query , callback);
+}
+
+//select progect for edit from tamplates page
+module.exports.SelectProgectFromTemplate = function(progectid , progect , callback){
+	var query = {"_Id" : progectid , "name" : progect};
 	Progect.find(query , callback);
 }

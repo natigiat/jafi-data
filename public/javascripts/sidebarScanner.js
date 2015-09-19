@@ -7,6 +7,8 @@ var box = $box.data("plugin_tinycolorpicker")
 box.setColor("#ff0000");
 
 
+    
+
 
 
 

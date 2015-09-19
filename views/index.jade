@@ -113,19 +113,134 @@ block content
                   | #17773224
     .clearfix
 
-    .container
-            .col-md-4
-                h2 About Us
-                p Lorem ipsum dolor sit amet, consectetur adipisicing 
-                a.btn.btn-default(href='#') View Details
-            .col-md-4
-                h2 Services
-                p Lorem ipsum dolor sit amet, consectetur adipisicing 
-                a.btn.btn-default(href='#') View Details
-            .col-md-4
-                h2 Get In Touch
-                p Lorem ipsum dolor sit amet, consectetur adipisicing 
-                a.btn.btn-default(href='#') View Details
+
+
+    section#category-listing
+      .container
+        h2.header Browse all categories
+        .mob-col
+          div.col-sm-3
+            ul
+              li(data-isource-track='LOHP_enus_browse_Emoji')
+                a(href='/illustrations/emoji') Emoji
+              li(data-isource-track='LOHP_enus_browse_Icons')
+                a(href='/illustrations/icons') Icons
+              li(data-isource-track='LOHP_enus_browse_Infographics')
+                a(href='/illustrations/infographic') Infographics
+              li(data-isource-track='LOHP_enus_browse_Fashion')
+                a(href='/illustrations/fashion+illustration') Fashion Illustrations
+              li(data-isource-track='LOHP_enus_browse_baby')
+                a(href='/photos/baby') Baby
+          div.col-sm-3
+            ul
+              li(data-isource-track='LOHP_enus_browse_FamilyPictures')
+                a(href='/photos/family+pictures') Family Pictures
+              li(data-isource-track='LOHP_enus_browse_Nature')
+                a(href='/photos/nature') Nature
+              li(data-isource-track='LOHP_enus_browse_Animals')
+                a(href='/photos/animal') Animals
+              li(data-isource-track='LOHP_enus_browse_VintagePhotos')
+                a(href='/photos/vintage+photos') Vintage Photos
+              li(data-isource-track='LOHP_enus_browse_BackgroundPhotos')
+                a(href='/photos/background') Background Photos
+        .mob-col
+          div.col-sm-3
+            ul
+              li(data-isource-track='LOHP_enus_browse_Food')
+                a(href='/photos/food') Food
+              li(data-isource-track='LOHP_enus_browse_Sports')
+                a(href='/photos/sports') Sports
+              li(data-isource-track='LOHP_enus_browse_business')
+                a(href=' http://www.istockphoto.com/photos/business+images') Business
+              li(data-isource-track='LOHP_enus_browse_Beauty')
+                a(href='/photos/beauty') Beauty
+              li(data-isource-track='LOHP_enus_browse_AnimalVideos')
+                a(href='/videos/animal') Animal Videos
+          div.col-sm-3
+            ul
+              li(data-isource-track='LOHP_enus_browse_HolidayVideos')
+                a(href='/videos/holiday') Holiday Videos
+              li(data-isource-track='LOHP_enus_browse_Fitness')
+                a(href='/videos/fitness') Fitness Videos
+              li(data-isource-track='LOHP_enus_browse_ChildrenVideos')
+                a(href='/videos/children') Children Videos
+              li(data-isource-track='LOHP_enus_browse_TravelVideos')
+                a(href='/videos/travel') Travel Videos
+              li(data-isource-track='LOHP_enus_browse_EducationVideos')
+                a(href='/videos/education') Education Videos
+
+    
+    .promo-banner
+      .container
+        section.billboard-container
+          .left-banner.col-sm-6
+                section#wrapper
+                  .videoContainer
+                    video#myVideo(controls='', preload='auto', poster='http://s.cdpn.io/6035/vp_poster.jpg', width='380')
+                      source(src='http://simplypx.com/images/Prometheus.mp4', type='video/mp4')
+                      p Your browser does not support the video tag.
+                    .caption Prometheus
+                    .control
+                      .btmControl
+                        .btnPlay.btn(title='Play/Pause video')
+                          span.icon-play
+                        .progress-bar
+                          .progress
+                            span.bufferBar
+                            span.timeBar
+                        //
+                          <div class="volume" title="Set volume">
+                          <span class="volumeBar"></span>
+                          </div>
+                        .sound.sound2.btn(title='Mute/Unmute sound')
+                          span.icon-sound
+                        .btnFS.btn(title='Switch to full screen')
+                          span.icon-fullscreen
+
+          .right-banner.col-sm-6
+            .banner-headline
+              p  
+              h2
+                strong Meet September’s Signature Artist of the Month
+                br
+              p
+                | Every month we take you behind-the-scenes with one of our talented artists to see what inspires their amazing work. Join us to see what drives education photographer Christopher Futcher.
+              a.primary-cta(href='http://content.istockphoto.com/signature-artist/christopher-futcher/', data-isource='enus_Homepage_Billboard_2015SeptSAM_ChristopherFutcher', target='_blank') Meet September's Signature Artist
+
+
+   
+     .free-stock
+       .container
+          section
+            h2.header
+              a(href='/join') Join drowroe
+              |  free landing pages that created every week
+            .free-stock-tiles
+              .tile.col-sm-3(data-isource-track='LOHP_enus_free_photo_51582070')
+                a(target='_self', href='/photo/i-choose-where-i-train-51582070')
+                  div
+                    img(src='http://i.istockimg.com/cms/resources/images/HomePage/FourPack/2015Sept/photo_Sep13_51582070.jpg', alt='Free photo')
+                    div
+                  h5 Free photo
+              .tile.col-sm-3(data-isource-track='LOHP_enus_free_illustration_23733863')
+                a(target='_self', href='/vector/autumn-sale-23733863')
+                  div
+                    img(src='http://i.istockimg.com/cms/resources/images/HomePage/FourPack/2015Sept/vector_23733863.png', alt='Free illustration')
+                    div
+                  h5 Free illustration
+              .tile.col-sm-3(data-isource-track='LOHP_enus_free_video_53773780')
+                a(target='_self', href='/video/elegant-swans-on-a-misty-lake-53773780')
+                  div
+                    img(src='http://i.istockimg.com/cms/resources/images/HomePage/FourPack/2015Sept/video-53773780.jpg', alt='Free video clip')
+                    .decoration-video
+                  h5 Free video clip
+              .tile.col-sm-3(data-isource-track='LOHP_enus_free_audio_23828876')
+                a(target='_self', href='/audio/fantasy-land-stinger-23828876')
+                  div
+                    img(src='http://i.istockimg.com/cms/resources/images/HomePage/FourPack/2015Sept/audio-23828876.jpg', alt='Free audio clip')
+                    .decoration-audio
+                  h5 Free audio clip
+
         
         
 

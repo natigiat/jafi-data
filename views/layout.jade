@@ -44,7 +44,8 @@ html
              img.Navbar-brand(src='/images/4444.png')
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav
-              li(class=(title == 'Account' ? 'active' : ''))
+              li(class=(title ==
+               'Account' ? 'active' : ''))
                 a(href='/account/') My Sites
               li(class=(title == 'Lando - Templates' ? 'active' : ''))
                 a(href='/templates') Templates
@@ -68,141 +69,114 @@ html
                       li
                         a(href='/users/logout') Logout
                 else 
-                     a.btn.btn-success(href='/users/register') Sign up 
-
-                     a.btn.btn-default(href='/users/login') Sign in
-
-    
-    
-      != messages()
-      != toasts
-
-      block content
-      
+                    ul.nav.navbar-nav
+                     li 
+                       a(href='/users/register') Sign up 
+                     li
+                       a(href='/users/login') Sign in
 
     
-      footer.footer
-        #content-root-footer(role='global')
-            .plans-and-pricing-ribbon
-                Incredible stock. Flexible pricing.  
-                a(href='http://www.istockphoto.com/plans-and-pricing') Buy credits or subscribe today.
+  .container
+    != messages()
+    != toasts
+
+  block content
+  
+
+
+  footer.footer
+    #content-root-footer(role='global')
+        .plans-and-pricing-ribbon
+            Incredible drowrow Flexible pricing.  
+            a(href='http://www.istockphoto.com/plans-and-pricing') Buy credits or subscribe today.
+                  
+          footer(role='global')
+           .container
+              .links
+                #what-we-sell
+                  ul
+                    li.footer-category-title What we sell
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/stock-photos', data-isource-track='nav=nav_Photos') Photo
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/stock-illustrations', data-isource-track='nav=nav_Illustrations') Illustrations
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/footage', data-isource-track='nav=nav_Video') Video
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/music-clips', data-isource-track='nav=nav_Audio') Audio
+                            
+                            
+                #company
+                  ul
+                    li.footer-category-title Company
+                                        
+                    li
+                      a(href='http://press.gettyimages.com/about-us/istock', data-isource-track='nav_About_us', target='_blank') About us
+                    li
+                      a(href='http://press.gettyimages.com/', data-isource-track='foot_Press', target='_blank') Press
+                    li
+                      a(href='http://www.gettyimagesjobs.com/', data-isource-track='nav_Careers', target='_blank') Careers
+                    li
+                      a(href='http://www.gettyimagesaffiliates.com/', data-isource-track='nav_Affiliates', target='_blank') Affiliates
+                    li
+                      a(href='sell-stock-photos.php', data-isource-track='nav_sellStock', target='_blank') Sell stock
+                            
+                #ways-to-pay
+                  ul
+                    li.footer-category-title Ways to pay
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/plans-and-pricing', data-isource-track='nav=footer_plans_and_pricing') Plans and pricing
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/corporate-accounts.php', data-isource-track='nav=nav_Corporate_accounts') Corporate accounts
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/promo-code', data-isource-track='nav=nav_promo_code') iStock promo codes
+                            
+                #resources
+                  ul
+                    li.footer-category-title Resources
+                                        
+                    li
+                      a(href='http://www.istockphoto.com/articles.php', data-isource-track='nav=nav_Articles') Articles
+                                        
+                    li
+                      a(href='https://itunes.apple.com/us/app/istockphoto/id377716883?mt=8&ign-mpt=uo%3D4', target='_blank', data-isource-track='nav_Tools_Apps') Download iOS app
+                            
+                #need-help
+                  ul
+                    li.footer-category-title Need help?
+                                        
+                    li#lpChatFooter(style='visibility: visible;')
+                                        
+                    li
+                      Phone support: 
+                      p
+                        a.tel(href='tel:+18664786251') 1 866 478 6251
+                                        
+                    li
+                      International toll-free: 
+                      p
+                        a.tel(href='tel:+0080066646664') 00 800 6664 6664
+                                        
+                    .contact-us
+                      li
+                        a(href='http://www.istockphoto.com/contact_ticket.php', data-isource-track='nav=nav_Contact_us') Contact us
+                                                                      
+                      li
+                        a(href='http://www.istockphoto.com/faq.php', data-isource-track='nav=nav_FAQ') FAQ
                       
-              footer(role='global')
-                .links
-                  #what-we-sell
-                    ul
-                      li.footer-category-title What we sell
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/stock-photos', data-isource-track='nav=nav_Photos') Photo
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/stock-illustrations', data-isource-track='nav=nav_Illustrations') Illustrations
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/footage', data-isource-track='nav=nav_Video') Video
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/music-clips', data-isource-track='nav=nav_Audio') Audio
-                              
-                              
-                  #company
-                    ul
-                      li.footer-category-title Company
-                                          
-                      li
-                        a(href='http://press.gettyimages.com/about-us/istock', data-isource-track='nav_About_us', target='_blank') About us
-                      li
-                        a(href='http://press.gettyimages.com/', data-isource-track='foot_Press', target='_blank') Press
-                      li
-                        a(href='http://www.gettyimagesjobs.com/', data-isource-track='nav_Careers', target='_blank') Careers
-                      li
-                        a(href='http://www.gettyimagesaffiliates.com/', data-isource-track='nav_Affiliates', target='_blank') Affiliates
-                      li
-                        a(href='sell-stock-photos.php', data-isource-track='nav_sellStock', target='_blank') Sell stock
-                              
-                  #ways-to-pay
-                    ul
-                      li.footer-category-title Ways to pay
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/plans-and-pricing', data-isource-track='nav=footer_plans_and_pricing') Plans and pricing
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/corporate-accounts.php', data-isource-track='nav=nav_Corporate_accounts') Corporate accounts
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/promo-code', data-isource-track='nav=nav_promo_code') iStock promo codes
-                              
-                  #resources
-                    ul
-                      li.footer-category-title Resources
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/articles.php', data-isource-track='nav=nav_Articles') Articles
-                                          
-                      li
-                        a(href='https://itunes.apple.com/us/app/istockphoto/id377716883?mt=8&ign-mpt=uo%3D4', target='_blank', data-isource-track='nav_Tools_Apps') Download iOS app
-                              
-                  #need-help
-                    ul
-                      li.footer-category-title Need help?
-                                          
-                      li#lpChatFooter(style='visibility: visible;')
-                                          
-                      li
-                        Phone support: 
-                        p
-                          a.tel(href='tel:+18664786251') 1 866 478 6251
-                                          
-                      li
-                        International toll-free: 
-                        p
-                          a.tel(href='tel:+0080066646664') 00 800 6664 6664
-                                          
-                      .contact-us
-                        li
-                          a(href='http://www.istockphoto.com/contact_ticket.php', data-isource-track='nav=nav_Contact_us') Contact us
-                                                                        
-                        li
-                          a(href='http://www.istockphoto.com/faq.php', data-isource-track='nav=nav_FAQ') FAQ
-                        
-                .footer-metadata
-                              
-                  .social-links
-                    ul
-                      li
-                        a.social.fb(href='http://www.facebook.com/istock', data-isource-track='nav_Facebook')
-                                          
-                      li
-                        a.social.tw(href='http://www.twitter.com/iStock', data-isource-track='nav_Twitter')
-                                          
-                      li
-                        a.social.gl(href='http://plus.google.com/118211792181745570694?prsrc=3', data-isource-track='nav_GooglePlus')
-                              
-                  .legal-links
-                    ul
-                      li
-                        a(href='http://www.istockphoto.com/help/licenses', data-isource-track='nav=nav_Licenses') License information
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/legal/license-agreement', data-isource-track='nav=nav_Legal_Agreement') Legal agreements
-                                          
-                      li
-                        a(href='http://www.istockphoto.com/legal/terms-of-use', data-isource-track='nav=nav_Terms_of_use') Terms of use
-                                          
-                      li.last-legal-link
-                        a(href='http://www.istockphoto.com/legal/privacy-policy', data-isource-track='nav=nav_Privacy_policy') Privacy policy
-                                    
-                    .clearfix
-                                    
-                    hr
-                                    
-                    .copy-right
-                      &copy;2015 iStockphoto LP. 
-                      span The iStock design is a trademark of iStockphoto LP.
+            .footer-metadata                                   
+                .copy-right
+                  &copy;2015 iStockphoto LP. 
+                  span The iStock design is a trademark of iStockphoto LP.
 
-          .clearfix
+      .clearfix
 
 
 script(src='/bower/bootstrap/dist/js/bootstrap.min.js')

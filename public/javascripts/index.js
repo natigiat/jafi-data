@@ -7,7 +7,9 @@ jQuery(document).ready(function($) {
   		  autoplaySpeed: 2000,
 		  speed: 500,
 		  fade: true,
-		  cssEase: 'linear'
+		  cssEase: 'linear',
+		  dots: true,
+		  fade: true
 	  });
 
 	 
