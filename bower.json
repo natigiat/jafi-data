@@ -32,6 +32,7 @@
     "color-thief": "*",
     "RulersGuides.js": "~0.8.0",
     "tinycolorpicker": "~0.9.1",
-    "bootstrap-modal": "~2.2.6"
+    "bootstrap-modal": "~2.2.6",
+    "list.js": "~1.1.1"
   }
 }

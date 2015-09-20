@@ -6,6 +6,15 @@ jQuery(document).ready(function($) {
 	  }, function() {
 	  	$(this).css('background-color', '#F8F8F8');
 	  });
+
+	  //filter by progect name
+	  var options = {
+		  valueNames: [ 'name', 'filter']
+      }
+	  var userList = new List('users', options);
+
+      var searchFilter = $('.searchFilter');
+	  $('.searchPlace').html(searchFilter);
 	  
 	}
 
