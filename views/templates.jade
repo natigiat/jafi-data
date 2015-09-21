@@ -1,13 +1,97 @@
 extends layout
 
 block content
-  .container
-     div.col-sm-12.searchTemplates
-        input(type='checkbox')
-        input(type='checkbox', checked='')
-        input(type='radio', name='iCheck')
-        input(type='radio', name='iCheck', checked='')
+  .container.filters
+     div.searchTemplates
+      div.col-sm-2.mainFilters
+        input(type='checkbox'   id="filter1" value='all')
+        label.labelFilters(for='flat-checkbox-1' id="input-1") All
+        br
+        input(type='checkbox' value="new")
+        label.labelFilters(for='flat-checkbox-2' id="input-2") New
+        br
+        input(type='checkbox' value="viewd")
+        label.labelFilters(for='flat-checkbox-3' id="input-3") Viewed
+        br
+        input(type='checkbox' value="liked")
+        label.labelFilters(for='flat-checkbox-4' id="input-4") Liked
+        br
+        input(type='checkbox' value="lides")
+        label.labelFilters(for='flat-checkbox-5' id="input-5") Lides
+      div.col-sm-10.rightFilters
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="business")
+          label.labelFilters(for='flat-checkbox-6' id="input-6" ) Business & Services
+          br
+           
+          input(type='checkbox' value="blog")
+          label.labelFilters(for='flat-checkbox-7' id="input-7" )  Blog
+          br
 
+          input(type='checkbox' value="hotel")
+          label.labelFilters(for='flat-checkbox-8' id="input-8" )  Hotel & travels
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="music")
+          label.labelFilters(for='flat-checkbox-9' id="input-9" )  Music
+          br
+
+          input(type='checkbox' value="online")
+          label.labelFilters(for='flat-checkbox-10' id="input-10"  ) Online Store
+          br
+
+          input(type='checkbox' value="entertainment")
+          label.labelFilters(for='flat-checkbox-11' id="input-11"  ) Entertainment
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="restaurant")
+          label.labelFilters(for='flat-checkbox-12' id="input-12"  ) Restaurant & Hospitality
+          br
+
+          input(type='checkbox' value="photography")
+          label.labelFilters(for='flat-checkbox-13' id="input-13"  ) Photography
+          br
+
+          input(type='checkbox' value="creative")
+          label.labelFilters(for='flat-checkbox-14' id="input-14"  ) Creative Arts
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="design")
+          label.labelFilters(for='flat-checkbox-15' id="input-15"  ) Design
+          br
+
+          input(type='checkbox' value="fashion")
+          label.labelFilters(for='flat-checkbox-16' id="input-16"  ) Fashion
+          br
+
+        div.col-sm-12
+          .colors.clear
+            strong Choose Color
+              |                 
+              ul.colorsPallete
+                li(title='Black')
+                |                   
+                li.red.active(title='Red')
+                |                   
+                li.green(title='Green')
+                |                   
+                li.blue(title='Blue')
+                |                   
+                li.aero(title='Aero')
+                |                   
+                li.grey(title='Grey')
+                |                   
+                li.orange(title='Orange')
+                |                   
+                li.yellow(title='Yellow')
+                |                   
+                li.pink(title='Pink')
+                |                   
+                li.purple(title='Purple')
+
+  hr.col-sm-10.col-sm-offset-1
+  .container
+     
      div.col-sm-12.pull-right.templateWrapper
        ol.templatesOl
         
@@ -30,8 +114,8 @@ block content
                    a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
               div.col-sm-12.temlatesButtons
                 
-                   a.btn.col-sm-6(href="/scanner/"+val._id +"/" +val.name ).progectLink= "Edit"
+                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/"+val._id +"/" +val.name ).progectLink= "Edit"
                
-                   a.btn.col-sm-6(href="/progect/"+val.userId +"/" +val.name ).progectLinkView= "View"
+                   a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6(href="/progect/"+val.userId +"/" +val.name ).progectLinkView= "View"
               input(type="hidden" class="pr" value=val.id)
                

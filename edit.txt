@@ -1,1 +1,7 @@
 1) url-to-image package must have phantomjs install in the machine
+
+2) for image npm thief deploy to eroku 
+npm install app.json --global
+app.json deploy zeke/rainbowbot
+
+//****and you need to have paytohon on your env

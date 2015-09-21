@@ -16,6 +16,7 @@
     "express-session": "^1.11.3",
     "express-toastr": "^2.0.2",
     "express-validator": "^2.13.0",
+    "imagecolors": "^0.10.5",
     "jade": "~1.11.0",
     "method-override": "^2.3.5",
     "mkdirp": "^0.5.1",

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var screenshotPromise = require('screenshot-promise');
+var imagecolors = require('imagecolors');
 var multer  = require('multer')
 var upload = multer({ dest: 'uploads/drowrow/' })
 
@@ -102,6 +103,9 @@ router.post('/', function(req, res, next) {
 		    .then(function (buf) {
 		        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
 		    });
+
+
+		    
 		}
 	})
 	

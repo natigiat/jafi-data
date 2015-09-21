@@ -34,6 +34,7 @@
     "tinycolorpicker": "~0.9.1",
     "bootstrap-modal": "~2.2.6",
     "icheck": "~1.0.2",
-    "list.js": "~1.1.1"
+    "list.js": "~1.1.1",
+    "adaptive.background": "~1.0.3"
   }
 }
