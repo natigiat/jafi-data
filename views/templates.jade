@@ -2,7 +2,12 @@ extends layout
 
 block content
   .container
-     div.col-sm-3.searchTemplates
+     div.col-sm-12.searchTemplates
+        input(type='checkbox')
+        input(type='checkbox', checked='')
+        input(type='radio', name='iCheck')
+        input(type='radio', name='iCheck', checked='')
+
      div.col-sm-12.pull-right.templateWrapper
        ol.templatesOl
         

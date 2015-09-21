@@ -82,8 +82,8 @@ router.post('/', function(req, res, next) {
 			var newProgect = new Progect ({
 			    userId: userId,
 			    name: progectName ,
-			    filter,
-			    filter_child,
+			    filter : filter,
+			    filter_child: filter_child,
 				html: html,
 				css: css,
 				js: js

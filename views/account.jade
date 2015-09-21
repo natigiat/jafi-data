@@ -6,12 +6,12 @@ block content
       div.col-sm-7
           h1 My Sites 
       div.accountButtons
-        div.col-sm-3
-            .input-group
-              input#srch-term.form-control(type="text", placeholder="Search Progect Name", name="srch-term")
-              .input-group-btn
-                button.btn.btn-default.btn-primary(type="submit")
-                  i.glyphicon.glyphicon-search
+        div.col-sm-3.searchPlace
+            //- .input-group
+            //-   input#srch-term.form-control.search(type="text", placeholder="Search Progect Name", name="srch-term")
+            //-   .input-group-btn
+            //-     button.btn.btn-default.btn-primary(type="submit")
+            //-       i.glyphicon.glyphicon-search
 
 
         div.col-sm-2
@@ -21,18 +21,34 @@ block content
             a.buttonNewProgec(href="/scanner" title="Create a new site")<i class="fa fa-dribbble"></i> Create a new site
 
     hr
+    
+    #users
+      div.searchFilter
+       .input-group
+          input.form-control.search(placeholder="Search Progect Name",)
+          .input-group-btn
+            button.btn.btn-default.btn-primary(type="submit")
+              i.glyphicon.glyphicon-search   
+      button.sort(data-sort='name')
+          | Sort by name
 
-    ol.col-sm-7.olProgect
-      each val, index in progects
-        li.progectLi
-          div.row.listProgect
-            div.col-sm-4
-              img(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
-            div.col-sm-8
-              div.progectName= val.name
-              a(href="/scanner/"+val.userId +"/" +val.name ).progectLink= "Edit"
-              a(href="/progect/"+val.userId +"/" +val.name ).progectLink= "View"
-              p.progectLink= "Upgrade"
+      ul.col-sm-7.olProgect.list
+        each val, index in progects
+          li.progectLi  
+            div.row.listProgect
+              div.col-sm-4
+                img(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
+              div.col-sm-8
+                div.progectName.name= val.name           
+                div.progectfilter.filter= val.filter 
+                a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp(href="/scanner/"+val.userId +"/" +val.name , title='') Edit
+                | &nbsp;&nbsp;
+                a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp(href="/progect/"+val.userId +"/" +val.name, title='') View
+                | &nbsp;&nbsp;
+                a.btn.btn-warning.btn-sm.fixed-bottom.box-shadow--8dp(href="/progect/"+val.userId +"/" +val.name , title='') Manage
+                | &nbsp;&nbsp;
+        
+             
 
 
     div.col-sm-7.creteNewProgect
