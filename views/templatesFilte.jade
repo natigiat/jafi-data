@@ -1,0 +1,28 @@
+ .container.filterStart
+     
+     div.col-sm-12.pull-right.templateWrapper
+       ol.templatesOl
+        
+        each val, index in progects
+          //- div #{index}
+          //- div #{val}
+        each val, index in progects
+          li.templateLi
+            div.col-sm-4.row.listProgect
+              div.text-center.col-sm-12progectName= val.name
+              div.col-sm-12
+                div(class="templatesWebsite")
+                img.temImage(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
+              div.col-sm-12.ratingTemplates
+                div.col-sm-6
+                  p.templatesPrice Price : Free
+                div.col-sm-6.pull-right
+                   a(class="watch" name="watch")<i class="fa fa-eye"></i>
+                     span.eyesValue(val="3") 3
+                   a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
+              div.col-sm-12.temlatesButtons
+                
+                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/"+val._id +"/" +val.name ).progectLink= "Edit"
+               
+                   a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6(href="/progect/"+val.userId +"/" +val.name ).progectLinkView= "View"
+              input(type="hidden" class="pr" value=val.id)

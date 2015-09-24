@@ -48,9 +48,20 @@ module.exports.SelectAllProgectById = function(userId , callback){
 	Progect.find(query , callback);
 }
 
+
 //select all progect for templates page
 module.exports.SelectAllProgect = function(callback){ //
+	
 	var query = {};
+
+    Progect.find(query, callback);
+}
+
+//select all progect for templates page
+module.exports.SelectAllProgectFilter = function(filter , filterChild, callback){ //
+	if (typeof(filter)==='undefined') filter = '';
+    if (typeof(filterChild)==='undefined') filterChild = '';
+	var query = {'filter': filter};
   
 	// Progect.find(query, callback).paginate(options, function(err, res) {
 	// 		// console.log(res);
@@ -62,6 +73,7 @@ module.exports.SelectAllProgect = function(callback){ //
 
 //select progect for progect page
 module.exports.SelectProgect = function(userId , progect , callback){
+
 	var query = {"userId" : userId , "name" : progect};
 	Progect.find(query , callback);
 }

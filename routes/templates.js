@@ -36,6 +36,7 @@ router.get('/', function(req, res, next) {
 	// 		}
 		 	
 	// }); 
+ 
 
 	Progect.SelectAllProgect(function(err , progects){
     		
@@ -47,24 +48,33 @@ router.get('/', function(req, res, next) {
 	});  		
 });
 
+//templates filtering
 router.post('/', function(req, res, next) {
 	
-	var progectId = req.body.progectId;
-	var eyesValue = req.body.eyesValue;
+	if (req.isAuthenticated()){
+    	var userName =  req.user.name;
+    }else{
+    	var userName =  '';
+    }
+
+	var filter = req.body.filter;
+	var filterChild = req.body.filterChild;
+
+	console.log(filter);
+	console.log(filterChild);
+
 	//check if pogect exsist
-	Progect.checkProjectExsist(progectId , function(err , progect){
-		if(progect){
-			
-			var conditions = { id: progectId }
-			  , update = { $inc: { visits: eyesValue }}
-
-			Progect.update(conditions, update);
-
-			console.log('yes');
+    Progect.SelectAllProgectFilter(filter , filterChild, function(err , progects){
+    		
+		if(progects){
+			res.render('templates', {  title: 'Lando - Templates' , progects:progects, name:userName });
 		}else{
-			console.log('no');
+			res.render('templates', {  title: 'Lando - Templates'});
 		}
-	})
+	});  
+    
+
+
 
 });
 
