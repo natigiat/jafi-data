@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 			$.post( '/templates', parameters, function(data) {
 			   
 			
-		       $('body').replaceWith(data);
+		       $('.filterStart').html(data);
 
 		    });
 		  

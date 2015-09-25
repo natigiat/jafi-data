@@ -13,11 +13,11 @@ var options = {
 
 var ProgectSchema = mongoose.Schema({
 	userId: { type: String , required: true},
-	name  : { type: String},
-	filter  : { type: String},
+	name  : { type: String , required: true},
+	filter  : { type: String , required: true},
 	filter_child  : { type: String},
-	html: { type: String},
-	css: { type: String},
+	html: { type: String , required: true},
+	css: { type: String , required: true},
 	js: { type: String},
 	watch: { type: Number},
 	paid: { type: Boolean},
@@ -61,7 +61,23 @@ module.exports.SelectAllProgect = function(callback){ //
 module.exports.SelectAllProgectFilter = function(filter , filterChild, callback){ //
 	if (typeof(filter)==='undefined') filter = '';
     if (typeof(filterChild)==='undefined') filterChild = '';
-	var query = {'filter': filter};
+
+
+	//sort by all
+	if (filter == 'all'){
+		var query = {};
+	}else{
+		var query = {'filter': filter};
+	}
+ 
+    //sort by date
+	if(filter == 'new'){
+		query = sort('uploadTime');
+	}
+
+
+
+	
   
 	// Progect.find(query, callback).paginate(options, function(err, res) {
 	// 		// console.log(res);
@@ -71,8 +87,15 @@ module.exports.SelectAllProgectFilter = function(filter , filterChild, callback)
     Progect.find(query, callback);
 }
 
-//select progect for progect page
-module.exports.SelectProgect = function(userId , progect , callback){
+//select progect for view in account and templates page
+module.exports.SelectProgect = function(Id , progect , callback){
+
+	var query = {"_id" : Id , "name" : progect};
+	Progect.find(query , callback);
+}
+
+//select progect for edit in account  page
+module.exports.SelectProgectId = function(userId , progect , callback){
 
 	var query = {"userId" : userId , "name" : progect};
 	Progect.find(query , callback);

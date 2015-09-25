@@ -20,7 +20,7 @@ block content
         label.labelFilters(for='flat-checkbox-5' id="input-5") Lides
       div.col-sm-10.rightFilters
         div.col-sm-3.smallCheck
-          input(type='checkbox' value="business")
+          input(type='checkbox' value="Business & Services")
           label.labelFilters(for='flat-checkbox-6' id="input-6" ) Business & Services
           br
            
@@ -32,31 +32,31 @@ block content
           label.labelFilters(for='flat-checkbox-8' id="input-8" )  Hotel & travels
           br
         div.col-sm-3.smallCheck
-          input(type='checkbox' value="music")
+          input(type='checkbox' value="Music")
           label.labelFilters(for='flat-checkbox-9' id="input-9" )  Music
           br
 
-          input(type='checkbox' value="online")
+          input(type='checkbox' value="Online Store")
           label.labelFilters(for='flat-checkbox-10' id="input-10"  ) Online Store
           br
 
-          input(type='checkbox' value="entertainment")
+          input(type='checkbox' value="Entertainment")
           label.labelFilters(for='flat-checkbox-11' id="input-11"  ) Entertainment
           br
         div.col-sm-3.smallCheck
-          input(type='checkbox' value="restaurant")
+          input(type='checkbox' value="Restaurant & Hospitality")
           label.labelFilters(for='flat-checkbox-12' id="input-12"  ) Restaurant & Hospitality
           br
 
-          input(type='checkbox' value="photography")
+          input(type='checkbox' value="Photography")
           label.labelFilters(for='flat-checkbox-13' id="input-13"  ) Photography
           br
 
-          input(type='checkbox' value="creative")
+          input(type='checkbox' value="Creative Arts")
           label.labelFilters(for='flat-checkbox-14' id="input-14"  ) Creative Arts
           br
         div.col-sm-3.smallCheck
-          input(type='checkbox' value="design")
+          input(type='checkbox' value="Design")
           label.labelFilters(for='flat-checkbox-15' id="input-15"  ) Design
           br
 
@@ -113,9 +113,9 @@ block content
                      span.eyesValue(val="3") 3
                    a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
               div.col-sm-12.temlatesButtons
-                
-                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/"+val._id +"/" +val.name ).progectLink= "Edit"
+                   
+                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/"+val._id +"/" +val.name +"/edit/" +userId).progectLink= "Edit"
                
-                   a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6(href="/progect/"+val.userId +"/" +val.name ).progectLinkView= "View"
+                   a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6(href="/progect/"+val._id +"/" +val.name  ).progectLinkView= "View"
               input(type="hidden" class="pr" value=val.id)
                
