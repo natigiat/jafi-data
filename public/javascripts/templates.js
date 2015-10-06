@@ -19,16 +19,14 @@ jQuery(document).ready(function($) {
 			$.post( '/templates', parameters, function(data) {
 			   
 			
-		       $('body').replaceWith(data);
+		       $('.filterStart').replaceWith(data);
 
 		    });
 		  
 		});
 
-		// $('#filter1').iCheck('check', function(){
-		 
-		// });
-        
+
+
         $('.filters').on('click' ,function(){
         
         	var len = $('.checked').find('input').val;
@@ -49,14 +47,6 @@ jQuery(document).ready(function($) {
 		       alert(data);
 		    });
 		});
-
-
-		// //ajax result
-		// $('.filters').click(function() {
-			
-		// });
-		
- 
 
 
 	}

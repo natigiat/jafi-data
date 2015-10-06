@@ -66,10 +66,11 @@ router.post('/', function(req, res, next) {
 	//check if pogect exsist
     Progect.SelectAllProgectFilter(filter , filterChild, function(err , progects){
     		
+		
 		if(progects){
-			res.render('templates', {  title: 'Lando - Templates' , progects:progects, name:userName });
+			res.render('templatesFilte', {  title: 'Lando - Templates' , progects:progects, name:userName });
 		}else{
-			res.render('templates', {  title: 'Lando - Templates'});
+			res.render('templatesFilte', {  title: 'Lando - Templates'});
 		}
 	});  
     
