@@ -230,7 +230,6 @@ jQuery(document).ready(function($) {
 
 
         var cinds = widget.getValue();
-	    console.log(cinds);
 	        var Fil = cinds[0][0].value;
 	        var Fil_c = cinds[0][1].value;
 
@@ -240,8 +239,15 @@ jQuery(document).ready(function($) {
 
 		var parameters = { progectName: progectName ,filter:filter ,filter_child:filter_child,  html: htmlValue , css: cssValue , js: jsValue};
 		$.post( '/scanner', parameters, function(data) {
-	       alert(data);
-	    });
+	       $('#loadingmessage').show();
+	    })
+	    .done(function() {
+		    alert( "second success" );
+		})
+		.fail(function() {
+		    alert( "error" );
+		});
+
 	});
 
 

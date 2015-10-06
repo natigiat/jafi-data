@@ -32,29 +32,29 @@ router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
   var username = req.params.user;
   var progect = req.params.progect;
 
-  Progect.SelectProgect(userId , progect , function(err , progect){
+  Progect.SelectProgectId(userId , progect , function(err , progect){
   	if(progect){
 	    console.log(typeof(progect));
-		res.render('scanner', {  title: 'Account' , progect:progect });
+		res.render('scanner', {  title: 'Scanner - new progect' , progect:progect });
 	}
   });
 });
 
 
 
-/* GET scanner edit from account page. */
-router.get('/:id/:progect', ensureAuthenticated,  function(req, res, next) {
-  var userId = req.user.id;
-  var progectid = req.params.id;
-  var progect = req.params.progect;
+// /* GET scanner edit from account page. */
+// router.get('/:id/:progect', ensureAuthenticated,  function(req, res, next) {
+//   var userId = req.user.id;
+//   var progectid = req.params.id;
+//   var progect = req.params.progect;
 
-  Progect.SelectProgect(progectid , progect , function(err , progect){
-  	if(progect){
-	    console.log(typeof(progect));
-		res.render('scanner', {  title: 'Account' , progect:progect });
-	}
-  });
-});
+//   Progect.SelectProgect(progectid , progect , function(err , progect){
+//   	if(progect){
+// 	    console.log(typeof(progect));
+// 		res.render('scanner', {  title: 'Account' , progect:progect });
+// 	}
+//   });
+// });
 
 
 
