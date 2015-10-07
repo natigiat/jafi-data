@@ -13,6 +13,7 @@
     text-decoration: none;
     color: #fff!important;
     background-color: #2E82C9!important;
+    height: 40px;
 }
 
 
@@ -111,6 +112,10 @@ div#drow {
 
 side-bar.selected_div {
     width: 20%;
+}
+
+a.navbar-brand.editorBack {
+    cursor: pointer;
 }
 
 

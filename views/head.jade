@@ -75,10 +75,10 @@ html
       // Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active.desktop
-            a
-              //- i(class="fa fa-desktop fa-2x")
-              span.icon-desktop.fs1            
+          //- li.active.desktop
+          //-   a
+          //-     //- i(class="fa fa-desktop fa-2x")
+          //-     span.icon-desktop.fs1            
           li
             a.mobile
               //- i(class="fa fa-mobile fa-2x")
@@ -96,33 +96,40 @@ html
               a <i class="fa fa-code"></i>
             li.preview 
               a Preview
-            li
-              a(data-toggle="modal" data-target="#myModal") Save
-              div#myModal.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                .modal-dialog(role='document')
-                  .modal-content 
-                    .modal-body
-                        .col-sm-12
-                          .col-sm-10.pull-left
-                            i(class="fa fa-database fa-4x saveProgect")
-                            span.textProgectOne It's time to save your work
-                            br 
-                            span.textProgectTwo and to give your website a name
+            
+            if (userId)
+              li.update 
+                 a update
+                 
+              
+            else 
+              li
+                a(data-toggle="modal" data-target="#myModal") Save
+                div#myModal.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
+                  .modal-dialog(role='document')
+                    .modal-content 
+                      .modal-body
                           .col-sm-12
-                            .col-sm-10
-                              input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
-                              div#search_bar
-                            button.btn.btnProgect(type='button' class="col-sm-2") Success
-                            .col-sm-10
-                              div.progectRow http://landing/#{name}/#[b.progectName]
-                          hr
-                          .col-sm-12
-                            ol
-                              li You can change your site name later    
+                            .col-sm-10.pull-left
+                              i(class="fa fa-database fa-4x saveProgect")
+                              span.textProgectOne It's time to save your work
+                              br 
+                              span.textProgectTwo and to give your website a name
+                            .col-sm-12
+                              .col-sm-10
+                                input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
+                                div#search_bar
+                              button.btn.btnProgect(type='button' class="col-sm-2") Success
+                              .col-sm-10
+                                div.progectRow http://landing/#{name}/#[b.progectName]
+                            hr
+                            .col-sm-12
+                              ol
+                                li You can change your site name later    
 
-                              li your site is private and will only be shown to the world with your approved 
-                                
-                              li You can publish your site
+                                li your site is private and will only be shown to the world with your approved 
+                                  
+                                li You can publish your site
             li
               a Publish 
 

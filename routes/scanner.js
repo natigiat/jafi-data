@@ -35,7 +35,7 @@ router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
   Progect.SelectProgectId(userId , progect , function(err , progect){
   	if(progect){
 	    console.log(typeof(progect));
-		res.render('scanner', {  title: 'Scanner - new progect' , progect:progect });
+		res.render('scanner', {  title: 'Scanner - new progect' , progect:progect ,userId:userId});
 	}
   });
 });
@@ -72,42 +72,61 @@ router.post('/', function(req, res, next) {
 	var js = req.body.js;
 
 
+    if(filter){
+    	//check if pogect exsist
+		Progect.checkProjectExsist(progectName , function(err , progect){
+			if(progect){
+				var satusProgect = "progect exsist";
+				return satusProgect;
+			}else{
+				
+				var newProgect = new Progect ({
+				    userId: userId,
+				    name: progectName ,
+				    filter : filter,
+				    filter_child: filter_child,
+					html: html,
+					css: css,
+					js: js
+				});
 
-	//check if pogect exsist
-	Progect.checkProjectExsist(progectName , function(err , progect){
-		if(progect){
-			var satusProgect = "progect exsist";
-			return satusProgect;
-		}else{
-			
-			var newProgect = new Progect ({
-			    userId: userId,
-			    name: progectName ,
-			    filter : filter,
-			    filter_child: filter_child,
-				html: html,
-				css: css,
-				js: js
-			});
+			    // save the user
+			    newProgect.save(function(err ,newProgect) {
+			        if(err) {
+			            console.log(err);
+			        }
 
-		    // save the user
-		    newProgect.save(function(err ,newProgect) {
-		        if(err) {
-		            console.log(err);
-		        }
+			    });
 
-		    });
-
-		    
-		    screenshotPromise('http://localhost:3000/progect/'+userId+'/'+progectName, '1024x768', {crop: true})
-		    .then(function (buf) {
-		        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
-		    });
+			    
+			    screenshotPromise('http://localhost:3000/progect/'+userId+'/'+progectName, '1024x768', {crop: true})
+			    .then(function (buf) {
+			        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
+			    });
 
 
-		    
-		}
-	})
+			    
+			}
+		})
+
+    }
+    else{
+
+         // console.log(userId);
+         
+	     console.log('the progect is' + progectName);
+	     // console.log(css);
+	     // console.log(html);
+	     Progect.update({ name: progectName}, {
+			    html: html, 
+			    css:css,
+			    js:js
+		 }, function(err, numberAffected, rawResponse) {
+		   console.log(err);
+		 })
+
+    }
+	
 	
 		
 });

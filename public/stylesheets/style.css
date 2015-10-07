@@ -874,7 +874,7 @@ video { border-radius: 6px; }
     width: 100%;
 }
 
-.navbar-right a {
+.reg a {
     font-size: 1.5rem;
     font-weight: 400;
     background: url(http://static.parastorage.com/services/skins/2.1229.14/images/wysiwyg/core/themes/editor_web/maineditortabs/dark-divider.png) 0px 50% no-repeat;
