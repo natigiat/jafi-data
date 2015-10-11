@@ -88,11 +88,7 @@ module.exports.SelectAllProgectFilter = function(filter , filterChild, callback)
 }
 
 
-//Update Progect from user edit
-module.exports.UpdateProgect = function(userId , progectName , callback){
-	var query = {"_Id" : progectid , "name" : progect};
-	Progect.find(query , callback);
-}
+
 
 //select progect for view in account and templates page
 module.exports.SelectProgect = function(Id , progect , callback){

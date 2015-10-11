@@ -4,7 +4,8 @@ var fs = require('fs');
 var screenshotPromise = require('screenshot-promise');
 var imagecolors = require('imagecolors');
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/drowrow/' })
+var upload = multer({ dest: 'uploads/drowrow/' });
+var url = require('url');
 
 
 var Progect = require('../modules/progect.js');
@@ -35,7 +36,7 @@ router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
   Progect.SelectProgectId(userId , progect , function(err , progect){
   	if(progect){
 	    console.log(typeof(progect));
-		res.render('scanner', {  title: 'Scanner - new progect' , progect:progect ,userId:userId});
+		res.render('scanner', {  title: 'Scanner - new progect' , progect:progect ,userId:userId, progectId:progect._id});
 	}
   });
 });
@@ -65,6 +66,7 @@ router.post('/', function(req, res, next) {
 	
 	var userId = req.user.id;
 	var progectName = req.body.progectName;
+	var progectId = req.body.progectId;
 	var filter = req.body.filter;
 	var filter_child = req.body.filter_child;
 	var css = req.body.css;
@@ -97,11 +99,12 @@ router.post('/', function(req, res, next) {
 			        }
 
 			    });
+                
 
-			    
-			    screenshotPromise('http://localhost:3000/progect/'+userId+'/'+progectName, '1024x768', {crop: true})
+			    screenshotPromise('http://localhost:3000/progect/'+newProgect.id+'/'+progectName, '1024x768', {crop: true , delay:5})
 			    .then(function (buf) {
 			        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
+			        console.log('public/images/screenshots/'+userId+progectName+'.png created' );
 			    });
 
 
@@ -112,17 +115,20 @@ router.post('/', function(req, res, next) {
     }
     else{
 
-         // console.log(userId);
-         
+         // console.log(userId)
 	     console.log('the progect is' + progectName);
-	     // console.log(css);
-	     // console.log(html);
 	     Progect.update({ name: progectName}, {
 			    html: html, 
 			    css:css,
 			    js:js
 		 }, function(err, numberAffected, rawResponse) {
 		   console.log(err);
+		   	    screenshotPromise('http://localhost:3000/progect/'+progectId+'/'+progectName, '1024x768', {crop: true})
+			    .then(function (buf) {
+			        fs.writeFileSync('public/images/screenshots/'+userId+progectName+'.png' , buf);
+			        console.log('public/images/screenshots/'+userId+progectName+'.png created' );
+			    });
+
 		 })
 
     }
