@@ -1,0 +1,481 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.setting img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: sub;
+}
+
+
+
+
+.setting input[type="text"] {
+  width: 100%;
+  border: 1px solid #cfcfcf;
+  background: #ebebeb;
+  height: 28px;
+  font-size: 0.75em;
+  padding: 5px;
+  outline: none;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  transition: background .3s ease;
+}
+
+.setting input[type="text"]:focus {
+  background: #f0f0f0;
+}
+
+.setting.checkbox {
+  color: #ccc;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+  font-size: 0.6875em;
+  margin-bottom: 7px;
+  display: inline-block;
+}
+
+.setting .box {
+  background: #f9f9f9;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.setting .box h2 {
+  color: #dd5555;
+  font-size: 0.875em;
+}
+.setting .box p {
+  font-size: 0.75em;
+  color: #7d7d7d;
+}
+
+.setting .locations {
+  padding: 30px;
+  text-align: center;
+}
+.setting .locations .avatar {
+}
+.setting .locations .avatar img {
+}
+.setting .locations .details {
+  margin-top: 30px;
+}
+.setting .locations .btn {
+  margin-top: 30px;
+}
+
+.setting .calendar {
+  text-align: center;
+}
+.setting .calendar .header {
+  padding: 10px 0;
+}
+.setting .calendar [class*="icon-"] {
+  color: #dd5555;
+  position: relative;
+  top: 2px;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.setting .calendar .days {
+  background: #dd5555;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+}
+.setting .calendar .days ul {
+  margin: 0;
+  padding: 0;
+}
+.setting .calendar .days li {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 0;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .setting .calendar .days li {
+    width: 20px;
+    height: 20px;
+  }
+}
+.setting .calendar .days li.next, .calendar .days li.previous {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.setting .nav a {
+  text-decoration: none;
+  color: #cccccc;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  font-size: 0.75em;
+}
+.setting .nav a:hover {
+  color: #dd5555;
+}
+.setting .nav [class*="icon-"] {
+  font-size: 2em;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.setting .nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.setting .nav li {
+  display: inline-block;
+}
+.setting .nav li a {
+  display: block;
+  padding: 20px 18px;
+}
+
+.setting .weather .header {
+  border-radius: 5px 5px 0 0;
+  padding: 20px 0;
+  background: #dd5555;
+  text-align: center;
+  color: #fff;
+  font-size: 3.125em;
+}
+.setting .weather [class*="icon-"] {
+  position: relative;
+  top: 2px;
+}
+.setting .weather article {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.setting .video {
+  position: relative;
+  cursor: pointer;
+}
+.setting .video:before {
+  content: '';
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  transition: background .3s ease;
+}
+.setting .video:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -5px 0 0 2px;
+  border: 10px solid transparent;
+  border-left: 10px solid rgba(255, 255, 255, 0.8);
+}
+.setting .video:hover:before {
+  background: rgba(255, 255, 255, 0.3);
+}
+.setting .video img {
+  border-radius: 5px;
+}
+
+.setting .post img {
+  border-radius: 5px 5px 0 0;
+}
+.setting .post .details {
+  padding: 10px 20px;
+}
+.setting .post .details p {
+  line-height: 1.5em;
+}
+
+.setting .audio {
+  position: relative;
+  height: 120px;
+}
+.setting .audio .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.setting .audio .image img {
+  border-radius: 5px 0 0 5px;
+}
+.setting .audio .details {
+  padding: 10px 0;
+  margin-left: 140px;
+}
+.setting .audio .actions {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
+.setting .audio .actions .btn {
+  width: 25px;
+  height: 25px;
+  display: block;
+  float: left;
+  margin-left: 5px;
+  padding: 5px 6px;
+  color: #FFF;
+}
+.setting .audio .player .bar {
+  margin: 30px 0 0;
+  height: 4px;
+  background: #cccccc;
+  width: 60%;
+  border-radius: 2px;
+}
+.setting .audio .player .bar .progress {
+  width: 45%;
+  background: #dd5555;
+  border-radius: 2px;
+  height: 4px;
+  position: relative;
+}
+.setting .audio .player .bar .progress:before {
+  content: attr(data-time);
+  background: #dd5555;
+  display: inline;
+  position: absolute;
+  font-size: 0.6875em;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 3px;
+  right: -14px;
+  bottom: 9px;
+}
+.setting .audio .player .bar .progress:after {
+  content: '';
+  border: 5px solid transparent;
+  border-top: 5px solid #dd5555;
+  position: absolute;
+  right: -3px;
+  bottom: 0px;
+}
+
+.setting .find {
+  padding: 10px;
+}
+
+
+/**************************************************************calendar*/
+
+.setting ol, .setting ul {
+  list-style: none;
+}
+.setting blockquote, q {
+  quotes: none;
+}
+.setting blockquote:before, blockquote:after,
+.setting q:before, q:after {
+  content: '';
+  content: none;
+}
+.setting table {
+  border-spacing: 2px;
+}
+.setting .clearfix:before,
+.setting .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.setting .clearfix:after {
+    clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.setting .clearfix {
+    *zoom: 1;
+}
+.setting a, .setting a:hover {
+    text-decoration: none;
+}
+.setting .img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.setting .elegant-calencar {
+    height: 31em;
+    border: 1px solid #c9c9c9;
+    -webkit-box-shadow: 0 0 5px #c9c9c9;
+    box-shadow: 0 0 5px #c9c9c9;
+    text-align: center;
+    position: relative;
+}
+
+.setting #header {
+    font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    height: 14em;
+    background-color: #2a3246;
+    margin-bottom: 1em;
+}
+
+.pre-button{
+  margin-top: 2em;
+    font-size: 3em;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    cursor: pointer;
+    height: 1em;
+    line-height: 1em;
+    color: #e66b6b;
+    border-radius: 50%;
+}
+.setting .setting .pre-button, .next-button {
+    margin-top: 2em;
+    font-size: 3em;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    color: #e66b6b;
+    border-radius: 50%;
+}
+
+.setting .pre-button:hover, .next-button:hover {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.setting .pre-button:active,.next-button:active{
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+.setting .pre-button {
+    float: left;
+    margin-left: 0.5em;
+}
+
+.setting .next-button {
+    float: right;
+    margin-right: 0.5em;
+}
+
+.setting .head-info {
+    float: left;
+    width: 20em;
+}
+
+.setting .head-day {
+    margin-top: 30px;
+    font-size: 8em;
+    line-height: 1;
+    color: #fff;
+}
+
+.setting .head-month {
+    margin-top: 20px;
+    font-size: 2em;
+    line-height: 1;
+    color: #fff;
+}
+
+.setting #calendar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.setting #calendar tr {
+    height: 2em;
+    line-height: 2em;
+}
+
+thead tr {
+    color: #e66b6b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.setting tbody tr {
+    color: #252a25;
+}
+
+.setting tbody td{
+    width: 14%;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition:all 0.2s ease-in;
+    transition:all 0.2s ease-in;
+}
+
+.setting tbody td:hover, .selected {
+    color: #fff;
+    background-color: #2a3246;
+    border: none;
+}
+
+.setting tbody td:active {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+.setting #today {
+    background-color: #e66b6b;
+    color: #fff;
+    font-family: serif;
+    border-radius: 50%;
+}
+
+.setting #disabled {
+    cursor: default;
+}
+
+.setting #disabled:hover {
+    background: #fff;
+    color: #c9c9c9;
+}
+
+.setting #reset {
+    display: block;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    z-index: 999;
+    color: #fff;
+    font-family: serif;
+    cursor: pointer;
+    padding: 0 0.5em;
+    height: 1.5em;
+    border: 0.1em solid #fff;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.setting #reset:hover {
+    color: #e66b6b;
+    border-color: #e66b6b;
+}
+
+.setting .avatar {
+    max-width: 100%!important;
+    margin: 0 auto!important;
+}
+
+.setting #reset:active{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);     
+}

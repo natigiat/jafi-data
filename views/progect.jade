@@ -31,6 +31,7 @@ html
     script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
     script(src='/bower/medium-editor/dist/js/medium-editor.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js')
     style.
         .github-fork-ribbon-wrapper {
             width: 150px;
@@ -98,12 +99,16 @@ html
         script(type="text/javascript").
 
     
+
+
     script(type='text/javascript').
        jQuery(document).ready(function($) {
            var progect =!{JSON.stringify(progect)}
            var html = progect[0].html;
            var css = progect[0].css;
            var js = progect[0].js;
+
+
 
            var title = progect[0].name;
            document.title = title;
@@ -118,4 +123,32 @@ html
            $('.htmlcss').find('style').html(css);
 
            $('.htmljs').find('script').html(js);
+       });
+
+    
+    script(type='text/javascript').
+       jQuery(document).ready(function($) {
+           
+            UserInfo.getInfo(function(data) {
+                var url      = window.location.href; 
+                var pieces = url.split("/");
+                var progectId = pieces[pieces.length - 2];
+                console.log(progectId);
+
+                userIp   = data.ip_address;
+                userDate = data.request_date;
+                userPosition = data.position;
+                userCountry = data.country.name;
+                userCity = data.country.name;
+
+                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPosition:userPosition ,userCountry:userCountry, userCity:userCity};
+                $.post( '/progect', parameters, function(data) {
+                   
+                });
+                // the "data" object contains the info
+            }, function(err) {
+              // the "err" object contains useful information in case of an error
+            });
+
+           
        });

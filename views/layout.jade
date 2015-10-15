@@ -6,6 +6,7 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/account.css')
     link(rel='stylesheet', href='/stylesheets/icons.css')
     link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
     
@@ -37,6 +38,7 @@ html
     script(src="/javascripts/index.js")
     script(src="/javascripts/account.js")
     script(src="/javascripts/templates.js")
+    script(src='/javascripts/calendar.js')
     
   body
     
@@ -71,7 +73,7 @@ html
                       b.caret
                     ul.dropdown-menu(role="menu")
                       li.arrowUp
-                        a(href='/users/logout') Account Settings
+                        a(href='/account/setting') Account Settings
                       li
                         a(href='/users/logout') Billing & Payments
                       li
@@ -91,7 +93,7 @@ html
   block content
   
 
-
+  .clear
   footer.footer
     #content-root-footer(role='global')
         .plans-and-pricing-ribbon

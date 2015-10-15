@@ -1,0 +1,165 @@
+extends layout
+
+block content
+    .col-sm-10.col-sm-offset-1.setting.mainWrapper
+        .col-sm-4
+          section.box.widget.locations
+            .avatar
+              img(src='/stylesheets/images/profile.png')
+           
+            .details
+              h2 #{name}
+              p #{email}
+              a.btn.btn-primary.btn-block.btn-large(href='#') Change Password
+          section.box.widget.calendar
+            .elegant-calencar
+              p#reset reset
+              #header.clearfix
+                .pre-button <
+                .head-info
+                  .head-day
+                  .head-month
+                .next-button >
+              table#calendar
+                thead
+                  tr
+                    th Sun
+                    th Mon
+                    th Tue
+                    th Wed
+                    th Thu
+                    th Fri
+                    th Sat
+                tbody
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                  tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td
+
+        .col-sm-8
+          nav.box.nav
+            ul
+              li
+                a(href='#')
+                  span.icon-home
+                  br
+                  span.title Home
+              li
+                a(href='')
+                  span.icon-images
+                  br
+                  span.title Gallery
+              li
+                a(href='')
+                  span.icon-bubble
+                  br
+                  span.title Message
+              li
+                a(href='')
+                  span.icon-music
+                  br
+                  span.title Music
+              li
+                a(href='')
+                  span.icon-search
+                  br
+                  span.title Search
+              li
+                a(href='')
+                  span.icon-cog
+                  br
+                  span.title Settings
+              li
+                a(href='')
+                  span.icon-location
+                  br
+                  span.title Location
+          .inner_container
+            .col-sm-3
+              section.box.widget.video
+                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_video.png', alt='')
+              section.box.widget.weather
+                header.header
+                  .temp
+                    | 10° 
+                    span.icon-brightness-half
+                  span.icon-partlycloudy
+                article
+                  h2 Saturday 16 January
+            .col-sm-3
+              article.box.post
+                .image
+                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_post.png')
+                .details
+                  h2 Amsterdan
+                  p
+                    | Amsterdam is the capital city of and the most populous within the Kingdom of the Netherlands. Amsterdam's name derives from Amstelredamme. Amsterdam is located in the western... Netherlands
+            .col-sm-3
+              section.box.widget.audio
+                .image
+                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_audio.png')
+                .details
+                  h2.album Geef mij maar Amsterdam
+                  p.artist Johnny Jordaan
+                  .player
+                    .bar
+                      .progress(data-time='1:45')
+                    .actions
+                      a.btn(href='#')
+                        span.icon-arrow-left
+                      a.btn.btn-primary(href='#')
+                        span.icon-pause
+                      a.btn(href='#')
+                        span.icon-arrow-right
+            .col-sm-3
+              section.box.widget.find
+                input(type='text', name='find', placeholder='Find your city place')
+                label.checkbox(for='favorite')
+                  input#favorite(type='checkbox', name='favorite')
+                  |             Add to favorites
+                a.btn.btn-primary.btn-large.btn-block(href='#') Search
+

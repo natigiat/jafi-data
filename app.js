@@ -29,7 +29,7 @@ var users = require('./routes/users');
 var account = require('./routes/account');
 var scanner = require('./routes/scanner');
 var result = require('./routes/result');
-var proegct = require('./routes/proegct');
+var proegct = require('./routes/progect');
 var templates = require('./routes/templates');
 
 var app = express();
@@ -39,7 +39,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //Handel file upload
-app.use(multer({dest:'./uploads/drowrow/'}).single('onixfile'));
+app.use(multer({
+  dest:'./uploads/drowrow/',
+  rename: function (fieldname, filename) {
+    return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
+  }
+
+}).single('onixfile'));
 
 
 

@@ -13,6 +13,10 @@
     src: url(fonts/Roboto-Lig//cdn2.hubspot.net/hub/53/file-581676469-png/Blog-Related_Images/unbounce_landing_page.png?t=1441029868483&width=669ht.ttf);;
 }
 
+.clear {
+    clear: both;
+}
+
 .Navbar-brand {
     padding: 10px 10px!important;
     width: 10%!important;

@@ -8,6 +8,12 @@ block content
            var css = progect[0].css;
            var js = progect[0].js;
 
+           var projectId = progect[0]._id;
+
+          
+           //set progect id to div 
+           $('.progectId').val(projectId)
+
            //- var builtWith = "<div class='github-fork-ribbon-wrapper left'> <div class='github-fork-ribbon'> <a href='https://github.com/simonwhitaker/github-fork-ribbon-css'>Build With Lando</a> </div> </div>";
            $('.dataHtml').val(html);
            $('.dataCss').val(css);
@@ -136,8 +142,8 @@ block content
 
 
 
-     //- input.progectI(type="hidden", value="#{progect.css}") 
-     li.progectI #{item.css} 
+     input.progectId(type="hidden") 
+
 
 
 //- div#loadingmessage

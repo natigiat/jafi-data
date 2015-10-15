@@ -256,18 +256,20 @@ jQuery(document).ready(function($) {
 		var url      = window.location.href; 
 		var pieces = url.split("/");
 		var progect = pieces[pieces.length - 1];
-		var progectId = pieces[pieces.length - 2];
+		var progectId = $('.progectId').val();
+
+	
 		
 		var progectName = progect;
 		var htmlValue = myCodeMirror.getValue('\n');
     	var cssValue = myCodeMirrorCss.getValue('\n');
     	var jsValue = myCodeMirrorJs.getValue('\n');
         
-        console.log(progectId);
-		// var parameters = { progectName: progectName , progectId:progectId, html: htmlValue , css: cssValue , js: jsValue};
-		// $.post( '/scanner', parameters, function(data) {
-	 //       alert(data);
-	 //    });
+
+		var parameters = { progectName: progectName , progectId:progectId, html: htmlValue , css: cssValue , js: jsValue};
+		$.post( '/scanner', parameters, function(data) {
+	       alert(data);
+	    });
 	});
 
 
