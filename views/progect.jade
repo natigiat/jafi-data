@@ -32,6 +32,9 @@ html
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
     script(src='/bower/medium-editor/dist/js/medium-editor.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js')
+    //- heatmaps
+    script(src='/bower/heatmap.js.bower/build/heatmap.min.js')
+
     style.
         .github-fork-ribbon-wrapper {
             width: 150px;
@@ -87,10 +90,10 @@ html
             width: 38%;
             padding: 0px 0px 0px 0px;
         }
+
     
-  body.result    
-       
-    div.htmlRow
+  body.result.demo-wrapper      
+    div.htmlRow.heatmap 
          
     div.htmlcss
         style.
@@ -123,7 +126,23 @@ html
            $('.htmlcss').find('style').html(css);
 
            $('.htmljs').find('script').html(js);
-       });
+
+
+           //start heatmaps
+            var heatmapInstance = h337.create({
+              container: document.querySelector('.heatmap'),
+              radius: 10
+            });
+            document.querySelector('.demo-wrapper').onclick = function(ev) {
+              heatmapInstance.addData({
+                x: ev.layerX,
+                y: ev.layerY,
+                value: 1
+              });
+            };
+
+           });
+       
 
     
     script(type='text/javascript').
@@ -133,15 +152,18 @@ html
                 var url      = window.location.href; 
                 var pieces = url.split("/");
                 var progectId = pieces[pieces.length - 2];
-                console.log(progectId);
+                
 
                 userIp   = data.ip_address;
                 userDate = data.request_date;
-                userPosition = data.position;
+                userPositionLat = data.position.latitude;
+                userPositionLong = data.position.longitude;
                 userCountry = data.country.name;
                 userCity = data.country.name;
 
-                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPosition:userPosition ,userCountry:userCountry, userCity:userCity};
+                console.log( userPositionLat+ "+" + userPositionLong );
+
+                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
                 $.post( '/progect', parameters, function(data) {
                    
                 });

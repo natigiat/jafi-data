@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
+// var $ = require('jQuery');
+var S = require('string');
+var moment = require('moment');
 
 var Progect = require('../modules/progect.js');
+var Manage = require('../modules/manage.js');
 
 /* GET home page. */
 
@@ -57,15 +61,58 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
    var id = req.params.id;
    var progectName = req.params.progect;
 
-   console.log(progectName);
+  
 
 
-   Progect.SelectProgect(id , progectName , function(err , progect){
-      if(progect){
-        console.log(progect);
-        res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id, progectName:progectName});
+   Manage.checkProjectExsistById(id , function(err , progectManage){
+      if(progectManage){
+        
+        console.log(progectManage);
+        
+        var count = 0;
+        for(var i=0 in progectManage) {
+          var today = moment().format('YYYY-MM-DD');;
+
+          // console.log(progectManage[i].userDate);
+          var dates = S(progectManage[i].userDate).left(10).s;
+          if (dates == today){
+            // progectManage[i]
+            count++
+          }
+
+          
+        }
+      
+        
+        //find the totla numbers of viewrs
+        Manage.count({progectId: id}, function(err, c)
+        {
+          // console.log('Count is ' + c);
+
+          Progect.SelectProgect(id , progectName , function(err , progect){
+            if(progect){
+              res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id, progectName:progectName, total:c ,today:count , progectManage:progectManage});
+            }
+          });
+
+        });
+
+        
+
+        
+
+      }else{
+        Progect.SelectProgect(id , progectName , function(err , progect){
+          if(progect){
+            res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id, progectName:progectName});
+          }
+        });
       }
+
    });
+
+
+   
 
 
   

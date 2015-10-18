@@ -35,6 +35,8 @@
     "bootstrap-modal": "~2.2.6",
     "icheck": "~1.0.2",
     "list.js": "~1.1.1",
-    "adaptive.background": "~1.0.3"
+    "adaptive.background": "~1.0.3",
+    "gmaps": "~0.4.21",
+    "heatmap.js.bower": "*"
   }
 }

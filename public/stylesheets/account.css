@@ -137,7 +137,7 @@
   padding: 20px 18px;
 }
 
-.setting .weather .header {
+.setting .todayUsers .header {
   border-radius: 5px 5px 0 0;
   padding: 20px 0;
   background: #dd5555;
@@ -145,11 +145,21 @@
   color: #fff;
   font-size: 3.125em;
 }
-.setting .weather [class*="icon-"] {
+
+.setting .totalUsers .header {
+  border-radius: 5px 5px 0 0;
+  padding: 20px 0;
+  background: #4B71A0;
+  text-align: center;
+  color: #fff;
+  font-size: 3.125em;
+}
+
+.setting .todayUsers [class*="icon-"] {
   position: relative;
   top: 2px;
 }
-.setting .weather article {
+.setting .todayUsers article ,  .setting .totalUsers article  {
   text-align: center;
   padding: 5px 0;
 }
@@ -478,4 +488,12 @@ thead tr {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);     
+}
+
+
+/*google maps*/
+
+#map {
+    width: 100%;
+    height: 470px;
 }

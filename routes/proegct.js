@@ -19,5 +19,20 @@ router.get('/:id/:progect', function(req, res, next) {
 });
 
 
+/* GET home page. */
+router.get('view/:progectId/:progect', function(req, res, next) {
+  // var userId = req.user.id;
+  var id = req.params.id;
+  var progect = req.params.progect;
+
+  Progect.SelectProgect(id , progect , function(err , progect){
+  	if(progect){
+		res.render('progect', {  title: 'Account' , progect:progect ,progectName: progect.name});
+	}
+  });
+  
+});
+
+
 
 module.exports = router;

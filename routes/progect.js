@@ -22,22 +22,26 @@ router.get('/:id/:progect', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	
-	var userId = req.user.id;
+	// var userId = req.user.id;
+
 
     var progectId =req.body.progectId;
 	var userIp = req.body.userIp;
 	var userDate = req.body.userDate;
-	var userPosition = req.body.userPosition;
+	var userPositionLat = req.body.userPositionLat;
+    var userPositionLong = req.body.userPositionLong;
 	var userCountry = req.body.userCountry;
 	var userCity = req.body.userCity;
+	console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCountry + "+" + userCity);
 
-	console.log(progectId);
+	// console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCount + "+" + userCity);
 	
 	var newManage = new Manage ({
 	    progectId: progectId,
 	    userIp: userIp,
 	    userDate : userDate,
-	    userPosition: userPosition,
+	    userPositionLat :userPositionLat ,
+	    userPositionLong :userPositionLong ,
 		userCountry: userCountry,
 		userCity: userCity
 	});

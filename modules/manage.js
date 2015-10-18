@@ -7,12 +7,10 @@ var uniqueValidator = require('mongoose-unique-validator');
 var ManageSchema = mongoose.Schema({
 	progectId: { type: String , required: true},
 	userDate  : { type: String},
-	userPosition : { type: String},
+	userPositionLat : { type: String},
+    userPositionLong : { type: String},
 	userCountry: { type: String},
 	userCity: { type: String},
-
-
-
 });
 
 // ProgectSchema.plugin(uniqueValidator);
@@ -26,6 +24,11 @@ module.exports.checkProjectExsist = function(progetcName , callback){
 	Manage.findOne(query , callback);
 }
 
+//check if progect exsist by id
+module.exports.checkProjectExsistById = function(progetcId , callback){
+	var query = {progectId : progetcId};
+	Manage.find(query , callback);
+}
 
 
 

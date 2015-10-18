@@ -2,6 +2,7 @@ extends layout
 
 block content
     .col-sm-10.col-sm-offset-1.setting.mainWrapper
+      .mainWrapper
         .col-sm-4
           section.box.widget.locations
             .avatar
@@ -87,7 +88,7 @@ block content
                 a(href='#')
                   span.icon-home
                   br
-                  span.title Home
+                  span.title Main
               li
                 a(href='')
                   span.icon-images
@@ -120,46 +121,63 @@ block content
                   span.title Location
           .inner_container
             .col-sm-3
+              input(type='hidden' class='progectManage' val='#{progectManage}') 
               section.box.widget.video
                 img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_video.png', alt='')
-              section.box.widget.weather
+              section.box.widget.todayUsers
                 header.header
                   .temp
-                    | 10° 
+                    | #{today} 
                     span.icon-brightness-half
                   span.icon-partlycloudy
                 article
-                  h2 Saturday 16 January
-            .col-sm-3
-              article.box.post
-                .image
-                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_post.png')
-                .details
-                  h2 Amsterdan
-                  p
-                    | Amsterdam is the capital city of and the most populous within the Kingdom of the Netherlands. Amsterdam's name derives from Amstelredamme. Amsterdam is located in the western... Netherlands
-            .col-sm-3
-              section.box.widget.audio
-                .image
-                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_audio.png')
-                .details
-                  h2.album Geef mij maar Amsterdam
-                  p.artist Johnny Jordaan
-                  .player
-                    .bar
-                      .progress(data-time='1:45')
-                    .actions
-                      a.btn(href='#')
-                        span.icon-arrow-left
-                      a.btn.btn-primary(href='#')
-                        span.icon-pause
-                      a.btn(href='#')
-                        span.icon-arrow-right
-            .col-sm-3
-              section.box.widget.find
-                input(type='text', name='find', placeholder='Find your city place')
-                label.checkbox(for='favorite')
-                  input#favorite(type='checkbox', name='favorite')
-                  |             Add to favorites
-                a.btn.btn-primary.btn-large.btn-block(href='#') Search
+                  h2 Today Users
+              section.box.widget.totalUsers
+                header.header
+                  .temp
+                    | #{total} 
+                    span.icon-brightness-half
+                  span.icon-partlycloudy
+                article
+                  h2 Total Users
+            .col-sm-9
+              div(id='map')
+            
+      
+      script(type='text/javascript').
+       jQuery(document).ready(function($) {
 
+
+           var progect =!{JSON.stringify(progectManage)}
+          
+
+           var count = $('.totalUsers').find('.temp').text();
+           
+           var map = new GMaps({
+              el: '#map',
+              zoom:2,
+              center: {lat: 31.5, lng: 34.75},
+           });  
+
+           for (i = 0; i < count; i++) { 
+               var userCuntry = progect[i].userCountry;
+               var userDate = progect[i].userDate;
+               var userLat = progect[i].userPositionLat;
+               var userLong = progect[i].userPositionLong;
+     
+                map.addMarker({
+                  lat: userLat,
+                  lng: userLong,
+                  title: userCuntry,
+                  click: function(e) {
+                    alert('You clicked in this marker');
+                  }
+                });
+           }
+
+
+        
+
+          
+       });
+        
