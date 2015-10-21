@@ -9,7 +9,7 @@
     color: #6BB0EC;
 }
 
-.scanner .nav>li>a:hover {
+.scanner .scannerNav a:hover {
     text-decoration: none;
     color: #fff!important;
     background-color: #2E82C9!important;
