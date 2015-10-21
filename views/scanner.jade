@@ -29,105 +29,119 @@ block content
     
     //-************************center*******************************
     .ui-layout-center
+          //- add menu
           nav.menu
             input#menu-open.menu-open(type='checkbox', href='#', name='menu-open')
             label.menu-open-button(for='menu-open')
               span.hamburger.hamburger-1
               span.hamburger.hamburger-2
               span.hamburger.hamburger-3
-            a.menu-item(href='#')
-              i.fa.fa-bar-chart
-            a.menu-item(href='#')
-              i.fa.fa-plus
-            a.menu-item(href='#')
-              i.fa.fa-heart
-            a.menu-item(href='#')
-              i.fa.fa-envelope
-            a.menu-item(href='#')
-              i.fa.fa-cog   
           div#drow
             ol#selectable.parent
               div.child.layer
 
-            side-bar
-              tabs
-                tab.layers(target='layers', touch-action='none')
-                tab.basic(target='basic', touch-action='none')
-                tab.border(target='border', touch-action='none')
-                tab.shadows(target='shadows', touch-action='none')
-                tab.text(target='text', touch-action='none')
-                tab.text-shadow(target='text-shadow', touch-action='none')
-                tab.filter(target='filter', touch-action='none')
-                tab.transform(target='transform', touch-action='none')
-                tab.settings(target='settings', touch-action='none')
+            //- add modal
+          p
+            .stream-0.modal
+              .sharing
+              .image
+                img(src='http://artsmc.net/codepen/chompstrap-framework/modal/images/wide_3.jpg')
+              .userData
+                | From: 
+                a(href='#') @GETFREEE
+                |  RT 
+                a(href='#') @RobinandOtto
+                |  ohh snap a short tweet 
+                a(href='#') http://t.co/qovKIad5
+             
+              .userMes
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet orci mattis, interdum lorem nec, elementum dolor. Aenean et arcu viverra velit volutpat dignissim. Donec hendrerit diam vitae magna pulvinar hendrerit. Mauris sit amet massa quis elit tristique iaculis. Sed posuere libero eu neque fringilla fermentum. Proin lorem nunc, malesuada in odio ac, bibendum pharetra ipsum. Sed pharetra tincidunt mauris. In convallis sem sem, in dictum dui gravida hendrerit. Pellentesque sed nisl id erat iaculis porttitor.
+                  br
+             
+              .admin Code goes here with a form
+              .shedule Code goes here with a form
+   
+
+            //- side-bar
+            //-   tabs
+            //-     tab.layers(target='layers', touch-action='none')
+            //-     tab.basic(target='basic', touch-action='none')
+            //-     tab.border(target='border', touch-action='none')
+            //-     tab.shadows(target='shadows', touch-action='none')
+            //-     tab.text(target='text', touch-action='none')
+            //-     tab.text-shadow(target='text-shadow', touch-action='none')
+            //-     tab.filter(target='filter', touch-action='none')
+            //-     tab.transform(target='transform', touch-action='none')
+            //-     tab.settings(target='settings', touch-action='none')
 
 
-              //-layers
-              tab.active(name='layers')
+            //-   //-layers
+            //-   tab.active(name='layers')
                 
-                panel(name='layers')
-                    legend Layers
-                    menu
-                      menu-item(action='up')
-                      menu-item(action='down')
-                      menu-item(action='remove')
-                      menu-item.add(action='add')
-                      menu-item(action='clone')
+            //-     panel(name='layers')
+            //-         legend Layers
+            //-         menu
+            //-           menu-item(action='up')
+            //-           menu-item(action='down')
+            //-           menu-item(action='remove')
+            //-           menu-item.add(action='add')
+            //-           menu-item(action='clone')
                     
-                    ul#sortable
-                      layer-item
-                        icon.eye.selected.active
-                        icon.lock
-                        input(spellcheck='false')
+            //-         ul#sortable
+            //-           layer-item
+            //-             icon.eye.selected.active
+            //-             icon.lock
+            //-             input(spellcheck='false')
 
-                panel(name='basic' style="display:none;")
-                    legend Basic
-                    field(type='input')
-                        input-number(class="inputwidth" , label='width:') 
-                    field(type='input')
-                        input-number( class="inputheight" , label='Height:') 
-                    field(type='input')
-                        input-number(class="inputfillOpacity" , label='opacity:') 
-                    field(type="select")
-                      label overflow
-                      select 
-                        option(value="visible") visible
-                        option(value="hidden") hidden
-                        option(value="scroll") scroll
-                        option(value="auto") auto
+            //-     panel(name='basic' style="display:none;")
+            //-         legend Basic
+            //-         field(type='input')
+            //-             input-number(class="inputwidth" , label='width:') 
+            //-         field(type='input')
+            //-             input-number( class="inputheight" , label='Height:') 
+            //-         field(type='input')
+            //-             input-number(class="inputfillOpacity" , label='opacity:') 
+            //-         field(type="select")
+            //-           label overflow
+            //-           select 
+            //-             option(value="visible") visible
+            //-             option(value="hidden") hidden
+            //-             option(value="scroll") scroll
+            //-             option(value="auto") auto
 
                     
-                    legend Background
+            //-         legend Background
 
-                    field(type='input')
-                        input-number(class="inputbsckgroundColor" ,label='bg:')
-                    field(type='input')
-                        input-number(class="inputbsckgroundImage" ,label='bg image:')
-                    field(type='input')
-                        input-number(class="inputbackgroundSize" ,label='bg size:')
-                    field(type='input')
-                        input-number(class="inputbackgroundRepeat" ,label='bg repeat:')
+            //-         field(type='input')
+            //-             input-number(class="inputbsckgroundColor" ,label='bg:')
+            //-         field(type='input')
+            //-             input-number(class="inputbsckgroundImage" ,label='bg image:')
+            //-         field(type='input')
+            //-             input-number(class="inputbackgroundSize" ,label='bg size:')
+            //-         field(type='input')
+            //-             input-number(class="inputbackgroundRepeat" ,label='bg repeat:')
 
-                   div#colorPicker
-                    a.color
-                      div.colorInner
-                    div.track
-                    ul.dropdown
-                    input(type="hidden" class="colorInput")
+            //-        div#colorPicker
+            //-         a.color
+            //-           div.colorInner
+            //-         div.track
+            //-         ul.dropdown
+            //-         input(type="hidden" class="colorInput")
             
                          
 
 
                 
 
-                panel(name='border' style="display:none;")
-                    legend Border
-                    menu
-                      menu-item(action='up')
-                      menu-item(action='down')
-                      menu-item(action='remove')
-                      menu-item.add(action='add')
-                      menu-item(action='clone')
+            //-     panel(name='border' style="display:none;")
+            //-         legend Border
+            //-         menu
+            //-           menu-item(action='up')
+            //-           menu-item(action='down')
+            //-           menu-item(action='remove')
+            //-           menu-item.add(action='add')
+            //-           menu-item(action='clone')
                    
 
 

@@ -4,13 +4,6 @@ var $box = $('#colorPicker');
 $box.tinycolorpicker();
 var box = $box.data("plugin_tinycolorpicker")
 
-box.setColor("#ff0000");
-
-
-    
-
-
-
 
 	$('body').on('click',  '.itemSubText' , function() {
 		tinymce.init({

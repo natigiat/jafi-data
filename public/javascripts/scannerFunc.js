@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
 	
 
+    $('.menu-open').click(function (event){
+		modalFun('.stream-0');
+	});
     
     //add intro 
 	// introJs().start();
