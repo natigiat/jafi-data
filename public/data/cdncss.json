@@ -1,0 +1,981 @@
+[
+  {
+    "name": "1140",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/1140/2.0/1140.min.css",
+    "tokens": [
+      "1140",
+      "1140"
+    ]
+  },
+  {
+    "name": "16pixels",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/16pixels/0.1.5/16pixels.min.css",
+    "tokens": [
+      "16pixels",
+      "16pixels"
+    ]
+  },
+  {
+    "name": "960gs",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/960gs/0/960.min.css",
+    "tokens": [
+      "960",
+      "960gs",
+      "grid system",
+      "960gs"
+    ]
+  },
+  {
+    "name": "Buttons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.min.css",
+    "tokens": [
+      "buttons",
+      "sass",
+      "scss",
+      "css",
+      "css buttons",
+      "sass buttons",
+      "Buttons"
+    ]
+  },
+  {
+    "name": "DinaKit",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/DinaKit/1.2/css/cdn_dinakit.min.css",
+    "tokens": [
+      "dinakit",
+      "css",
+      "dinakit.css",
+      "dinakit.min.css",
+      "html",
+      "html5",
+      "css",
+      "css3",
+      "framework",
+      "DinaKit"
+    ]
+  },
+  {
+    "name": "FrozenUI",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/FrozenUI/1.3.0/css/frozen.css",
+    "tokens": [
+      "FrozenUI"
+    ]
+  },
+  {
+    "name": "Han",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.6/han.min.css",
+    "tokens": [
+      "CJK",
+      "normalize",
+      "typography",
+      "typesetting",
+      "Han"
+    ]
+  },
+  {
+    "name": "SlickNav",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.4/slicknav.min.css",
+    "tokens": [
+      "SlickNav",
+      "responsive menu",
+      "jquery",
+      "SlickNav"
+    ]
+  },
+  {
+    "name": "WebRupee",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/WebRupee/2.0/font.min.css",
+    "tokens": [
+      "rupee",
+      "WebRupee",
+      "WebRupee"
+    ]
+  },
+  {
+    "name": "aegis",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/aegis/1.3.3/aegis.min.css",
+    "tokens": [
+      "playlyfe",
+      "gamification",
+      "css-framework",
+      "styles",
+      "aegis"
+    ]
+  },
+  {
+    "name": "allmighty-autocomplete",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/allmighty-autocomplete/1.0.140706/autocomplete.min.css",
+    "tokens": [
+      "autocomplete",
+      "angularjs",
+      "allmighty-autocomplete"
+    ]
+  },
+  {
+    "name": "angular-material",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.1/angular-material.min.css",
+    "tokens": [
+      "angular-material"
+    ]
+  },
+  {
+    "name": "angular-motion",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/angular-motion/0.4.3/angular-motion.min.css",
+    "tokens": [
+      "angular",
+      "animation",
+      "angular-motion"
+    ]
+  },
+  {
+    "name": "animate.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css",
+    "tokens": [
+      "animation",
+      "css",
+      "animate.css"
+    ]
+  },
+  {
+    "name": "authy-forms.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/authy-forms.css/2.2/form.authy.min.css",
+    "tokens": [
+      "authy",
+      "authentication",
+      "two factor authentication",
+      "authy-forms.css"
+    ]
+  },
+  {
+    "name": "awesome-bootstrap-checkbox",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.5/awesome-bootstrap-checkbox.min.css",
+    "tokens": [
+      "awesome-bootstrap-checkbox"
+    ]
+  },
+  {
+    "name": "basics",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/basics/1.2.2/basics.css",
+    "tokens": [
+      "basic",
+      "css",
+      "defaults",
+      "basics"
+    ]
+  },
+  {
+    "name": "bigfishtv-turret",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/bigfishtv-turret/3.1.2/turret.min.css",
+    "tokens": [
+      "css",
+      "less",
+      "responsive",
+      "front-end",
+      "framework",
+      "web",
+      "bigfishtv-turret"
+    ]
+  },
+  {
+    "name": "bootstrap-rtl",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css",
+    "tokens": [
+      "twitter",
+      "bootstrap",
+      "rtl",
+      "css",
+      "persian",
+      "farsi",
+      "arabic",
+      "hebrew",
+      "theme",
+      "bootstrap-rtl"
+    ]
+  },
+  {
+    "name": "bootstrap-social",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.min.css",
+    "tokens": [
+      "bootstrap",
+      "social",
+      "buttons",
+      "bootstrap-social"
+    ]
+  },
+  {
+    "name": "bootswatch",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/custom/bootstrap.min.css",
+    "tokens": [
+      "css",
+      "bootswatch"
+    ]
+  },
+  {
+    "name": "caiuss",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/caiuss/1.0.2/caiuss.min.css",
+    "tokens": [
+      "caiuss",
+      "css",
+      "framework",
+      "minimalist",
+      "caiuss"
+    ]
+  },
+  {
+    "name": "cascade-framework",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/cascade-framework/1.5.0/css/build-full.min.css",
+    "tokens": [
+      "cascade",
+      "CSS",
+      "OOCSS",
+      "frontend",
+      "bootstrap",
+      "foundation",
+      "grid",
+      "system",
+      "framework",
+      "responsive",
+      "cascade-framework"
+    ]
+  },
+  {
+    "name": "cc-icons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css",
+    "tokens": [
+      "creative",
+      "commons",
+      "css",
+      "font",
+      "library",
+      "icons",
+      "cc-icons"
+    ]
+  },
+  {
+    "name": "chrome-bootstrap",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/chrome-bootstrap/1.5.0/chrome-bootstrap.min.css",
+    "tokens": [
+      "chrome",
+      "bootstrap",
+      "chrome-bootstrap"
+    ]
+  },
+  {
+    "name": "colors",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/colors/1.0/colors.min.css",
+    "tokens": [
+      "css",
+      "colors",
+      "html",
+      "new",
+      "colors"
+    ]
+  },
+  {
+    "name": "css-social-buttons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.1.1/css/zocial.min.css",
+    "tokens": [
+      "css",
+      "font",
+      "icon",
+      "social",
+      "zocial",
+      "css-social-buttons"
+    ]
+  },
+  {
+    "name": "css-spinning-spinners",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/1.1.1/load1.css",
+    "tokens": [
+      "CSS",
+      "spinner",
+      "loader",
+      "css-spinning-spinners"
+    ]
+  },
+  {
+    "name": "devicons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css",
+    "tokens": [
+      "font",
+      "icons",
+      "devicons",
+      "glyphs",
+      "devicons"
+    ]
+  },
+  {
+    "name": "ember-charts",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/ember-charts/0.4.0/ember-charts.min.css",
+    "tokens": [
+      "ember",
+      "charts",
+      "d3",
+      "ember-charts"
+    ]
+  },
+  {
+    "name": "flag-icon-css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css",
+    "tokens": [
+      "flag-icon-css"
+    ]
+  },
+  {
+    "name": "flat-ui",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css",
+    "tokens": [
+      "ui",
+      "flat",
+      "bootstrap",
+      "flat-ui"
+    ]
+  },
+  {
+    "name": "flexslider",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/flexslider.min.css",
+    "tokens": [
+      "utility",
+      "popular",
+      "flexslider"
+    ]
+  },
+  {
+    "name": "font-awesome",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css",
+    "tokens": [
+      "css",
+      "font",
+      "icons",
+      "font-awesome"
+    ]
+  },
+  {
+    "name": "fullPage.js",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.2/jquery.fullPage.min.css",
+    "tokens": [
+      "jquery",
+      "scrolling",
+      "single_page",
+      "one_page",
+      "sliding",
+      "fullPage.js"
+    ]
+  },
+  {
+    "name": "furtive",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/furtive/2.2.3/furtive.min.css",
+    "tokens": [
+      "furtive",
+      "css",
+      "framework",
+      "microframework",
+      "scss",
+      "stylus",
+      "furtive"
+    ]
+  },
+  {
+    "name": "github-fork-ribbon-css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css",
+    "tokens": [
+      "css",
+      "fork",
+      "Github",
+      "ribbon",
+      "github-fork-ribbon-css"
+    ]
+  },
+  {
+    "name": "gridforms",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/gridforms/1.0.4/gridforms.min.css",
+    "tokens": [
+      "Responsive",
+      "Grid",
+      "Forms",
+      "gridforms"
+    ]
+  },
+  {
+    "name": "gumby",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/gumby/2.6.0/css/gumby.min.css",
+    "tokens": [
+      "css",
+      "gumby",
+      "responsive",
+      "gumby"
+    ]
+  },
+  {
+    "name": "hint.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/hint.css/1.3.5/hint.min.css",
+    "tokens": [
+      "tooltip",
+      "ui",
+      "sass",
+      "css",
+      "help",
+      "hint",
+      "hint.css"
+    ]
+  },
+  {
+    "name": "hover.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css",
+    "tokens": [
+      "2d",
+      "3d",
+      "CSS",
+      "CSS3",
+      "animations",
+      "effects",
+      "transitions",
+      "hover.css"
+    ]
+  },
+  {
+    "name": "icono",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/icono/1.3.0/icono.min.css",
+    "tokens": [
+      "css",
+      "icons",
+      "ui",
+      "icono",
+      "icono"
+    ]
+  },
+  {
+    "name": "ionicons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css",
+    "tokens": [
+      "font",
+      "icon",
+      "ionicons"
+    ]
+  },
+  {
+    "name": "jasny-bootstrap",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css",
+    "tokens": [
+      "twitter bootstrap",
+      "bootstrap",
+      "css",
+      "jasny-bootstrap"
+    ]
+  },
+  {
+    "name": "jquery-timepicker",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.1/jquery.timepicker.min.css",
+    "tokens": [
+      "timepicker",
+      "time",
+      "picker",
+      "ui",
+      "google calendar",
+      "jquery-timepicker"
+    ]
+  },
+  {
+    "name": "jquery-ui-bootstrap",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css",
+    "tokens": [
+      "jquery",
+      "bootstrap",
+      "jquery-ui-bootstrap"
+    ]
+  },
+  {
+    "name": "jquery.nanoscroller",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/jquery.nanoscroller/0.8.7/css/nanoscroller.min.css",
+    "tokens": [
+      "scrollbar",
+      "custom",
+      "lion",
+      "jquery",
+      "jquery.nanoscroller"
+    ]
+  },
+  {
+    "name": "kube",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/kube/3.0.2/css/kube.min.css",
+    "tokens": [
+      "kube",
+      "design",
+      "kube"
+    ]
+  },
+  {
+    "name": "label.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/label.css/0.1.1/label.min.css",
+    "tokens": [
+      "label.css"
+    ]
+  },
+  {
+    "name": "loaders.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/loaders.css/0.1.1/loaders.min.css",
+    "tokens": [
+      "css",
+      "loader",
+      "animation",
+      "animate",
+      "loaders.css"
+    ]
+  },
+  {
+    "name": "m8tro-bootstrap",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/m8tro-bootstrap/3.3.5/m8tro.min.css",
+    "tokens": [
+      "css",
+      "less",
+      "bootstrap",
+      "modern ui",
+      "metro",
+      "metro ui",
+      "windows 8",
+      "windows 10",
+      "windows phone",
+      "m8tro-bootstrap"
+    ]
+  },
+  {
+    "name": "magic",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css",
+    "tokens": [
+      "css",
+      "css3",
+      "magic",
+      "animations",
+      "magic"
+    ]
+  },
+  {
+    "name": "marx",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css",
+    "tokens": [
+      "marx",
+      "karl",
+      "mblode",
+      "matthew blode",
+      "matt",
+      "blode",
+      "layout",
+      "framework",
+      "css",
+      "sass",
+      "scss",
+      "web",
+      "frontend",
+      "bootstrap",
+      "pure",
+      "markdown",
+      "format",
+      "classless",
+      "marx"
+    ]
+  },
+  {
+    "name": "material-design-iconic-font",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css",
+    "tokens": [
+      "material",
+      "design",
+      "css",
+      "font",
+      "icons",
+      "material-design-iconic-font"
+    ]
+  },
+  {
+    "name": "materialize",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css",
+    "tokens": [
+      "materialize"
+    ]
+  },
+  {
+    "name": "meyer-reset",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css",
+    "tokens": [
+      "css",
+      "reset",
+      "meyer-reset"
+    ]
+  },
+  {
+    "name": "normalize",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css",
+    "tokens": [
+      "cross browser",
+      "normalize"
+    ]
+  },
+  {
+    "name": "octicons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css",
+    "tokens": [
+      "GitHub",
+      "icons",
+      "font",
+      "web font",
+      "icon font",
+      "octicons"
+    ]
+  },
+  {
+    "name": "paymentfont",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/paymentfont/1.1.2/css/paymentfont.min.css",
+    "tokens": [
+      "payment",
+      "font",
+      "icons",
+      "paymentfont"
+    ]
+  },
+  {
+    "name": "pure",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css",
+    "tokens": [
+      "css",
+      "framework",
+      "responsive",
+      "pure"
+    ]
+  },
+  {
+    "name": "quill",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/quill/0.20.0/quill.base.min.css",
+    "tokens": [
+      "editor",
+      "rich text",
+      "wysiwyg",
+      "quill"
+    ]
+  },
+  {
+    "name": "rangeslider.js",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.0.2/rangeslider.min.css",
+    "tokens": [
+      "input",
+      "range",
+      "slider",
+      "rangeslider",
+      "rangeslider.js",
+      "polyfill",
+      "browser",
+      "jquery-plugin",
+      "rangeslider.js"
+    ]
+  },
+  {
+    "name": "responsive-nav.js",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.39/responsive-nav.min.css",
+    "tokens": [
+      "responsive-nav",
+      "responsive",
+      "navigation",
+      "CSS3",
+      "responsive-nav.js"
+    ]
+  },
+  {
+    "name": "s3colors",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/s3colors/1.0/s3-colors.min.css",
+    "tokens": [
+      "css colors",
+      "css colors name",
+      "s3colors"
+    ]
+  },
+  {
+    "name": "sanitize.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css",
+    "tokens": [
+      "css",
+      "normalize",
+      "sanitize",
+      "sanitize.css"
+    ]
+  },
+  {
+    "name": "sco.js",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/sco.js/1.1.0/css/scojs.min.css",
+    "tokens": [
+      "scojs",
+      "sco.js",
+      "twitter",
+      "bootstrap",
+      "twitter-bootstrap",
+      "sco.js"
+    ]
+  },
+  {
+    "name": "select2-bootstrap-css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css",
+    "tokens": [
+      "bootstrap",
+      "select2",
+      "css",
+      "select2-bootstrap-css"
+    ]
+  },
+  {
+    "name": "simple-line-icons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.1/css/simple-line-icons.min.css",
+    "tokens": [
+      "icon",
+      "simple",
+      "line",
+      "css",
+      "webfont",
+      "fonts",
+      "simple-line",
+      "simple-line-icons"
+    ]
+  },
+  {
+    "name": "skeleton",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
+    "tokens": [
+      "css",
+      "boilerplate",
+      "grid",
+      "responsive",
+      "skeleton"
+    ]
+  },
+  {
+    "name": "startbootstrap-landing-page",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-landing-page/1.0.4/css/landing-page.min.css",
+    "tokens": [
+      "bootstrap",
+      "theme",
+      "startbootstrap-landing-page"
+    ]
+  },
+  {
+    "name": "startbootstrap-stylish-portfolio",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-stylish-portfolio/1.0.3/css/stylish-portfolio.min.css",
+    "tokens": [
+      "bootstrap",
+      "theme",
+      "startbootstrap-stylish-portfolio"
+    ]
+  },
+  {
+    "name": "sweetalert",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css",
+    "tokens": [
+      "alert",
+      "modal",
+      "sweetalert"
+    ]
+  },
+  {
+    "name": "tachyons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/tachyons/3.0.1/tachyons.min.css",
+    "tokens": [
+      "css",
+      "sass",
+      "oocss",
+      "performance",
+      "tachyons",
+      "tachyons.css",
+      "tachyons"
+    ]
+  },
+  {
+    "name": "timeline.css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/timeline.css/1.0.0/timeline.min.css",
+    "tokens": [
+      "timeline",
+      "dynamic",
+      "responsive",
+      "timeline.css"
+    ]
+  },
+  {
+    "name": "toast-css",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/toast-css/1.0.0/grid.min.css",
+    "tokens": [
+      "toast",
+      "css",
+      "toast-css"
+    ]
+  },
+  {
+    "name": "topcoat-icons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/topcoat-icons/0.1.0/font/icomatic.css",
+    "tokens": [
+      "css",
+      "web",
+      "icons",
+      "svg",
+      "font",
+      "topcoat-icons"
+    ]
+  },
+  {
+    "name": "topcoat",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css",
+    "tokens": [
+      "library",
+      "BEM",
+      "performance",
+      "clean",
+      "fast",
+      "css",
+      "web",
+      "mobile",
+      "desktop",
+      "topcoat"
+    ]
+  },
+  {
+    "name": "typeplate-starter-kit",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/typeplate-starter-kit/2.1.0/css/typeplate.min.css",
+    "tokens": [
+      "typeplate",
+      "starter",
+      "kit",
+      "typographic",
+      "pattern",
+      "typeplate-starter-kit"
+    ]
+  },
+  {
+    "name": "unsemantic",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/unsemantic/1.0.2/unsemantic-grid-responsive.min.css",
+    "tokens": [
+      "unsemantic",
+      "unsemantic grid",
+      "responsive grid",
+      "grid system",
+      "unsemantic"
+    ]
+  },
+  {
+    "name": "weather-icons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css",
+    "tokens": [
+      "css",
+      "font",
+      "icons",
+      "weather",
+      "weather-icons"
+    ]
+  },
+  {
+    "name": "web-starter-kit",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/web-starter-kit/0.2.0-beta/styles/main.min.css",
+    "tokens": [
+      "google",
+      "boilerplate",
+      "web-starter-kit"
+    ]
+  },
+  {
+    "name": "webicons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons.min.css",
+    "tokens": [
+      "icons",
+      "svg",
+      "webicons"
+    ]
+  },
+  {
+    "name": "wuzzle",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/wuzzle/1.1.0/wuzzle.min.css",
+    "tokens": [
+      "wuzzle",
+      "ws1",
+      "grid",
+      "css",
+      "wuzzle"
+    ]
+  },
+  {
+    "name": "yamlcss",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/yamlcss/4.1.2/core/base.min.css",
+    "tokens": [
+      "yaml",
+      "css",
+      "framework",
+      "yamlcss"
+    ]
+  },
+  {
+    "name": "css-social-buttons",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.1.1/css/zocial.min.css",
+    "tokens": [
+      "css",
+      "font",
+      "icon",
+      "social",
+      "zocial",
+      "css-social-buttons"
+    ]
+  },
+  {
+    "name": "zurb-ink",
+    "value": "https://cdnjs.cloudflare.com/ajax/libs/zurb-ink/1.0.5/ink.min.css",
+    "tokens": [
+      "ink",
+      "css",
+      "email",
+      "html",
+      "zurb",
+      "zurb-ink"
+    ]
+  },
+  {
+    "name": "Foundation 5.3.3",
+    "value": "https://cdn.jsdelivr.net/foundation/5.5.0/css/foundation.css",
+    "tokens": [
+      "foundation",
+      "zurb"
+    ]
+  },
+  {
+    "name": "Bootstrap 3.2.0",
+    "value": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css",
+    "tokens": [
+      "bootstrap"
+    ]
+  },
+  {
+    "name": "Metro",
+    "value": "https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro.min.css",
+    "tokens": [
+      "metro"
+    ]
+  },
+  {
+    "name": "Metro Responsive",
+    "value": "https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-responsive.min.css",
+    "tokens": [
+      "metro"
+    ]
+  },
+  {
+    "name": "Metro Schemes",
+    "value": "https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-schemes.min.css",
+    "tokens": [
+      "metro"
+    ]
+  },
+  {
+    "name": "Metro RTL",
+    "value": "https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-rtl.min.css",
+    "tokens": [
+      "metro"
+    ]
+  },
+  {
+    "name": "Metro Icons",
+    "value": "https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-icons.min.css",
+    "tokens": [
+      "metro"
+    ]
+  }
+]
