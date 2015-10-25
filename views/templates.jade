@@ -114,7 +114,7 @@ block content
                    a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
               div.col-sm-12.temlatesButtons
                    
-                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/"+val._id +"/" +val.name +"/edit/" +userId).progectLink= "Edit"
+                   a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/edit/"+val._id +"/#{userId}").progectLink= "Edit"
                
                    a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6(href="/progect/"+val._id +"/" +val.name  ).progectLinkView= "View"
               input(type="hidden" class="pr" value=val.id)

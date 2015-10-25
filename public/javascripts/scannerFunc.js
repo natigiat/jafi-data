@@ -2,7 +2,12 @@ jQuery(document).ready(function($) {
 	
 
     $('.menu-open').click(function (event){
-		modalFun('.stream-0');
+		if($('#modal-overlay').length < 1 ){
+			modalFun('.stream-0');
+		}else{
+			$('#modal-overlay').show();
+		}
+		
 	});
     
     //add intro 

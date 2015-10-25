@@ -1,4 +1,4 @@
-.modal-backdrop {
+  .modal-backdrop {
   -webkit-backface-visibility: hidden;
 }
 .modal-backdrop.zoom,
@@ -445,7 +445,7 @@ svg:not(:root) {
   height: 30%;
   width: 100%;
 }
-.modal {
+.modal-overlay .modal {
   display: none;
   height: 0px;
   width: 0px;
@@ -461,7 +461,7 @@ svg:not(:root) {
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.modal-wrapper {
+.modal-overlay .modal-wrapper {
   position: absolute;
   /*Center Overlay*/
   top: 60px;
@@ -491,7 +491,7 @@ svg:not(:root) {
   background-color: #ffffff;
   overflow: hidden;
 }
-.modal-content {
+.modal-overlay .modal-content {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -499,7 +499,7 @@ svg:not(:root) {
   left: 0;
   height: 100%;
 }
-.modal-close {
+.modal-overlay .modal-close {
   position: absolute;
   text-shadow: rgba(0, 0, 0, 0.5) -1px 0, rgba(0, 0, 0, 0.3) 0 -1px, rgba(255, 255, 255, 0.5) 0 1px;
   border-left: 1px solid #b3b3b3;
@@ -510,12 +510,12 @@ svg:not(:root) {
   padding: 6px 23px;
   line-height: 3;
 }
-.modal-close:hover {
+.modal-overlay .modal-close:hover {
   background: #bfbfbf;
   color: #ffffff;
   cursor: pointer;
 }
-.modal-header {
+.modal-overlay .modal-header {
   z-index: 1007;
   color: #666666;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -538,7 +538,7 @@ svg:not(:root) {
   height: 32px;
   padding: 20px;
 }
-.modal-body {
+.modal-overlay .modal-body {
   position: relative;
   display: block;
   overflow: hidden;
