@@ -130,9 +130,9 @@ jQuery(document).ready(function($) {
 	
 	$('.editor').resizable({
       maxHeight: 250,
-      maxWidth: 550,
+      maxWidth: 750,
       minHeight: 150,
-      minWidth: 200
+      minWidth: 20
 	});
 
 

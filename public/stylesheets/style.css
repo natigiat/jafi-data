@@ -224,6 +224,10 @@ li.active{
     font-size: 14px;
 }
 
+#template-js{
+    width: 53%!important; 
+}
+
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
  max-height: 300%!important;
 }

@@ -429,7 +429,7 @@ svg:not(:root) {
     display: none !important;
   }
 }
-
+/******************************************************************************/
 .modal-trigger {
   color: white;
   font-size: 3em;
@@ -546,6 +546,7 @@ svg:not(:root) {
   width: 100%;
   margin-top: 32px;
 }
+/******************************************************************************/
 .share {
   position: absolute;
 }
