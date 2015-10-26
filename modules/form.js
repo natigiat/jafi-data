@@ -21,9 +21,9 @@ var FormSchema = mongoose.Schema({
 var Form = module.exports = mongoose.model('Form' , FormSchema);
 
 //check if progect exsist
-module.exports.checkProjectExsist = function(progetcName , callback){
-	var query = {name : progetcName};
-	Form.findOne(query , callback);
+module.exports.selectFormByProgectId = function(progetcId , callback){
+	var query = {progectId : progetcId};
+	Form.find(query , callback);
 }
 
 

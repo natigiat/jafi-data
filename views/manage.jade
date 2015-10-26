@@ -147,6 +147,29 @@ block content
               .col-sm-9
                 div(id='map')
 
+            .manage3
+                .wrapperTable
+                  .tableManage
+                    .rowManage.header.blue
+                      .cellManage 
+                        | Cuntry 
+                      .cellManage 
+                        | City
+                      .cellManage
+                        | Date
+                      .cellManage
+                        | Flag #{leeds}
+                    each val, index in leeds
+                      .rowManage
+                        .cellManage
+                          =val.name
+                        .cellManage
+                          =val.email
+                        .cellManage
+                           
+                        .cellManage
+                           span(class="flag-icon")
+
             .manage6
                 .wrapperTable
                   .tableManage
