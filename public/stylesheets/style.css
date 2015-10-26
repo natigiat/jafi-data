@@ -224,9 +224,7 @@ li.active{
     font-size: 14px;
 }
 
-#template-js{
-    width: 53%!important; 
-}
+
 
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
  max-height: 300%!important;
@@ -245,7 +243,7 @@ li.active{
 }
 
 .CodeMirror-gutter.CodeMirror-linenumbers {
-    background-color: #3494E5;
+    background-color: #202020;
 }
 
 i.fa.fa-folder-open-o.fa-5x.faNewProgect {
@@ -263,7 +261,8 @@ span.h4.NewProgectTitle {
 }
 
 .CodeMirror-linenumber.CodeMirror-gutter-elt {
-    color: #fff!important;
+    color: #444F4F!important;
+    text-shadow: none!important;
 }
 
 

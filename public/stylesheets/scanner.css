@@ -82,14 +82,25 @@
   margin-top: -6px !important;
 }
 
+.editor .ui-resizable-e {
+    top: 0% !important;
+    height: 100%!important;
+    background: #3494E5!important;
+    width: 25px!important;
+    margin-top: 0px !important;
+}
 
 div#drow {
     z-index: 22222;
     width: 70%;
     display: block;
     margin-left: 3%;
-    border : 1px dashed #3494E5
-;float: left;
+    border : 1px dashed #3494E5;
+    float: left;
+}
+
+#template-js .ui-resizable-e{
+   display: none!important;
 }
 
 .mobileView

@@ -132,9 +132,22 @@ jQuery(document).ready(function($) {
       maxHeight: 250,
       maxWidth: 750,
       minHeight: 150,
-      minWidth: 20
+      minWidth: 20,
+      handles: "e"
 	});
 
+
+    //controle editor resize
+    // template-css
+
+    $('.ui-layout-south').on('mousemove' , '.editerWraper' , function() {
+    var win = $( window ).width();
+    var editor1 = $('#template-html').width();
+    var editor2 =$('#template-css').width();
+    var editor3 = win - (editor1 + editor2);
+
+    $('#template-js').width(editor3 -28);
+    });
 
 
  	
