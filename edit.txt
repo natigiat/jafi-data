@@ -5,3 +5,7 @@ npm install app.json --global
 app.json deploy zeke/rainbowbot
 
 //****and you need to have paytohon on your env
+
+//codepen
+1. http://codepen.io/lukepeters/pen/bfFur - tables
+2. http://codepen.io/puny-d/pen/eygIH - calendar

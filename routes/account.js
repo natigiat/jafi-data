@@ -68,7 +68,6 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
       if(progectManage){
         
         console.log(progectManage);
-        
         var count = 0;
         for(var i=0 in progectManage) {
           var today = moment().format('YYYY-MM-DD');;
@@ -84,14 +83,19 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
         }
       
         
-        //find the totla numbers of viewrs
+        //find the total numbers of viewrs
         Manage.count({progectId: id}, function(err, c)
         {
           // console.log('Count is ' + c);
 
           Progect.SelectProgect(id , progectName , function(err , progect){
             if(progect){
-              res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id, progectName:progectName, total:c ,today:count , progectManage:progectManage});
+              console.log(progect[0]);
+              var Time = progect[0].uploadTime;
+              var uploadTime = moment(Time).format('L');
+              
+
+              res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id,progect:progect,uploadTime:uploadTime, progectName:progectName, total:c ,today:count , progectManage:progectManage });
             }
           });
 

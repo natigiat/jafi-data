@@ -372,19 +372,11 @@
     transform: scale(0.7);
 }
 
-.setting .pre-button {
-    float: left;
-    margin-left: 0.5em;
-}
 
-.setting .next-button {
-    float: right;
-    margin-right: 0.5em;
-}
 
-.setting .head-info {
-    float: left;
-    width: 20em;
+
+.no-padding{
+  padding: 0px!important;
 }
 
 .setting .head-day {
@@ -488,6 +480,60 @@ thead tr {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);     
+}
+
+
+.wrapperTable {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.tableManage {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .tableManage {
+    display: block;
+  }
+}
+
+.rowManage {
+  display: table-row;
+  background: #f6f6f6;
+}
+.rowManage:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.rowManage.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.rowManage.green {
+  background: #27ae60;
+}
+.rowManage.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .rowManage {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cellManage {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cellManage {
+    padding: 2px 12px;
+    display: block;
+  }
 }
 
 

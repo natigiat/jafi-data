@@ -6,7 +6,7 @@ var uniqueValidator = require('mongoose-unique-validator');
 
 var FormSchema = mongoose.Schema({
 	progectId: { type: String , required: true},
-	submitDate  : { type: String},
+	submitDate  : { type : Date, default: Date.now },
 	email : { type: String},
     phone : { type: String},
 	contry: { type: String},
@@ -26,11 +26,6 @@ module.exports.checkProjectExsist = function(progetcName , callback){
 	Form.findOne(query , callback);
 }
 
-//check if progect exsist by id
-module.exports.checkProjectExsistById = function(progetcId , callback){
-	var query = {progectId : progetcId};
-	Form.find(query , callback);
-}
 
 
 

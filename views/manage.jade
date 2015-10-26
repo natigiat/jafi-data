@@ -1,6 +1,7 @@
 extends layout
 
 block content
+     
     .col-sm-10.col-sm-offset-1.setting.mainWrapper
       .mainWrapper
         .col-sm-4
@@ -14,13 +15,14 @@ block content
               a.btn.btn-primary.btn-block.btn-large(href="/scanner/"+userId +"/" +progectName , title='',  target="_blank") Edit
           section.box.widget.calendar
             .elegant-calencar
+              p   campaign start - #{uploadTime}
               p#reset reset
               #header.clearfix
-                .pre-button <
-                .head-info
+                .pre-button.col-sm-1.no-padding <
+                .head-info.col-sm-10.no-padding 
                   .head-day
                   .head-month
-                .next-button >
+                .next-button.col-sm-1.no-padding >
               table#calendar
                 thead
                   tr
@@ -84,96 +86,194 @@ block content
         .col-sm-8
           nav.box.nav
             ul
-              li
-                a(href='#')
+              li.startM1
+                a
                   span.icon-home
                   br
                   span.title Main
-              li
-                a(href='')
+              li.startM2
+                a
                   span.icon-images
                   br
                   span.title Gallery
-              li
-                a(href='')
+              li.startM3
+                a
                   span.icon-bubble
                   br
                   span.title Message
-              li
-                a(href='')
+              li.startM4
+                a
                   span.icon-music
                   br
                   span.title Music
-              li
-                a(href='')
+              li.startM5
+                a
                   span.icon-search
                   br
                   span.title Search
-              li
-                a(href='')
+              li.startM6
+                a
+                  span.icon-location
+                  br
+                  span.title Users
+              li.startM7
+                a
                   span.icon-cog
                   br
                   span.title Settings
-              li
-                a(href='')
-                  span.icon-location
-                  br
-                  span.title Location
           .inner_container
-            .col-sm-3
-              input(type='hidden' class='progectManage' val='#{progectManage}') 
-              section.box.widget.video
-                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_video.png', alt='')
-              section.box.widget.todayUsers
-                header.header
-                  .temp
-                    | #{today} 
-                    span.icon-brightness-half
-                  span.icon-partlycloudy
-                article
-                  h2 Today Users
-              section.box.widget.totalUsers
-                header.header
-                  .temp
-                    | #{total} 
-                    span.icon-brightness-half
-                  span.icon-partlycloudy
-                article
-                  h2 Total Users
-            .col-sm-9
-              div(id='map')
+
+            .manage1
+              .col-sm-3
+                input(type='hidden' class='progectManage' val='#{progectManage}') 
+                section.box.widget.video
+                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_video.png', alt='')
+                section.box.widget.todayUsers
+                  header.header
+                    .temp
+                      | #{today} 
+                      span.icon-brightness-half
+                    span.icon-partlycloudy
+                  article
+                    h2 Today Users
+                section.box.widget.totalUsers
+                  header.header
+                    .temp
+                      | #{total} 
+                      span.icon-brightness-half
+                    span.icon-partlycloudy
+                  article
+                    h2 Total Users
+              .col-sm-9
+                div(id='map')
+
+            .manage6
+                .wrapperTable
+                  .tableManage
+                    .rowManage.header
+                      .cellManage
+                        | Cuntry
+                      .cellManage
+                        | City
+                      .cellManage
+                        | Date
+                      .cellManage
+                        | Flag
+                    each val, index in progectManage
+                      .rowManage
+                        .cellManage.mangeCountry
+                           =val.userCountry
+                        .cellManage
+                           =val.userCity
+                        .cellManage.mangeDate
+                           =val.userDate
+                        .cellManage
+                           span(class="flag-icon")
+                    
+               
+            .manage7
+              .col-sm-3
+                input(type='hidden' class='progectManage' val='#{progectManage}') 
+                section.box.widget.video
+                  img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_video.png', alt='')
+                section.box.widget.todayUsers
+                  header.header
+                    .temp
+                      | #{today} 
+                      span.icon-brightness-half
+                    span.icon-partlycloudy
+                  article
+                    h2 campaign start
+                section.box.widget.totalUsers
+                  header.header
+                    .tempTotal
+                      | #{total} 
+                      span.icon-brightness-half
+                    span.icon-partlycloudy
+                  article
+                    h2 Total Users
+              .col-sm-9
+                div(id='map')
+
+
             
       
       script(type='text/javascript').
-       jQuery(document).ready(function($) {
+       jQuery(document).ready(function($) {      
 
-
-           var progect =!{JSON.stringify(progectManage)}
+           var manage =!{JSON.stringify(progectManage)}
           
 
-           var count = $('.totalUsers').find('.temp').text();
-           
+           var count = $('.totalUsers').find('.tempTotal').text();
+
+          
+           //config googlemap //1
            var map = new GMaps({
               el: '#map',
               zoom:2,
               center: {lat: 31.5, lng: 34.75},
-           });  
+           });
 
            for (i = 0; i < count; i++) { 
-               var userCuntry = progect[i].userCountry;
-               var userDate = progect[i].userDate;
-               var userLat = progect[i].userPositionLat;
-               var userLong = progect[i].userPositionLong;
-     
-                map.addMarker({
-                  lat: userLat,
-                  lng: userLong,
-                  title: userCuntry,
-                  click: function(e) {
-                    alert('You clicked in this marker');
-                  }
+                 var userCuntry = manage[i].userCountry;
+                 var userCity = manage[i].userCity;
+                 var userDate = manage[i].userDate;
+                 var userLat = manage[i].userPositionLat;
+                 var userLong = manage[i].userPositionLong;
+                 
+                  map.addMarker({
+                    lat: userLat,
+                    lng: userLong,
+                    title: userCuntry,
+                    click: function(e) {
+                      alert('You clicked in this marker');
+                    }
+                  });
+                      
+            }
+            
+           
+            //calendar
+            var thisMonth = moment().format();
+            
+            
+
+            //manage dates by moment library
+            $(".mangeDate").each(function(i, el) {
+                var date = $(this).text();
+                var thisMonthValid = moment().format();
+                if (thisMonthValid === thisMonth){
+                   var day = moment(date).format("D");
+                   var time = moment(date).format("h:mm:ss");   
+                   
+                }
+
+                $('#calendar').mousemove(function(){
+                  $('td:contains("'+day+'")').css("background", "#1C1515");
+                  $('td:contains("'+day+'")').attr('data-hint', time);
                 });
-           }
+                
+            });
+
+           
+            
+
+
+         
+
+           //flage for users tables //6
+           var mangeCountry = $('.mangeCountry').text();
+           var resCountry = mangeCountry.substring(0, 2).toLowerCase();
+           $('.flag-icon').addClass('flag-icon-' + resCountry);  
+
+           //manage dates by moment library
+           $(".mangeDate").each(function(i, el) {
+              var date = $(this).text();
+              var now = moment(date).calendar();
+              $(this).text(now);
+           });
+
+          
 
 
         

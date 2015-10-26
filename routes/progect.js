@@ -4,6 +4,7 @@ var router = express.Router();
 
 var Progect = require('../modules/progect.js');
 var Manage = require('../modules/manage.js');
+var Form = require('../modules/form.js');
 
 /* GET home page. */
 router.get('/:id/:progect', function(req, res, next) {
@@ -56,6 +57,41 @@ router.post('/', function(req, res, next) {
 
 });
 
+
+//leeds
+router.post('/form', function(req, res, next) {
+	
+	var progectId = req.body.progectId;
+
+	var leedemail     = req.body.email     ? req.body.email : '' ;
+	var leedphone    =  req.body.phone    ? req.body.phone    : '';
+	var leedcontry   =  req.body.contry   ? req.body.contry   : '';
+	var leedname     =  req.body.name     ? req.body.name   : '';
+	var leedlastName =  req.body.lastName ? req.body.lastName   : '';
+
+	// console.log(leedemail +''+leedesob);
+
+
+	// var newForm = new Progect ({
+	//     progectId  : progectId,
+	//     submitDate : submitDate ,
+	//     email      : leedemail,
+	//     phone      : leedphone,
+	// 	contry     : leedcontry,
+	// 	name       : leedname,
+	// 	lastName   : leedlastName
+	// });
+
+ //    // save the user
+ //    newForm.save(function(err ,newForm) {
+ //        if(err) {
+ //            console.log(err);
+ //        }
+
+ //    });
+
+
+});
 
 
 module.exports = router;

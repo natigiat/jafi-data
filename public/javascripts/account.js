@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 	  }, function() {
 	  	$(this).css('background-color', '#F8F8F8');
 	  });
+	  
 
 	  //filter by progect name
 	  var options = {
@@ -17,6 +18,31 @@ jQuery(document).ready(function($) {
 	  $('.searchPlace').html(searchFilter);
 	  
 	}
+
+    // manage start***********************************************************
+    $(".manage7,.manage6").hide();   
+    
+
+    $('.box.nav').on('click', '.startM1', function(event) {
+    	$(".manage7,.manage6").hide(1200); 
+    	$(".manage1").show(1200);     
+    	/* Act on the event */
+    }); 
+
+    $('.box.nav').on('click', '.startM6', function(event) {
+    	$(".manage1,.manage7").hide(1200); 
+    	$(".manage6").show(1200);     
+    	/* Act on the event */
+    }); 
+
+
+    $('.box.nav').on('click', '.startM7', function(event) {
+    	$(".manage1,.manage6").hide(1200); 
+    	$(".manage7").show(1200);     
+    	/* Act on the event */
+    }); 
+
+
 
 
 	

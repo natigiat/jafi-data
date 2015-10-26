@@ -163,7 +163,7 @@ html
                 userCountry = data.country.name;
                 userCity = data.country.name;
 
-                console.log( userPositionLat+ "+" + userPositionLong );
+                
 
                 var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
                 $.post( '/progect', parameters, function(data) {
@@ -172,6 +172,31 @@ html
                 // the "data" object contains the info
             }, function(err) {
               // the "err" object contains useful information in case of an error
+            });
+
+            
+            //start form leeds
+            $( "form" ).on("submit", function( event ) {
+                event.preventDefault();
+                $("form").find("input").each(function(i, el) {
+                    if ($(this).val() == ''){
+                        console.log("fill");
+                    }else{
+                        
+                        var url      = window.location.href; 
+                        var pieces = url.split("/");
+                        var progectId = pieces[pieces.length - 2];
+
+                        var email = $(this).val();
+                        console.log("good");
+                        var parameters = { progectId:progectId , email:email };
+                        $.post( '/progect/form', parameters, function(data) {
+                           alert(data);
+                        });
+
+                    }
+                });
+
             });
 
            
