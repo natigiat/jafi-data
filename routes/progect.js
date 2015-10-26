@@ -72,23 +72,22 @@ router.post('/form', function(req, res, next) {
 	// console.log(leedemail +''+leedesob);
 
 
-	// var newForm = new Progect ({
-	//     progectId  : progectId,
-	//     submitDate : submitDate ,
-	//     email      : leedemail,
-	//     phone      : leedphone,
-	// 	contry     : leedcontry,
-	// 	name       : leedname,
-	// 	lastName   : leedlastName
-	// });
+	var newForm = new Form ({
+	    progectId  : progectId,
+	    email      : leedemail,
+	    phone      : leedphone,
+		contry     : leedcontry,
+		name       : leedname,
+		lastName   : leedlastName
+	});
 
- //    // save the user
- //    newForm.save(function(err ,newForm) {
- //        if(err) {
- //            console.log(err);
- //        }
+    // save the user
+    newForm.save(function(err ,newForm) {
+        if(err) {
+            console.log(err);
+        }
 
- //    });
+    });
 
 
 });
