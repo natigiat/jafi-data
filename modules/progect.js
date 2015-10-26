@@ -36,6 +36,14 @@ module.exports.checkProjectExsist = function(progetcName , callback){
 	Progect.findOne(query , callback);
 }
 
+
+//check if progect exsist
+module.exports.checkProjectById = function(progect , callback){
+	var query = {"_id" : progect};
+	Progect.findOne(query , callback);
+}
+
+
 //check if progect exsist by id
 module.exports.checkProjectExsistById = function(progetcId , callback){
 	var query = {name : progetcId};

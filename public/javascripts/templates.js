@@ -39,18 +39,6 @@ jQuery(document).ready(function($) {
 
 		$('#input-1').iCheck('check');
 
-
-		$('.progectLink').on('click',  function() {
-			var progectId = $(this).find('.pr').val();
-			var eyesValue = $(this).find('.eyesValue').val();
-
-			var parameters = { progectId: progectId , eyesValue : eyesValue} ;
-			$.post( '/templates', parameters, function(data) {
-		       alert(data);
-		    });
-		});
-
-
 	}
 	
 });

@@ -3,7 +3,7 @@ extends head
 block content
     script(type='text/javascript').
        jQuery(document).ready(function($) {
-           var progect =!{JSON.stringify(progect)}
+           var progect =!{JSON.stringify(progect)};
            var html = progect[0].html;
            var css = progect[0].css;
            var js = progect[0].js;
@@ -36,17 +36,10 @@ block content
               span.hamburger.hamburger-1
               span.hamburger.hamburger-2
               span.hamburger.hamburger-3
-          //- div#drow
-          //-   ol#selectable.parent
-          //-     div.child.layer
 
-         
+          //- start model
           p
             .stream-0.modal
-              
-
-
-
               .userMes
                 p
                   | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet orci mattis, interdum lorem nec, elementum dolor. Aenean et arcu viverra velit volutpat dignissim. Donec hendrerit diam vitae magna pulvinar hendrerit. Mauris sit amet massa quis elit tristique iaculis. Sed posuere libero eu neque fringilla fermentum. Proin lorem nunc, malesuada in odio ac, bibendum pharetra ipsum. Sed pharetra tincidunt mauris. In convallis sem sem, in dictum dui gravida hendrerit. Pellentesque sed nisl id erat iaculis porttitor.
@@ -163,18 +156,5 @@ block content
         form(action="...", method="post", enctype="multipart/form-data")
           input(type="file", name="displayImage")
 
-
-
-
      input.progectId(type="hidden") 
 
-
-
-//- div#loadingmessage
-//-   div.container
-//-     <div class="ex"></div>
-//-     <div class="ex"></div>
-//-     <div class="ex"></div>
-//-     <div class="ex"></div>
-//-     <h1>Loading...</h1>
-//-   </div>  

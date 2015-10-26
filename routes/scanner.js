@@ -42,6 +42,22 @@ router.get('/:user/:progect', ensureAuthenticated,  function(req, res, next) {
 });
 
 
+/* GET scanner edit from templates page. */
+router.get('/edit/:progect/:userId', ensureAuthenticated,  function(req, res, next) {
+  var userId = req.user.id;
+  var username = req.params.user;
+  var progect = req.params.progect;
+
+  
+
+  Progect.checkProjectById(progect , function(err , progect){
+  	if(progect){
+	    console.log(progect);
+		res.render('scanner', {  title: 'Scanner - edit progect' , progect:progect ,userId:userId});
+	}
+  });
+});
+
 
 // /* GET scanner edit from account page. */
 // router.get('/:id/:progect', ensureAuthenticated,  function(req, res, next) {
