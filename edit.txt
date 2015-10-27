@@ -9,3 +9,4 @@ app.json deploy zeke/rainbowbot
 //codepen
 1. http://codepen.io/lukepeters/pen/bfFur - tables
 2. http://codepen.io/puny-d/pen/eygIH - calendar
+3. https://www.lucidchart.com/users/registerLevel?t13=A&t4=A&t5=A&tP=1&t3=E&t10=A - payments

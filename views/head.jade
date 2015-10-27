@@ -38,8 +38,6 @@ html
     link(rel='stylesheet', href='/bower/intro.js/introjs.css')
     //-quill editor
     link(rel='stylesheet', href='/bower/quill/dist/quill.snow.css')
-    //-ruler
-    link(rel='stylesheet', href='/bower/RulersGuides.js/RulersGuides.js')
     //-autocomlete fields
     link(rel='stylesheet', href='/javascripts/folders/autocomplete-0.3.0.min.css')
 
@@ -90,6 +88,42 @@ html
          ul.nav.navbar-nav.navbar-right.publishNav
             //- li.drowB
             //-   a <i class="fa fa-crop"></i>
+            li.api
+              a(data-toggle="modal" data-target="#myApi") <i class="fa fa-book"></i>
+                 div#myApi.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
+                  .modal-dialog(role='document')
+                    .modal-content 
+                      .modal-body
+                          .col-md-3.pull-right(role='complementary')
+                              nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix-top
+                                ul.nav.bs-docs-sidenav
+                                  li
+                                    a(href='#glyphicons') Glyphicons
+                                    ul.nav
+                                      li
+                                        a(href='#glyphicons-glyphs') Available glyphs
+                                      li
+                                        a(href='#glyphicons-how-to-use') How to use
+                                      li
+                                        a(href='#glyphicons-examples') Examples
+                                  li
+                                    a(href='#dropdowns') Dropdowns
+                                    ul.nav
+                                      li
+                                        a(href='#dropdowns-example') Example
+                                      li
+                                        a(href='#dropdowns-alignment') Alignment
+                                      li
+                                        a(href='#dropdowns-headers') Headers
+                                      li
+                                        a(href='#dropdowns-divider') Divider
+                                      li
+                                        a(href='#dropdowns-disabled') Disabled menu items
+                          
+                   
+
+                          
+            
             li.styleB
               a <i class="fa fa-file-image-o"></i>
             li.codeB 

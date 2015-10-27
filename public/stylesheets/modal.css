@@ -1174,3 +1174,15 @@ svg:not(:root) {
     right: 3.5%
   }
 }
+
+
+/*apimodal************************************/
+#myApi .modal-dialog {
+    width: 90%;
+}
+
+#myApi a {
+    color: rgba(26, 74, 115, 0.77);
+    background: none;
+}
+
