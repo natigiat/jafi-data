@@ -9,6 +9,7 @@ var url = require('url');
 
 
 var Progect = require('../modules/progect.js');
+var Element = require('../modules/element.js');
 var User = require('../modules/user.js');
 
 
@@ -152,6 +153,51 @@ router.post('/', function(req, res, next) {
 	
 		
 });
+
+
+// save element
+router.post('/element', function(req, res, next) {
+	
+	// var userId = req.user.id;
+	var userId = '234234';  //for dev
+	var elmentName = req.body.elmentName;
+	var elementHtml = req.body.elementHtml;
+	var elementCss = req.body.elementCss;
+	var elementJs = req.body.elementJs;
+
+	console.log(elmentName+ elementHtml +elementCss +elementJs);
+				
+		
+		var newElement = new Element ({
+		    userId: userId,
+		    name: elmentName ,
+		    html : elementHtml,
+			css: elementCss,
+			js: elementJs
+		});
+
+	    // save the user
+	    newElement.save(function(err ,newProgect) {
+	        if(err) {
+	            console.log(err);
+	        }
+
+	    });
+                
+
+	    // screenshotPromise('http://localhost:3000/progect/'+newProgect.id+'/'+progectName, '1024x768', {crop: true , delay:5})
+	    // .then(function (buf) {
+	    //     fs.writeFileSync('public/images/elements/'+userId+progectName+'.png' , buf);
+	    //     console.log('public/images/screenshots/'+userId+progectName+'.png created' );
+	    // });
+
+
+
+});
+
+
+
+
 
 
 

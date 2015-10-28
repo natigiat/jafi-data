@@ -68,68 +68,68 @@ router.post('/form', function(req, res, next) {
 	progectId = req.body.progectId;
 	console.log(req.body);
 
-	obj = req.body;
+	// obj = req.body;
     
 
-	for (var k in obj){
+	// for (var k in obj){
 	    
-	    if (typeof obj[k] !== 'function') {
-	         console.log("Key is " + k + ", value is" + obj[k]);
-	         var k = obj[k];
-	         console.log(tel1);
+	//     if (typeof obj[k] !== 'function') {
+	//          console.log("Key is " + k + ", value is" + obj[k]);
+	//          var k = obj[k];
+	//          console.log(tel1);
 
-	    }
+	//     }
 
-	}
+	// }
 
 	
 	
-	// text1       = req.body.text1         ? req.body.text1      : '' ;
-	// text2       = req.body.text2         ? req.body.text2      : '' ;
-	// text3       = req.body.text3         ? req.body.text3      : '' ;
-	// text4       = req.body.text4         ? req.body.text4      : '' ;
-	// text5       = req.body.text5         ? req.body.text5      : '' ;
-	// text6       = req.body.text6         ? req.body.text6      : '' ;
-	// text7       = req.body.text7         ? req.body.text7      : '' ;
-	// text8       = req.body.text8         ? req.body.text8      : '' ;
-	// text9       = req.body.text9         ? req.body.text9      : '' ;
-	// text10      = req.body.text10        ? req.body.text10     : '' ;
-	// email1      = req.body.email1        ? req.body.email1     : '' ;
-	// email2      = req.body.email2        ? req.body.email2     : '' ;
-	// email3      = req.body.email3        ? req.body.email3     : '' ;
-	// email4      = req.body.email4        ? req.body.email4     : '' ;
-	// date1       = req.body.date1         ? req.body.date1      : '' ;
-	// date2       = req.body.date2         ? req.body.date2      : '' ;
-	// date3       = req.body.date3         ? req.body.date3      : '' ;
-	// date4       = req.body.date4         ? req.body.date4      : '' ;
- //    time1       = req.body.time1         ? req.body.time1      : '' ;
-	// time2       = req.body.time2         ? req.body.time2      : '' ;
-	// time3       = req.body.time3         ? req.body.time3      : '' ;
-	// time4       = req.body.time4         ? req.body.time4      : '' ;
-	// number1     = req.body.number1       ? req.body.number1    : '' ;
-	// number2     = req.body.number2       ? req.body.number2    : '' ;
-	// number3     = req.body.number3       ? req.body.number3    : '' ;
-	// number4     = req.body.number4       ? req.body.number4    : '' ;
-	// password1   = req.body.password1     ? req.body.password1  : '' ;
-	// password2   = req.body.password2     ? req.body.password2  : '' ;
-	// password3   = req.body.password3     ? req.body.password3  : '' ;
-	// password4   = req.body.password4     ? req.body.password4  : '' ;
-	// range1      = req.body.rangel        ? req.body.rangel     : '' ;
-	// range2      = req.body.range2        ? req.body.range2     : '' ;
-	// range3      = req.body.range3        ? req.body.range3     : '' ;
-	// range4      = req.body.range4        ? req.body.range4     : '' ;
-	// tel1        = req.body.tel1          ? req.body.tel1       : '' ;
-	// tel2        = req.body.tel2          ? req.body.tel2       : '' ;
-	// tel3        = req.body.tel3          ? req.body.tel3       : '' ;
-	// tel4        = req.body.tel4          ? req.body.tel4       : '' ;
-	// url1        = req.body.url1          ? req.body.url1       : '' ;
-	// url2        = req.body.url2          ? req.body.url2       : '' ;
-	// url3        = req.body.url3          ? req.body.url3       : '' ;
-	// url4        = req.body.url4          ? req.body.url4       : '' ;
-	// texterea1        = req.body.texterea1          ? req.body.texterea1       : '' ;
-	// texterea2        = req.body.texterea2          ? req.body.texterea2       : '' ;
-	// texterea3        = req.body.texterea3          ? req.body.texterea3       : '' ;
-	// texterea4        = req.body.texterea4          ? req.body.texterea4       : '' ;
+	text1       = req.body.text1         ? req.body.text1      : '' ;
+	text2       = req.body.text2         ? req.body.text2      : '' ;
+	text3       = req.body.text3         ? req.body.text3      : '' ;
+	text4       = req.body.text4         ? req.body.text4      : '' ;
+	text5       = req.body.text5         ? req.body.text5      : '' ;
+	text6       = req.body.text6         ? req.body.text6      : '' ;
+	text7       = req.body.text7         ? req.body.text7      : '' ;
+	text8       = req.body.text8         ? req.body.text8      : '' ;
+	text9       = req.body.text9         ? req.body.text9      : '' ;
+	text10      = req.body.text10        ? req.body.text10     : '' ;
+	email1      = req.body.email1        ? req.body.email1     : '' ;
+	email2      = req.body.email2        ? req.body.email2     : '' ;
+	email3      = req.body.email3        ? req.body.email3     : '' ;
+	email4      = req.body.email4        ? req.body.email4     : '' ;
+	date1       = req.body.date1         ? req.body.date1      : '' ;
+	date2       = req.body.date2         ? req.body.date2      : '' ;
+	date3       = req.body.date3         ? req.body.date3      : '' ;
+	date4       = req.body.date4         ? req.body.date4      : '' ;
+    time1       = req.body.time1         ? req.body.time1      : '' ;
+	time2       = req.body.time2         ? req.body.time2      : '' ;
+	time3       = req.body.time3         ? req.body.time3      : '' ;
+	time4       = req.body.time4         ? req.body.time4      : '' ;
+	number1     = req.body.num1          ? req.body.num1       : '' ;
+	number2     = req.body.num2          ? req.body.num2       : '' ;
+	number3     = req.body.num3          ? req.body.num3       : '' ;
+	number4     = req.body.num4          ? req.body.num4       : '' ;
+	password1   = req.body.password1     ? req.body.password1  : '' ;
+	password2   = req.body.password2     ? req.body.password2  : '' ;
+	password3   = req.body.password3     ? req.body.password3  : '' ;
+	password4   = req.body.password4     ? req.body.password4  : '' ;
+	range1      = req.body.rangel        ? req.body.rangel     : '' ;
+	range2      = req.body.range2        ? req.body.range2     : '' ;
+	range3      = req.body.range3        ? req.body.range3     : '' ;
+	range4      = req.body.range4        ? req.body.range4     : '' ;
+	tel1        = req.body.tel1          ? req.body.tel1       : '' ;
+	tel2        = req.body.tel2          ? req.body.tel2       : '' ;
+	tel3        = req.body.tel3          ? req.body.tel3       : '' ;
+	tel4        = req.body.tel4          ? req.body.tel4       : '' ;
+	url1        = req.body.url1          ? req.body.url1       : '' ;
+	url2        = req.body.url2          ? req.body.url2       : '' ;
+	url3        = req.body.url3          ? req.body.url3       : '' ;
+	url4        = req.body.url4          ? req.body.url4       : '' ;
+	texterea1        = req.body.texterea1          ? req.body.texterea1       : '' ;
+	texterea2        = req.body.texterea2          ? req.body.texterea2       : '' ;
+	texterea3        = req.body.texterea3          ? req.body.texterea3       : '' ;
+	texterea4        = req.body.texterea4          ? req.body.texterea4       : '' ;
 	
 
 
