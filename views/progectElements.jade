@@ -1,0 +1,192 @@
+doctype html
+html
+  head
+    title
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/bower/medium-editor/dist/css/medium-editor.css')
+
+    //- bower scripts
+    script(src='/bower/jquery/dist/jquery.min.js')
+    script(src="/javascripts/result.js")
+    script(src="/bower/jquery-ui/jquery-ui.js")
+    script(src="/bower/jquery.layout/dist/jquery.layout-latest.js")
+    script(src="/bower/ace-builds-bower-patched/src/ace.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/lib/codemirror.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/xml/xml.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/htmlmixed/htmlmixed.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/css/css.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/mode/javascript/javascript.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/scroll/simplescrollbars.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/show-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/xml-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/html-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/css-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/hint/javascript-hint.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
+    script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
+    script(src='/bower/medium-editor/dist/js/medium-editor.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js')
+    //- heatmaps
+    script(src='/bower/heatmap.js.bower/build/heatmap.min.js')
+    script(src='/javascripts/progect.js')
+
+
+    style.
+        .github-fork-ribbon-wrapper {
+            width: 150px;
+            height: 150px;
+            left: 0;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .github-fork-ribbon {
+            position: absolute;
+            padding: 2px 0;
+            background-color: #a00;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+            background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+            background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+            background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+            background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+            -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+            font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            z-index: 9999;
+            pointer-events: auto;
+            top: 42px;
+            left: -43px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .github-fork-ribbon a, .github-fork-ribbon a:hover {
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 200px;
+            line-height: 20px;
+            display: inline-block;
+            padding: 2px 0;
+            border-width: 1px 0;
+            border-style: dotted;
+            border-color: #fff;
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+        img.buildWith {
+            width: 38%;
+            padding: 0px 0px 0px 0px;
+        }
+
+    
+  body.result.demo-wrapper      
+    div.htmlRow.heatmap 
+         
+    div.htmlcss
+        style.
+            
+    div.htmljs
+        script(type="text/javascript").
+    
+    <img src="loading.gif" id="loadingImage" style="display: none;" />
+
+    
+
+
+    script(type='text/javascript').
+       jQuery(document).ready(function($) {
+           var progect =!{JSON.stringify(progect)}
+           var html = progect[0].html;
+           var css = progect[0].css;
+           var js = progect[0].js;
+
+
+
+           var title = progect[0].name;
+           document.title = title;
+
+           var builtWith = "<div class='github-fork-ribbon-wrapper left'> <div class='github-fork-ribbon'> <a href='http://drawrow.com/'>Build With <img class='buildWith' src='/images/4444.png'></a> </div> </div>";
+          
+
+           
+           $('.htmlRow').html(html);
+           $('.htmlRow').append(builtWith);
+
+           $('.htmlcss').find('style').html(css);
+
+           $('.htmljs').find('script').html(js);
+
+
+           //start heatmaps
+            var heatmapInstance = h337.create({
+              container: document.querySelector('.heatmap'),
+              radius: 10
+            });
+            document.querySelector('.demo-wrapper').onclick = function(ev) {
+              heatmapInstance.addData({
+                x: ev.layerX,
+                y: ev.layerY,
+                value: 1
+              });
+            };
+
+           });
+       
+
+    
+    script(type='text/javascript').
+       jQuery(document).ready(function($) {
+           
+            UserInfo.getInfo(function(data) {
+                var url      = window.location.href; 
+                var pieces = url.split("/");
+                var progectId = pieces[pieces.length - 2];
+                
+
+                userIp   = data.ip_address;
+                userDate = data.request_date;
+                userPositionLat = data.position.latitude;
+                userPositionLong = data.position.longitude;
+                userCountry = data.country.name;
+                userCity = data.country.name;
+
+                
+
+                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
+                $.post( '/progect', parameters, function(data) {
+                   
+                });
+
+            });
+
+            
+            
+
+            //start form leeds
+            
+            //get key value from each input
+            parametersValues = {};
+
+            //get progectId
+            var url      = window.location.href; 
+            var pieces = url.split("/");
+            var progectId = pieces[pieces.length - 2];
+            parametersValues["progectId"] = progectId;
+
+               
+           
+           
+       });

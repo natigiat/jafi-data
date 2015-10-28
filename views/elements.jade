@@ -1,0 +1,124 @@
+extends layout
+
+block content
+  .container.filters
+     div.searchTemplates
+      div.col-sm-2.mainFilters
+        input(type='checkbox'   id="filter1" value='all')
+        label.labelFilters(for='flat-checkbox-1' id="input-1") All
+        br
+        input(type='checkbox' value="new")
+        label.labelFilters(for='flat-checkbox-2' id="input-2") New
+        br
+        input(type='checkbox' value="viewd")
+        label.labelFilters(for='flat-checkbox-3' id="input-3") Viewed
+        br
+        input(type='checkbox' value="liked")
+        label.labelFilters(for='flat-checkbox-4' id="input-4") Liked
+        br
+        input(type='checkbox' value="lides")
+        label.labelFilters(for='flat-checkbox-5' id="input-5") Lides
+      div.col-sm-10.rightFilters
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="Business & Services")
+          label.labelFilters(for='flat-checkbox-6' id="input-6" ) Business & Services
+          br
+           
+          input(type='checkbox' value="Blog")
+          label.labelFilters(for='flat-checkbox-7' id="input-7" )  Blog
+          br
+
+          input(type='checkbox' value="Hotel & travels")
+          label.labelFilters(for='flat-checkbox-8' id="input-8" )  Hotel & travels
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="Music")
+          label.labelFilters(for='flat-checkbox-9' id="input-9" )  Music
+          br
+
+          input(type='checkbox' value="Online Store")
+          label.labelFilters(for='flat-checkbox-10' id="input-10"  ) Online Store
+          br
+
+          input(type='checkbox' value="Entertainment")
+          label.labelFilters(for='flat-checkbox-11' id="input-11"  ) Entertainment
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="Restaurant & Hospitality")
+          label.labelFilters(for='flat-checkbox-12' id="input-12"  ) Restaurant & Hospitality
+          br
+
+          input(type='checkbox' value="Photography")
+          label.labelFilters(for='flat-checkbox-13' id="input-13"  ) Photography
+          br
+
+          input(type='checkbox' value="Creative Arts")
+          label.labelFilters(for='flat-checkbox-14' id="input-14"  ) Creative Arts
+          br
+        div.col-sm-3.smallCheck
+          input(type='checkbox' value="Design")
+          label.labelFilters(for='flat-checkbox-15' id="input-15"  ) Design
+          br
+
+          input(type='checkbox' value="Fashion")
+          label.labelFilters(for='flat-checkbox-16' id="input-16"  ) Fashion
+          br
+
+        div.col-sm-12
+          .colors.clear
+            strong Choose Color
+              |                 
+              ul.colorsPallete
+                li(title='Black')
+                |                   
+                li.red.active(title='Red')
+                |                   
+                li.green(title='Green')
+                |                   
+                li.blue(title='Blue')
+                |                   
+                li.aero(title='Aero')
+                |                   
+                li.grey(title='Grey')
+                |                   
+                li.orange(title='Orange')
+                |                   
+                li.yellow(title='Yellow')
+                |                   
+                li.pink(title='Pink')
+                |                   
+                li.purple(title='Purple')
+
+  hr.col-sm-10.col-sm-offset-1
+  .container.filterStart
+     
+   div.col-sm-12.pull-right.templateWrapper
+     ol.templatesOl
+      
+
+    
+    each val, index in elements
+      iframe(src="/progect/element/"+val._id +"/" +val.name allowtransparency="true" frameborder="0" scrolling="no")
+        //- element/:id/:progect
+        //- a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6.sec(href="/progect/element/"+val._id +"/" +val.name)
+        //- li.templateLi
+        //-   div.col-sm-4.row.listProgect
+        //-     div.text-center.col-sm-12progectName
+        //-     div.col-sm-12
+        //-       div(class="templatesWebsite")
+        //-       img.temImage(src='/images/screenshots/.png' class="projectImage")
+        //-     div.col-sm-12.ratingTemplates
+        //-       div.col-sm-6
+        //-         p.templatesPrice Price : Free
+        //-       div.col-sm-6.pull-right
+        //-          a(class="watch" name="watch")<i class="fa fa-eye"></i>
+        //-            span.eyesValue(val="3") 3
+        //-          a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
+        //-     div.col-sm-12.temlatesButtons
+                 
+        //-          a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/edit/#{userId}").progectLink= "Edit"
+             
+        //-          a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6.sec(href="/progect/" ).progectLinkView= "View"
+            
+        //-     input(type="hidden" class="pr" )
+               

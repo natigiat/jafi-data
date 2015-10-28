@@ -5,6 +5,7 @@ var router = express.Router();
 
 
 var Progect = require('../modules/progect.js');
+var Element = require('../modules/element.js');
 var Manage = require('../modules/manage.js');
 var Form = require('../modules/form.js');
 
@@ -23,6 +24,25 @@ router.get('/:id/:progect', function(req, res, next) {
   });
   
 });
+
+
+/* GET element dinamickly */
+router.get('element/:id/:name', function(req, res, next) {
+  // var userId = req.user.id;
+  
+  res.render('progect', {  title: 'Account' });
+  var id = req.params.id;
+  console.log(id);
+ //  var name = req.params.name;
+
+ //  Element.SelectElement(id , name , function(err , element){
+ //  	if(element){
+	// 	res.render('progectElement', {  title: 'Account' , element:element});
+	// }
+ //  });
+  
+});
+
 
 
 router.post('/', function(req, res, next) {

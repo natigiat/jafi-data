@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 	}
 
     // manage start***********************************************************
-    $(".manage7,.manage6,.manage3").hide();   
+    $(".manage7,.manage6,.manage3,.manage2").hide();   
     
 
     $('.box.nav').on('click', '.startM1', function(event) {
@@ -28,6 +28,13 @@ jQuery(document).ready(function($) {
     	$(".manage1").show(1200);     
     	/* Act on the event */
     }); 
+
+   $('.box.nav').on('click', '.startM2', function(event) {
+        $(".manage1,.manage7,.manage6,.manage3").hide(1200); 
+        $(".manage2").show(1200);     
+        /* Act on the event */
+    });
+
 
     $('.box.nav').on('click', '.startM3', function(event) {
         $(".manage1,.manage7, .manage6").hide(1200); 

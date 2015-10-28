@@ -93,9 +93,9 @@ block content
                   span.title Main
               li.startM2
                 a
-                  span.icon-images
+                  span.icon-cube
                   br
-                  span.title Gallery
+                  span.title Element
               li.startM3
                 a
                   span.icon-bubble
@@ -146,6 +146,29 @@ block content
                     h2 Total Users
               .col-sm-9
                 div(id='map')
+
+            .manage2
+                .wrapperTable
+                  .tableManage
+                    .rowManage.header.blue
+                      .cellManage 
+                        | Cuntry 
+                      .cellManage 
+                        | City
+                      .cellManage
+                        | Date
+                      .cellManage
+                        | Flag #{leeds}
+                    each val, index in leeds
+                      .rowManage
+                        .cellManage
+                          =val.name
+                        .cellManage
+                          =val.email
+                        .cellManage
+                           
+                        .cellManage
+                           span(class="flag-icon")
 
             .manage3
                 .wrapperTable

@@ -23,20 +23,13 @@ var ElementSchema = mongoose.Schema({
 
 var Element = module.exports = mongoose.model('Element' , ElementSchema);
 
-//check if Element exsist
-module.exports.checkElementExsist = function(progetcName , callback){
-	var query = {name : progetcName};
-	Element.findOne(query , callback);
+//select all progect for templates page
+module.exports.SelectAllElements = function(callback){ //
+	
+	var query = {};
+
+    Element.find(query, callback);
 }
-
-
-//select Element for view in account and templates page
-module.exports.SelectElement = function(Id , Element , callback){
-
-	var query = {"_id" : Id , "name" : Element};
-	Element.find(query , callback);
-}
-
 
 
 
