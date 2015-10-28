@@ -90,6 +90,14 @@
     margin-top: 0px !important;
 }
 
+.addEditor .ui-resizable-e {
+    top: 0% !important;
+    height: 100%!important;
+    background: #3494E5!important;
+    width: 25px!important;
+    margin-top: 0px !important;
+}
+
 div#drow {
     z-index: 22222;
     width: 70%;

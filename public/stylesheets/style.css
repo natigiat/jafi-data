@@ -224,6 +224,12 @@ li.active{
     font-size: 14px;
 }
 
+.addEditor {
+    width: 33%;
+    float: left;
+    font-size: 14px;
+}
+
 
 
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
