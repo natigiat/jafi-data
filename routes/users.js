@@ -3,9 +3,7 @@ var router = express.Router();
 var path = require('path');
 var multer  = require('multer');
 var bcrypt  = require('bcrypt-nodejs');
-var mkdirp = require('mkdirp');
 var nodemailer = require('nodemailer');
-
 var upload = multer({ dest: '../uploads/' });
 
 var passport = require('passport');
