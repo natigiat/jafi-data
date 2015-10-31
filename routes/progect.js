@@ -27,19 +27,18 @@ router.get('/:id/:progect', function(req, res, next) {
 
 
 /* GET element dinamickly */
-router.get('element/:id/:name', function(req, res, next) {
+router.get('/element/:id/:name', function(req, res, next) {
   // var userId = req.user.id;
   
-  res.render('progect', {  title: 'Account' });
   var id = req.params.id;
-  console.log(id);
- //  var name = req.params.name;
+  var name = req.params.name;
+  // console.log(id +name);
 
- //  Element.SelectElement(id , name , function(err , element){
- //  	if(element){
-	// 	res.render('progectElement', {  title: 'Account' , element:element});
-	// }
- //  });
+  Element.SelectElement(id , name , function(err , element){
+  	if(element){
+		res.render('progectElements.jade', {  title: 'Account' , element:element});
+	}
+  });
   
 });
 
@@ -57,7 +56,7 @@ router.post('/', function(req, res, next) {
     var userPositionLong = req.body.userPositionLong;
 	var userCountry = req.body.userCountry;
 	var userCity = req.body.userCity;
-	console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCountry + "+" + userCity);
+	// console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCountry + "+" + userCity);
 
 	// console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCount + "+" + userCity);
 	
@@ -86,7 +85,7 @@ router.post('/', function(req, res, next) {
 router.post('/form', function(req, res, next) {
 	
 	progectId = req.body.progectId;
-	console.log(req.body);
+	// console.log(req.body);
 
 	// obj = req.body;
     

@@ -93,7 +93,7 @@ html
 
     
   body.result.demo-wrapper      
-    div.htmlRow.heatmap 
+    div.htmlRow
          
     div.htmlcss
         style.
@@ -108,7 +108,7 @@ html
 
     script(type='text/javascript').
        jQuery(document).ready(function($) {
-           var progect =!{JSON.stringify(progect)}
+           var progect =!{JSON.stringify(element)}
            var html = progect[0].html;
            var css = progect[0].css;
            var js = progect[0].js;
@@ -128,20 +128,6 @@ html
            $('.htmlcss').find('style').html(css);
 
            $('.htmljs').find('script').html(js);
-
-
-           //start heatmaps
-            var heatmapInstance = h337.create({
-              container: document.querySelector('.heatmap'),
-              radius: 10
-            });
-            document.querySelector('.demo-wrapper').onclick = function(ev) {
-              heatmapInstance.addData({
-                x: ev.layerX,
-                y: ev.layerY,
-                value: 1
-              });
-            };
 
            });
        

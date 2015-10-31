@@ -31,6 +31,12 @@ module.exports.SelectAllElements = function(callback){ //
     Element.find(query, callback);
 }
 
+//select progect for view in account and templates page
+module.exports.SelectElement = function(Id , name , callback){
+
+	var query = {"_id" : Id , "name" : name};
+	Element.find(query , callback);
+}
 
 
 
