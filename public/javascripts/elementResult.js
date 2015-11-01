@@ -17,9 +17,6 @@ jQuery(document).ready(function($) {
 
 	    	$('.addhtmljs').find('script').html(addjs);
 
-	  //   	$( "h1 , h2 ,h3, h4 ,h5, h6, a , span, p" ).each(function() {
-			//   $( this ).addClass('editable');
-			// });
 
 			var elements = document.querySelectorAll('.editable'),
     		editor = new MediumEditor(elements);

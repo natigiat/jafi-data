@@ -24,7 +24,8 @@ var User = require('../modules/user.js');
 
 /* GET scanner page. */
 router.get('/',  function(req, res, next) {
-  res.render('scanner', { title: 'Scanner'}); //, name: req.user.name
+
+    res.render('scanner', { title: 'Scanner' }); //, name: req.user.name
 });
 
 
@@ -196,11 +197,6 @@ router.post('/element', function(req, res, next) {
 });
 
 
-
-
-
-
-
 router.post('/upload', upload.single('onixfile'), function(req, res, next) {
   // if(done==true){
     console.dir(req.file);
@@ -208,6 +204,31 @@ router.post('/upload', upload.single('onixfile'), function(req, res, next) {
   // }
     
 });
+
+//get element ajax info
+router.post('/elements/:kind', function(req, res, next) {  	
+  	
+  	var kind = req.params.kind;
+  	console.log(kind);
+
+  	if (kind === 'element') {
+  		Element.SelectAllElements(function(err , elements){
+    		res.contentType('json');
+			res.send(elements);		
+		});  	
+  	}
+  	else if(kind === 'form') {
+        Element.SelectElementByKind("form" , function(err , elements){
+    		console.log(elements);
+    		res.contentType('json');
+			res.send(elements);	
+
+		});  
+  	}
+
+    
+})
+
 
 
 
