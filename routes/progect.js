@@ -32,7 +32,7 @@ router.get('/element/:id/:name', function(req, res, next) {
   
   var id = req.params.id;
   var name = req.params.name;
-  // console.log(id +name);
+  console.log(id +name);
 
   Element.SelectElement(id , name , function(err , element){
   	if(element){

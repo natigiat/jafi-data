@@ -217,8 +217,8 @@ router.post('/elements/:kind', function(req, res, next) {
 			res.send(elements);		
 		});  	
   	}
-  	else if(kind === 'form') {
-        Element.SelectElementByKind("form" , function(err , elements){
+  	else if(kind != 'element') {
+        Element.SelectElementByKind(kind , function(err , elements){
     		console.log(elements);
     		res.contentType('json');
 			res.send(elements);	

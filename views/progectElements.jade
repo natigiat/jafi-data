@@ -136,27 +136,27 @@ html
     script(type='text/javascript').
        jQuery(document).ready(function($) {
            
-            UserInfo.getInfo(function(data) {
-                var url      = window.location.href; 
-                var pieces = url.split("/");
-                var progectId = pieces[pieces.length - 2];
+            //- UserInfo.getInfo(function(data) {
+            //-     var url      = window.location.href; 
+            //-     var pieces = url.split("/");
+            //-     var progectId = pieces[pieces.length - 2];
                 
 
-                userIp   = data.ip_address;
-                userDate = data.request_date;
-                userPositionLat = data.position.latitude;
-                userPositionLong = data.position.longitude;
-                userCountry = data.country.name;
-                userCity = data.country.name;
+            //-     userIp   = data.ip_address;
+            //-     userDate = data.request_date;
+            //-     userPositionLat = data.position.latitude;
+            //-     userPositionLong = data.position.longitude;
+            //-     userCountry = data.country.name;
+            //-     userCity = data.country.name;
 
                 
 
-                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
-                $.post( '/progect', parameters, function(data) {
+            //-     var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
+            //-     $.post( '/progect', parameters, function(data) {
                    
-                });
+            //-     });
 
-            });
+            //- });
 
             
             
