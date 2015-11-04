@@ -4,7 +4,7 @@ block content
   .container
     div.account.row
       div.col-sm-7
-          h1 My Sites 
+          h1 My Landing Pages 
       div.accountButtons
         div.col-sm-3.searchPlace
             //- .input-group
@@ -37,7 +37,9 @@ block content
           li.progectLi  
             div.row.listProgect
               div.col-sm-4
-                img(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
+                //- img(src='/images/screenshots/'+val.userId+val.name+'.png' class="projectImage")
+                div(class="iframe-wrap account")
+                  iframe(src="/progect/"+val._id +"/" +val.name class="webform-frame" style="margin: 0 auto; transform-origin: top left;" allowtransparency="true" width="100%" height="250px" frameborder="0" scrolling="no" align="center")
               div.col-sm-8
                 div.progectName.name= val.name           
                 div.progectfilter.filter= val.filter 

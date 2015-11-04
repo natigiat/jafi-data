@@ -211,7 +211,7 @@ router.post('/elements/:kind', function(req, res, next) {
   	var kind = req.params.kind;
   	console.log(kind);
 
-  	if (kind === 'element') {
+  	if (kind === 'element' || kind === 'all') {
   		Element.SelectAllElements(function(err , elements){
     		res.contentType('json');
 			res.send(elements);		
