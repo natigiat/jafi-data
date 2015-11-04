@@ -6,6 +6,7 @@ var moment = require('moment');
 
 var Progect = require('../modules/progect.js');
 var Manage = require('../modules/manage.js');
+var Form = require('../modules/form.js');
 
 /* GET home page. */
 
@@ -24,7 +25,7 @@ router.get('/', ensureAuthenticated ,function(req, res, next) {
 
   	Progect.SelectAllProgectById(req.user.id , function(err , progects){
   		if(progects){
-			console.log('this user have progects');
+			  // console.log('this user have progects');
   			res.render('account', {  title: 'Account' , name: userName , progects:progects });
   		}
   		// }else{
@@ -67,8 +68,7 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
    Manage.checkProjectExsistById(id , function(err , progectManage){
       if(progectManage){
         
-        console.log(progectManage);
-        
+        // console.log(progectManage);
         var count = 0;
         for(var i=0 in progectManage) {
           var today = moment().format('YYYY-MM-DD');;
@@ -84,14 +84,23 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
         }
       
         
-        //find the totla numbers of viewrs
+        //find the total numbers of viewrs
         Manage.count({progectId: id}, function(err, c)
         {
           // console.log('Count is ' + c);
 
           Progect.SelectProgect(id , progectName , function(err , progect){
             if(progect){
-              res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id, progectName:progectName, total:c ,today:count , progectManage:progectManage});
+              
+              var Time = progect[0].uploadTime;
+              var uploadTime = moment(Time).format('L');
+
+              //get leed info
+              Form.selectFormByProgectId(id  , function(err , leeds){
+                  console.log(leeds);
+                  res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id,progect:progect,uploadTime:uploadTime, progectName:progectName, total:c ,today:count , progectManage:progectManage, leeds:leeds });
+
+              });
             }
           });
 

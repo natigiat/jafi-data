@@ -31,6 +31,7 @@ var scanner = require('./routes/scanner');
 var result = require('./routes/result');
 var progect = require('./routes/progect');
 var templates = require('./routes/templates');
+var elements = require('./routes/elements');
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(require('express-promise')());
 
 
 //Express sessions
@@ -123,7 +125,9 @@ app.use('/scanner' , scanner);
 app.use('/account' , account); 
 app.use('/result' , result); 
 app.use('/progect' , progect); 
-app.use('/templates' , templates); 
+app.use('/templates' , templates);
+app.use('/elements' , elements);
+ 
 
 
 

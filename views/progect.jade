@@ -11,8 +11,6 @@ html
     //- bower scripts
     script(src='/bower/jquery/dist/jquery.min.js')
     script(src="/javascripts/result.js")
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')
     script(src="/bower/jquery-ui/jquery-ui.js")
     script(src="/bower/jquery.layout/dist/jquery.layout-latest.js")
     script(src="/bower/ace-builds-bower-patched/src/ace.js" type="text/javascript" charset="utf-8")
@@ -102,6 +100,8 @@ html
             
     div.htmljs
         script(type="text/javascript").
+    
+    <img src="loading.gif" id="loadingImage" style="display: none;" />
 
     
 
@@ -163,15 +163,60 @@ html
                 userCountry = data.country.name;
                 userCity = data.country.name;
 
-                console.log( userPositionLat+ "+" + userPositionLong );
+                
 
                 var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
                 $.post( '/progect', parameters, function(data) {
                    
                 });
-                // the "data" object contains the info
-            }, function(err) {
-              // the "err" object contains useful information in case of an error
+
+            });
+
+            
+            
+
+            //start form leeds
+            
+            //get key value from each input
+            parametersValues = {};
+
+            //get progectId
+            var url      = window.location.href; 
+            var pieces = url.split("/");
+            var progectId = pieces[pieces.length - 2];
+            parametersValues["progectId"] = progectId;
+
+               
+            $("form").on("keyup" , "input", function(){
+                 var inputType = $(this).attr("name");
+                 var inputVal = $(this).val();
+                 parametersValues[inputType] = inputVal;
+      
+            });
+
+                                                      
+            //get form params
+            $( "form" ).on("submit", function( event ) {
+                event.preventDefault();
+
+
+                        $("#loadingImage").show();
+                        console.log(parametersValues);
+
+                        $.post( '/progect/form', parametersValues, function(data) {
+                           $("#loadingImage").hide();
+                        })
+                          .done(function() {
+                            console.log( "second success" );
+                            $("#loadingImage").hide();
+                          })
+                          .fail(function() {
+                            console.log( "error" );
+                          })
+
+                    
+
+
             });
 
            

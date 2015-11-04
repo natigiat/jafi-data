@@ -8,6 +8,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/account.css')
     link(rel='stylesheet', href='/stylesheets/icons.css')
+    //-flages css
+    link(rel='stylesheet', href='/stylesheets/flages.css')
+
     link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
     
     //- bower styles*********************************************
@@ -21,6 +24,10 @@ html
     link(rel='stylesheet', href='/bower/toastr/toastr.css')
     //- Icheck for filte checkboxes
     link(rel='stylesheet', href='/bower/icheck/skins/flat/_all.css')
+    //- hint tooltip 
+    link(rel='stylesheet', href='/bower/hint.css/hint.css')
+
+
 
 
     //- bower scripts
@@ -44,6 +51,10 @@ html
     script(src='http://maps.google.com/maps/api/js?sensor=true')
     script(src='/bower/gmaps/gmaps.js')
 
+    script(src='/bower/moment/min/moment-with-locales.min.js')
+
+
+
     
   body
     
@@ -64,6 +75,8 @@ html
                 a(href='/account/') My Sites
               li(class=(title == 'Lando - Templates' ? 'active' : ''))
                 a(href='/templates') Templates
+              li(class=(title == 'Lando - Elements' ? 'active' : ''))
+                a(href='/elements') Elements
               li(class=(title == 'Support' ? 'active' : ''))
                 a(href='/support') Support
 

@@ -63,6 +63,35 @@ ul.rrssb-buttons.clearfix {
     z-index: 22;
 }
 
+.iframe-wrap.loaded{
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+    
+iframe.webform-frame {
+
+    visibility: visible;
+    opacity: 1;
+    width: 201%;
+    height: 201%;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
+
+    
+}
 
 
 .slick-slider{
@@ -224,9 +253,13 @@ li.active{
     font-size: 14px;
 }
 
-#template-js{
-    width: 53%!important; 
+.addEditor {
+    width: 33%;
+    float: left;
+    font-size: 14px;
 }
+
+
 
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
  max-height: 300%!important;
@@ -245,7 +278,7 @@ li.active{
 }
 
 .CodeMirror-gutter.CodeMirror-linenumbers {
-    background-color: #3494E5;
+    background-color: #202020;
 }
 
 i.fa.fa-folder-open-o.fa-5x.faNewProgect {
@@ -263,7 +296,8 @@ span.h4.NewProgectTitle {
 }
 
 .CodeMirror-linenumber.CodeMirror-gutter-elt {
-    color: #fff!important;
+    color: #444F4F!important;
+    text-shadow: none!important;
 }
 
 
