@@ -119,4 +119,13 @@ module.exports.SelectProgectFromTemplate = function(progectid , progect , callba
 }
 
 
+//select all progect for templates page
+module.exports.SelectAllProgectSkip = function(progectSum ,callback){ //
+	
+	var query = {};
+
+    Progect.find(query, callback).skip(elementSum).limit(6);
+}
+
+
 

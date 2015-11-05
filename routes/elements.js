@@ -8,19 +8,15 @@ var Element = require('../modules/element.js');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
+        
+    // var element =  req.params.element;
+    var pageId =  req.params.id -1;
+    var elementSum = pageId * 6;
 
- //    if (req.isAuthenticated()){
- //    	var userName =  req.user.name;
- //    	var userId =  req.user._id;
- //    }else{
- //    	var userName =  '';
- //    }
+    // console.log(element);
 
- //    console.log(userName);  
-	// var query = {};
-
-	Element.SelectAllElements(function(err , elements){
+	Element.SelectAllElementsSkip(elementSum ,function(err , elements){
     		
 		if(elements){
 			res.render('elements', {  title: 'Lando - Elements' , elements:elements});
@@ -30,31 +26,28 @@ router.get('/', function(req, res, next) {
 	});  		
 });
 
-// //templates filtering
-// router.post('/', function(req, res, next) {
-	
-// 	if (req.isAuthenticated()){
-//     	var userName =  req.user.name;
-//     }else{
-//     	var userName =  '';
-//     }
 
 
-// 	var filter = req.body.filter;
-// 	var filterChild = req.body.filterChild;
+/* GET home page. */
+router.get('/:element/:id', function(req, res, next) {
+        
+    var element =  req.params.element;
+    var pageId =  req.params.id -1;
+    var elementSum = pageId * 6;
 
-// 	//check if pogect exsist
-//     Progect.SelectAllProgectFilter(filter , filterChild, function(err , progects){
+    console.log(element);
+
+	Element.SelectElementsPaginat(element, elementSum ,function(err , elements){
     		
-		
-// 		if(progects){
-// 			res.render('templatesFilte', {  title: 'Lando - Templates' , progects:progects, name:userName });
-// 		}else{
-// 			res.render('templatesFilte', {  title: 'Lando - Templates'});
-// 		}
-// 	});  
-    
-// });
+		if(elements){
+			res.render('elements', {  title: 'Lando - Elements' , elements:elements});
+		}else{
+			res.render('elements', {  title: 'Lando - Elements'});
+		}
+	});  		
+});
+
+
 
 
 module.exports = router;

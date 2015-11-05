@@ -16,7 +16,11 @@ var Progect = require('../modules/progect.js');
 var Progect = require('../modules/progect.js');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
+    var pageId =  req.params.id -1;
+    var progectSum = pageId * 6;
+
+    //check user details
     if (req.isAuthenticated()){
     	var userName =  req.user.name;
     	var userId =  req.user._id;
@@ -25,9 +29,11 @@ router.get('/', function(req, res, next) {
     }
 
     console.log(userName);  
-	var query = {};
+	
+	SelectAllProgectSkip
 
-	Progect.SelectAllProgect(function(err , progects){
+
+	Progect.SelectAllProgectSkip(progectSum ,function(err , progects){
     		
 		if(progects){
 			res.render('templates', {  title: 'Lando - Templates' , progects:progects , name:userName , userId: userId});

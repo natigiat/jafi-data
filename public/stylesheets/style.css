@@ -332,7 +332,7 @@ li.active {
 }
 
 a.buttonNewProgect {
-    border: 1px solid #6EAAE2!important;;
+    border: 1px solid #6EAAE2!important;
 }
 
 
@@ -357,6 +357,29 @@ a.buttonNewProgec {
   text-align: center;
   line-height: 250%;
 }
+
+.prevElement {
+  border: 1px solid #6EAAE2!important;
+  position: absolute;
+  top: 16px;
+  right: 150px;
+  bottom: 0;
+  margin: auto;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #6BB0EC;
+  border-radius: 8px;
+  height: 2.5em;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  color: #6BB0EC;
+  -webkit-transition: color 0.3s 0.1s ease-out;
+          transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  line-height: 250%;
+}
+
 a.buttonNewProgec::before {
   position: absolute;
   top: 0;
