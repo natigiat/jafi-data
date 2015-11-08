@@ -69,6 +69,12 @@ module.exports.SelectElementByKind = function(name , callback){
 	Element.find(query , callback);
 }
 
+//check if progect exsist by id
+module.exports.SelectElementsByUser = function(userId , callback){
+	var query = {userId : userId};
+	Element.find(query , callback);
+}
+
 
 
 

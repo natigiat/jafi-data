@@ -49,6 +49,10 @@ var FormSchema = mongoose.Schema({
 	url2        : { type: String},
 	url3        : { type: String},
 	url4        : { type: String},
+	texterea1   : { type: String},
+	texterea2   : { type: String},
+	texterea3   : { type: String},
+	texterea4   : { type: String},
 
 	
 });

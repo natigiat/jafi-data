@@ -7,6 +7,7 @@ var uniqueValidator = require('mongoose-unique-validator');
 var ManageSchema = mongoose.Schema({
 	progectId: { type: String , required: true},
 	userDate  : { type: String},
+	userIp : { type: String},
 	userPositionLat : { type: String},
     userPositionLong : { type: String},
 	userCountry: { type: String},

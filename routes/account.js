@@ -7,6 +7,7 @@ var moment = require('moment');
 var Progect = require('../modules/progect.js');
 var Manage = require('../modules/manage.js');
 var Form = require('../modules/form.js');
+var Element = require('../modules/element.js');
 
 /* GET home page. */
 
@@ -97,9 +98,13 @@ router.get('/manage/:id/:progect', ensureAuthenticated , function(req, res, next
 
               //get leed info
               Form.selectFormByProgectId(id  , function(err , leeds){
-                  console.log(leeds);
-                  res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id,progect:progect,uploadTime:uploadTime, progectName:progectName, total:c ,today:count , progectManage:progectManage, leeds:leeds });
 
+                  Element.SelectElementsByUser(userId , function(err , elements){
+                     
+                        res.render('manage', {title: 'Manage Pages' , name: userName,email:userEmail ,userInfo:req.user, userId:userId , id:id,progect:progect,uploadTime:uploadTime, progectName:progectName, total:c ,today:count , progectManage:progectManage, leeds:leeds ,elements:elements });
+
+
+                  });  
               });
             }
           });

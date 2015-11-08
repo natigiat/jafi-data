@@ -250,7 +250,7 @@ jQuery(document).ready(function($) {
 
 
         var cinds = widget.getValue();
-	    console.log(cinds);
+	    // console.log(cinds);
 	        var Fil = cinds[0][0].value;
 	        var Fil_c = cinds[0][1].value;
 

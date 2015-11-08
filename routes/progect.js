@@ -56,6 +56,7 @@ router.post('/', function(req, res, next) {
     var userPositionLong = req.body.userPositionLong;
 	var userCountry = req.body.userCountry;
 	var userCity = req.body.userCity;
+	// console.log(userIp);
 	// console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCountry + "+" + userCity);
 
 	// console.log(progectId + "+" + userIp + "+" + userDate + "+" + userPositionLat + "+" + userPositionLong + "+" + userCount + "+" + userCity);
@@ -191,6 +192,17 @@ router.post('/form', function(req, res, next) {
 		range3      :    range3,
 		range4      :    range4,
 		tel1        :    tel1,
+		tel2        : 	 tel2,
+		tel3        :    tel3,
+		tel4        :    tel4,
+		url1        :    url1,
+		url2        :    url2,
+		url3        :    url3,
+		url4        :    url4,
+		texterea1   :    texterea1,
+		texterea2   :    texterea2,
+		texterea3   :    texterea3,
+		texterea4   :    texterea4,
 
 	});
 
