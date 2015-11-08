@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container.filters
+  .container.filters.progects
      div.searchTemplates
       div.col-sm-2.mainFilters
         input(type='checkbox'   id="filter1" value='all')
@@ -119,5 +119,7 @@ block content
                  a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6.sec(href="/progect/"+val._id +"/" +val.name  ).progectLinkView= "View"
             input(type="hidden" class="pr" value=val.id)
 
-  a.btn.col-sm-6(href="#") Next
+  div(class="col-sm-2 col-sm-offset-6" )
+    a.btn.col-sm-6.buttonNewProgec.nextProgect(href="#") Next
+    a.btn.col-sm-6.prevElement(href="#") Prev
                

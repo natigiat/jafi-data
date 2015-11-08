@@ -29,9 +29,6 @@ router.get('/:id', function(req, res, next) {
     }
 
     console.log(userName);  
-	
-	SelectAllProgectSkip
-
 
 	Progect.SelectAllProgectSkip(progectSum ,function(err , progects){
     		
@@ -43,34 +40,54 @@ router.get('/:id', function(req, res, next) {
 	});  		
 });
 
+
+/* GET home page. */
+router.get('/:element/:id', function(req, res, next) {
+        
+    var element =  req.params.element;
+    var pageId =  req.params.id -1;
+    var elementSum = pageId * 6;
+
+    console.log(element);
+
+	Progect.SelectProgectPaginat(element, elementSum ,function(err , progects){
+    		
+		if(progects){
+			res.render('templates', {  title: 'Lando - Templates' , progects:progects});
+		}else{
+			res.render('templates', {  title: 'Lando - Templates'});
+		}
+	});  		
+});
+
 //templates filtering
-router.post('/', function(req, res, next) {
+// router.post('/', function(req, res, next) {
 	
-	if (req.isAuthenticated()){
-    	var userName =  req.user.name;
-    }else{
-    	var userName =  '';
-    }
+// 	if (req.isAuthenticated()){
+//     	var userName =  req.user.name;
+//     }else{
+//     	var userName =  '';
+//     }
 
 
-	var filter = req.body.filter;
-	var filterChild = req.body.filterChild;
+// 	var filter = req.body.filter;
+// 	var filterChild = req.body.filterChild;
 
-	//check if pogect exsist
-    Progect.SelectAllProgectFilter(filter , filterChild, function(err , progects){
+// 	//check if pogect exsist
+//     Progect.SelectAllProgectFilter(filter , filterChild, function(err , progects){
     		
 		
-		if(progects){
-			res.render('templatesFilte', {  title: 'Lando - Templates' , progects:progects, name:userName });
-		}else{
-			res.render('templatesFilte', {  title: 'Lando - Templates'});
-		}
-	});  
+// 		if(progects){
+// 			res.render('templatesFilte', {  title: 'Lando - Templates' , progects:progects, name:userName });
+// 		}else{
+// 			res.render('templatesFilte', {  title: 'Lando - Templates'});
+// 		}
+// 	});  
     
 
 
 
-});
+// });
 
 
 module.exports = router;

@@ -124,8 +124,24 @@ module.exports.SelectAllProgectSkip = function(progectSum ,callback){ //
 	
 	var query = {};
 
-    Progect.find(query, callback).skip(elementSum).limit(6);
+    Progect.find(query, callback).skip(progectSum).limit(6);
 }
+
+//select all progect for templates page
+module.exports.SelectProgectPaginat = function(element , progectSum ,callback){ //
+	
+	if(element ==="all"){
+		var query = {};
+	}else{
+		var query = {"filter" : {$regex : ".*"+element+".*"}};
+	}
+	
+	
+
+    Progect.find(query, callback).skip(progectSum).limit(6);
+}
+
+
 
 
 

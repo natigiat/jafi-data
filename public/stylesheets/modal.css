@@ -490,8 +490,8 @@ svg:not(:root) {
   width: 70%;
   min-width: 430px;
   height: 95%;
-  min-height: 300px;
-  max-height: 550px;/*END Make responsive*/
+  min-height: 306px;
+  max-height: 618px;/*END Make responsive*/
   padding: 0px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;

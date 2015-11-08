@@ -20,21 +20,38 @@ jQuery(document).ready(function($) {
 		var elementType = pieces[pieces.length - 2];
 
 
+        if($('.progects').length) {
+			if(elementType !== "templates"){
+				$('.nextElement').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) + 1));
+	            $('.prevElement').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) -1));
+			}else{
+				$('.nextElement').attr("href" , "/templates/"+ (parseInt(elementId) + 1));
+	            $('.prevElement').attr("href" , "/templates/"+ (parseInt(elementId) -1));
+			}
 
-		console.log(elementType);
-		if(elementType !== "elements"){
-			$('.nextElement').attr("href" , "/elements/"+elementType+"/"+ (parseInt(elementId) + 1));
-            $('.prevElement').attr("href" , "/elements/"+elementType+"/"+ (parseInt(elementId) -1));
-		}else{
-			$('.nextElement').attr("href" , "/elements/"+ (parseInt(elementId) + 1));
-            $('.prevElement').attr("href" , "/elements/"+ (parseInt(elementId) -1));
-		}
+			if(elementId == "1"){
+	            $('.prevElement').remove();
+	            $('.nextElement').parent().removeClass( "col-sm-2 col-sm-offset-6" );
+	            $('.nextElement').parent().addClass('col-sm-4 col-sm-offset-4');
+			}
+        }else{
+        	console.log(elementType);
+			if(elementType !== "elements"){
+				$('.nextElement').attr("href" , "/elements/"+elementType+"/"+ (parseInt(elementId) + 1));
+	            $('.prevElement').attr("href" , "/elements/"+elementType+"/"+ (parseInt(elementId) -1));
+			}else{
+				$('.nextElement').attr("href" , "/elements/"+ (parseInt(elementId) + 1));
+	            $('.prevElement').attr("href" , "/elements/"+ (parseInt(elementId) -1));
+			}
 
-		if(elementId == "1"){
-            $('.prevElement').remove();
-            $('.nextElement').parent().removeClass( "col-sm-2 col-sm-offset-6" );
-            $('.nextElement').parent().addClass('col-sm-4 col-sm-offset-4');
-		}
+			if(elementId == "1"){
+	            $('.prevElement').remove();
+	            $('.nextElement').parent().removeClass( "col-sm-2 col-sm-offset-6" );
+	            $('.nextElement').parent().addClass('col-sm-4 col-sm-offset-4');
+			}
+        }
+
+		
 		
 
 
@@ -49,11 +66,11 @@ jQuery(document).ready(function($) {
 		});
 
 		//####################### filters result in templetes #############################
-		$('.elements').find('input').on('ifChecked', function(event){
+		$('.progects').find('input').on('ifChecked', function(event){
 		  
 		  	 var value = event.target.value;
 		  	 console.log(value);
-		  	 window.location.href = '/elements/'+value+"/"+1;
+		  	 window.location.href = '/templates/'+value+"/"+1;
 		  	 
 		  	 event.preventDefault();		  
 		});
@@ -81,14 +98,6 @@ jQuery(document).ready(function($) {
 
 
 
-
-        $('.filters').on('click' ,function(){
-        
-        	var len = $('.checked').find('input').val;
-		    console.log(len);
-
-        });
-		
 
 		$('#input-1').iCheck('check');
 

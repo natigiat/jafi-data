@@ -14,19 +14,19 @@ var User = require('../modules/user.js');
 
 
 
-/* GET scanner page. */
-router.get('/', ensureAuthenticated,  function(req, res, next) {
-  var userName =  req.user.name;
-  userName = userName.replace(/\s/g, '');
-
-  res.render('scanner', { title: 'Scanner' , user: req.user , name: userName }); //, name: req.user.name
-});
-
 // /* GET scanner page. */
-// router.get('/',  function(req, res, next) {
+// router.get('/', ensureAuthenticated,  function(req, res, next) {
+//   var userName =  req.user.name;
+//   userName = userName.replace(/\s/g, '');
 
-//     res.render('scanner', { title: 'Scanner' }); //, name: req.user.name
+//   res.render('scanner', { title: 'Scanner' , user: req.user , name: userName }); //, name: req.user.name
 // });
+
+/* GET scanner page. */
+router.get('/',  function(req, res, next) {
+
+    res.render('scanner', { title: 'Scanner' }); //, name: req.user.name
+});
 
 
 /* GET scanner edit from account page. */
@@ -59,24 +59,6 @@ router.get('/edit/:progect/:userId', ensureAuthenticated,  function(req, res, ne
 	}
   });
 });
-
-
-// /* GET scanner edit from account page. */
-// router.get('/:id/:progect', ensureAuthenticated,  function(req, res, next) {
-//   var userId = req.user.id;
-//   var progectid = req.params.id;
-//   var progect = req.params.progect;
-
-//   Progect.SelectProgect(progectid , progect , function(err , progect){
-//   	if(progect){
-// 	    console.log(typeof(progect));
-// 		res.render('scanner', {  title: 'Account' , progect:progect });
-// 	}
-//   });
-// });
-
-
-
 
 
 

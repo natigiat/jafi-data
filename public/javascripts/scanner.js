@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
 
 
+
 	//main layout page layouy ******************************************
 	var myLayout = $('body').layout();
 	$('body').layout({ applyDefaultStyles: true });
