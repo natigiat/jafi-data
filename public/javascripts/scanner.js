@@ -290,6 +290,26 @@ jQuery(document).ready(function($) {
 	});
 
 
+	//Edit element post to save element
+	$('.saveElementEdit').on('click',  function() {
+
+        
+        // console.log('good');
+        var elmentName  =  $('.elementName').val();
+        var elementHtml =  myCodeMirror.getValue('\n');
+        var elementCss  =  myCodeMirrorCss.getValue('\n');
+        var elementJs   =  myCodeMirrorJs.getValue('\n');
+
+        // console.log(elementHtml);
+        
+
+        var parameters = { elmentName: elmentName , elementHtml: elementHtml , elementCss: elementCss , elementJs: elementJs};
+        $.post( '/scanner/element', parameters, function(data) {
+           alert(data);
+        }); 
+    });
+
+
 
 
 
