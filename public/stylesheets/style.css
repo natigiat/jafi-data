@@ -120,6 +120,13 @@ iframe.webform-frame {
     
 }
 
+.publishNav li {
+    cursor: pointer;
+}
+
+.saveEditElement {
+    margin-top: 2px;
+}
 .manage-frame{
     visibility: visible;
     opacity: 1;
@@ -393,7 +400,7 @@ a.buttonNewProgec {
   line-height: 250%;
 }
 
-.prevElement {
+.prevElement , .prevProgect{
   border: 1px solid #6EAAE2!important;
   position: absolute;
   top: 16px;

@@ -1337,7 +1337,25 @@ input[type="text"]
     margin: 2px 0;
 }
 
-i.fa.fa-chevron-right.saveElement {
+i.fa.fa-chevron-right.saveElement , {
+    position: absolute;
+    left: 105%;
+    font-size: 19px;
+    color: #318CD9;
+    cursor: pointer;
+    top: 10px;
+}
+
+.saveElement {
+    position: absolute;
+    left: 105%;
+    font-size: 19px;
+    color: #318CD9;
+    cursor: pointer;
+    top: 10px;
+}
+
+.saveElementEdit {
     position: absolute;
     left: 105%;
     font-size: 19px;

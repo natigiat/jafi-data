@@ -36,11 +36,30 @@ router.get('/element/:id/:name', function(req, res, next) {
 
   Element.SelectElement(id , name , function(err , element){
   	if(element){
+  		console.log(element);
 		res.render('progectElements.jade', {  title: 'Account' , element:element});
 	}
   });
   
 });
+
+
+/* GET EditElement dinamickly */
+router.get('/element/edit/:id/:name', function(req, res, next) {
+  // var userId = req.user.id;
+  
+  var id = req.params.id;
+  var name = req.params.name;
+  console.log(id +name);
+  
+  Element.SelectElement(id , name , function(err , element){
+  	if(element){
+		res.render('editElement.jade', {  title: 'Edit Element' , element:element});
+	}
+  });
+  
+});
+
 
 
 

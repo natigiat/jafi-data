@@ -21,20 +21,25 @@ jQuery(document).ready(function($) {
 
 
         if($('.progects').length) {
+			
 			if(elementType !== "templates"){
-				$('.nextElement').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) + 1));
-	            $('.prevElement').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) -1));
+
+				$('.nextProgect').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) + 1));
+	            $('.prevProgect').attr("href" , "/templates/"+elementType+"/"+ (parseInt(elementId) -1));
 			}else{
-				$('.nextElement').attr("href" , "/templates/"+ (parseInt(elementId) + 1));
-	            $('.prevElement').attr("href" , "/templates/"+ (parseInt(elementId) -1));
+				
+				$('.nextProgect').attr("href" , "/templates/"+ (parseInt(elementId) + 1));
+	            $('.prevProgect').attr("href" , "/templates/"+ (parseInt(elementId) -1));
 			}
 
 			if(elementId == "1"){
-	            $('.prevElement').remove();
-	            $('.nextElement').parent().removeClass( "col-sm-2 col-sm-offset-6" );
-	            $('.nextElement').parent().addClass('col-sm-4 col-sm-offset-4');
+	            $('.prevProgect').remove();
+	            $('.nextProgect').parent().removeClass( "col-sm-2 col-sm-offset-6" );
+	            $('.nextProgect').parent().addClass('col-sm-4 col-sm-offset-4');
 			}
-        }else{
+        }
+        else
+        {
         	console.log(elementType);
 			if(elementType !== "elements"){
 				$('.nextElement').attr("href" , "/elements/"+elementType+"/"+ (parseInt(elementId) + 1));

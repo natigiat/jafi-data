@@ -1,5 +1,10 @@
 jQuery(document).ready(function($) {
 
+    var url      = window.location.href; 
+    var pieces = url.split("/");
+	var CheckIfEditPage = pieces[pieces.length - 3];
+
+	// var progectId = $('.progectId').val();
 
 
 	//main layout page layouy ******************************************
@@ -8,9 +13,10 @@ jQuery(document).ready(function($) {
 	var state = myLayout.state;
 	myLayout.sizePane("west", 600);
     myLayout.close( "west");
-    myLayout.close( "south");
+    myLayout.sizePane("south", 290);
 
 
+     
     //hide drow pallte
     $('#drow').hide();
 
@@ -153,10 +159,7 @@ jQuery(document).ready(function($) {
 
  	
 
-
-
 	//get codevalueses
-
 	$('.ui-layout-pane-south').on('keyup', function() {
 		//mirror valuses
 		var htmlValue = myCodeMirror.getValue('\n');

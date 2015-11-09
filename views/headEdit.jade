@@ -30,9 +30,9 @@ html
     link(rel="stylesheet" href="/bower/CodeMirror/addon/hint/show-hint.css")        
     link(rel="stylesheet" href="/bower/CodeMirror/addon/dialog/dialog.css")        
     
-
     //- hint tooltip 
     link(rel='stylesheet', href='/bower/hint.css/hint.css')
+
 
     //-font awesome  
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
@@ -87,89 +87,37 @@ html
               span.icon-tablet.fs1         
           
 
-          
+        .saveB
+          section.elementSave.saveEditElement(style='display: block;')
+              .button
+                input.elementName(type='text', placeholder='Element Name')
+              |  
+              .cover
+                .innie
+                |  
+                .spine
+                |  
+                .outie
+              |  
+              .shadow
+            i.fa.fa-chevron-right.saveElementEdit(style='display: block;')
+ 
 
          ul.nav.navbar-nav.navbar-right.publishNav
             //- li.drowB
             //-   a <i class="fa fa-crop"></i>
-            li(class="hint--bottom" data-hint="Api").api
-              a(data-toggle="modal" data-target="#myApi") <i class="fa fa-book"></i>
-                 div#myApi.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                  .modal-dialog(role='document')
-                    .modal-content 
-                      .modal-body
-                          .col-md-3.pull-right(role='complementary')
-                              nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix-top
-                                ul.nav.bs-docs-sidenav
-                                  li
-                                    a(href='#glyphicons') Glyphicons
-                                    ul.nav
-                                      li
-                                        a(href='#glyphicons-glyphs') Available glyphs
-                                      li
-                                        a(href='#glyphicons-how-to-use') How to use
-                                      li
-                                        a(href='#glyphicons-examples') Examples
-                                  li
-                                    a(href='#dropdowns') Dropdowns
-                                    ul.nav
-                                      li
-                                        a(href='#dropdowns-example') Example
-                                      li
-                                        a(href='#dropdowns-alignment') Alignment
-                                      li
-                                        a(href='#dropdowns-headers') Headers
-                                      li
-                                        a(href='#dropdowns-divider') Divider
-                                      li
-                                        a(href='#dropdowns-disabled') Disabled menu items
+          
                           
                    
 
                           
             
-            li.styleB
-              a(class="hint--bottom" data-hint="Open Sketch") <i class="fa fa-file-image-o"></i>
-            li.codeB(class="hint--bottom" data-hint="Open Editor") 
-              a <i class="fa fa-code"></i>
-            li.preview
-              a(class="hint--bottom" data-hint="Preview Mode")  Preview
-            
-            if (userId)
-              li.update 
-                 a update
-                 
-              
-            else 
-              li
-                a(data-toggle="modal" data-target="#myModal") Save
-                div#myModal.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                  .modal-dialog(role='document')
-                    .modal-content 
-                      .modal-body
-                          .col-sm-12
-                            .col-sm-10.pull-left
-                              i(class="fa fa-database fa-4x saveProgect")
-                              span.textProgectOne It's time to save your work
-                              br 
-                              span.textProgectTwo and to give your website a name
-                            .col-sm-12
-                              .col-sm-10
-                                input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
-                                div#search_bar
-                              button.btn.btnProgect(type='button' class="col-sm-2") Success
-                              .col-sm-10
-                                div.progectRow http://landing/#{name}/#[b.progectName]
-                            hr
-                            .col-sm-12
-                              ol
-                                li You can change your site name later    
-
-                                li your site is private and will only be shown to the world with your approved 
-                                  
-                                li You can publish your site
-            li
-              a Publish 
+            li.codeB
+              a(class="hint--bottom" data-hint="Open Editor")   <i class="fa fa-code"></i>
+            li.preview 
+              a(class="hint--bottom" data-hint="Preview Mode") Preview
+             
+   
 
             //-fileupload 
             div#upload.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , aria-labelledby='myModalLabel' ,aria-hidden="true")

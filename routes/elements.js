@@ -35,7 +35,7 @@ router.get('/:element/:id', function(req, res, next) {
     var pageId =  req.params.id -1;
     var elementSum = pageId * 6;
 
-    console.log(element);
+    // console.log(element);
 
 	Element.SelectElementsPaginat(element, elementSum ,function(err , elements){
     		
