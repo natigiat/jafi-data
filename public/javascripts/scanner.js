@@ -160,7 +160,7 @@ jQuery(document).ready(function($) {
  	
 
 	//get codevalueses
-	$('.ui-layout-pane-south').on('keyup', function() {
+	$('.ui-layout-pane-south').on('ready', function() {
 		//mirror valuses
 		var htmlValue = myCodeMirror.getValue('\n');
 
@@ -310,7 +310,14 @@ jQuery(document).ready(function($) {
     });
 
 
+    //manage selected div
+    $('iframe').contents().on('click' , "a , h1" , function() {
+    	// $('#uploads').contents().find('iframe').contents().find('#element');
+           // $(this).addClass('selected_div');
+           $(this).toggleClass('selected_div');
+           console.log($(this));  
 
+    });
 
 
 	

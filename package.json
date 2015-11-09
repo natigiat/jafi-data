@@ -23,6 +23,7 @@
     "jquery": "^2.1.4",
     "jsdom": "^7.0.2",
     "method-override": "^2.3.5",
+    "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
     "mongodb": "^2.0.39",
     "mongoose": "^4.1.1",
