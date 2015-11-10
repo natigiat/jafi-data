@@ -78,25 +78,6 @@ jQuery(document).ready(function($) {
 
 
     //panels start
-
-    
-
-    //change layer dinameclly
-    $('.ui-layout-center').on('click' , ".layers , .basic , .border"  , function() {
-       
-       var className = this.className;
-       var panel = $("panel[name='" +className+ "']");
-       
-       $(panel).siblings().hide(1200);
-       if(className == 'layers'){
-          $(panel).show(1200)
-       }
-
-
-	});
-    
-
-
     //layers*********************************************
 
 

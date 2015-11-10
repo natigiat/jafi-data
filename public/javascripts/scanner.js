@@ -6,6 +6,12 @@ jQuery(document).ready(function($) {
 
 	// var progectId = $('.progectId').val();
 
+	//reset global variables******************************************
+    (function (global) {
+	        global.localStorage.setItem("html", '');
+	        global.localStorage.setItem("css", '');
+	        global.localStorage.setItem("js", '');
+	}(window));
 
 	//main layout page layouy ******************************************
 	var myLayout = $('body').layout();
@@ -17,7 +23,7 @@ jQuery(document).ready(function($) {
 
 
      
-    //hide drow pallte
+    //hide drow pallte ******************************************
     $('#drow').hide();
 
     $('.drowB').click(function(event) {
@@ -28,7 +34,7 @@ jQuery(document).ready(function($) {
    
 
 
-	//navbar icone for code and style active
+	//navbar icone for code and style active ******************************************
 	var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
 	var codeClick = state.west.isClosed ? $('.codeB').find('a').removeClass('bactive') : $('.codeB').find('a').addClass('bactive');
 
@@ -41,13 +47,13 @@ jQuery(document).ready(function($) {
 	});
 
 
-	//setup modal
+	//setup modal ******************************************
 	$('#myModal').on('shown.bs.modal', function () {
 	  $('#myInput').focus();
 	});
 
 
-	//close and open layouts from nav link
+	//close and open layouts from nav link ******************************************
 	$('.styleB').on('click', function() {	
 		// $('.ui-layout-resizer').hide();
 		myLayout.toggle("west");
@@ -63,14 +69,18 @@ jQuery(document).ready(function($) {
 
 	$(".preview , .mobile , .insperation").on('click', function() {	
 		// $('.ui-layout-resizer').hide();
+		
+		$('.ui-layout-center').find('.menu').hide();
 		myLayout.hide("south");
 		myLayout.hide("west");
 		myLayout.hide("north");
 		$('.scannerNav').hide();
 		$('.ui-layout-resizer').hide();
-		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">Editor</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#"><i class="fa fa-desktop fa-2x"></i></a></li> <li><a href="#"><i class="fa fa-mobile fa-2x"></i></a></li> </ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
+		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">EDITOR</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav navSmartphones"> <li class="active"><a class="hint--bottom mobile" data-hint="Desktop View"><span class="icon-display fs1"></span></a></li></ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
 		$('.ui-layout-center').css('top', '20px!important');
-
+		if(!($('.rangSmartphones').length)){
+			$('.navSmartphones').after('<div class="rangSmartphones col-sm-6 col-sm-offset-2"><div class="range"> <input type="range" min="1" max="7" steps="1" value="1"> </div> <ul class="range-labels"> <li class="active selected">Iphone</li> <li>Samsong</li> <li>HTC</li> <li>LG</li> <li>Ipad Mini</li> <li>Ipad</li> <li>Laptop</li> </ul></div>');
+	    }
 	});
 
 	$('.mobile').on('click', function() {
@@ -78,17 +88,63 @@ jQuery(document).ready(function($) {
 	});
 	
 
-	$(document).on("click", ".editorBack , .fa-desktop",function(){
+	$(document).on("click", ".editorBack , .icon-display",function(){
 		// myLayout.show("south");
 		// myLayout.show("west");
+		$('.rangSmartphones').remove();
+		$('.ui-layout-cente').find('.menu').show();
 		myLayout.show("north");
 		$('.scannerNav').show();
 		$('.ui-layout-resizer').show();
 		$('.previewModeNav').remove();
 		$('iframe').removeClass('mobileView');
 	});
+     
+    /*----------  range script  ----------*/
+    
+    var sheet = document.createElement('style'),  
+	  $rangeInput = $('.range input'),
+	  prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
 
+	document.body.appendChild(sheet);
 
+	var getTrackStyle = function (el) {  
+	  var curVal = el.value,
+	      val = (curVal - 1) * 16.666666667,
+	      style = '';
+	  
+	  // Set active label
+	  $('.range-labels li').removeClass('active selected');
+	  
+	  var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
+	  
+	  curLabel.addClass('active selected');
+	  curLabel.prevAll().addClass('selected');
+	  
+	  // Change background gradient
+	  for (var i = 0; i < prefs.length; i++) {
+	    style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
+	    style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
+	  }
+
+	  return style;
+	}
+
+	$rangeInput.on('input', function () {
+	  sheet.textContent = getTrackStyle(this);
+	});
+
+	// Change input value on label click
+	$('.range-labels li').on('click', function () {
+	  var index = $(this).index();
+	  
+	  $rangeInput.val(index + 1).trigger('input');
+	  
+	});
+
+	/*----------  range script  ----------*/
+
+	
 	//get data for edit scanner
 	$dataHtml = $('.dataHtml').val();
 	$dataCss = $('.dataCss').val();
@@ -98,12 +154,14 @@ jQuery(document).ready(function($) {
 	if(!$dataCss){ $dataCss='';}
 	if(!$dataJs){ $dataJs='';}
 	
+    
 
 	// page editor  ******************************************
 	var myCodeMirror = CodeMirror(document.getElementById("template-html") , {
 	  mode: "htmlmixed",
 	  theme: "ambiance",
 	  lineNumbers: true,
+	  styleActiveLine: true,
 	  scrollbarStyle: "simple",
 	  gutter: true,
 	  extraKeys: {"Ctrl-Space": "autocomplete"},
@@ -114,22 +172,26 @@ jQuery(document).ready(function($) {
 	  },
       value: $dataHtml
 	});
-
+ 
 	var myCodeMirrorCss = CodeMirror(document.getElementById("template-css") , {
 	  mode:  "text/css",
 	  theme: "ambiance",
 	  lineNumbers: true,
+	  styleSelectedText: true,
 	  scrollbarStyle: "simple",
 	  gutter: true,
 	  extraKeys: {"Ctrl-Space": "autocomplete"},
 	  value: $dataCss
 
 	});
+ 
+
 
 	var myCodeMirrorJs = CodeMirror(document.getElementById("template-js") , {
 	  mode:  "text/javascript",
 	  theme: "ambiance",
 	  lineNumbers: true,
+	  styleActiveLine: true,
 	  scrollbarStyle: "simple",
 	  extraKeys: {"Ctrl-Space": "autocomplete"},
 	  value: $dataJs
@@ -143,6 +205,8 @@ jQuery(document).ready(function($) {
       handles: "e"
 	});
 
+    
+    
 
     //controle editor resize
     // template-css
@@ -158,9 +222,30 @@ jQuery(document).ready(function($) {
 
 
  	
+    //set values for each page on load to load element
+	    var htmlValue = myCodeMirror.getValue('\n');
+
+    	var cssValue = myCodeMirrorCss.getValue('\n');
+
+    	var jsValue = myCodeMirrorJs.getValue('\n');
+
+
+    	$('.htmlRow').html(htmlValue);
+
+    	$('.htmlcss').find('style').html(cssValue);
+
+    	$('.htmljs').find('script').html(jsValue);
+
+
+    	(function (global) {
+	        global.localStorage.setItem("html", htmlValue);
+	        global.localStorage.setItem("css", cssValue);
+	        global.localStorage.setItem("js", jsValue);
+		}(window));
+
 
 	//get codevalueses
-	$('.ui-layout-pane-south').on('ready', function() {
+	$('.ui-layout-pane-south').on('keyup', function() {
 		//mirror valuses
 		var htmlValue = myCodeMirror.getValue('\n');
 
@@ -311,14 +396,50 @@ jQuery(document).ready(function($) {
 
 
     //manage selected div
-    $('iframe').contents().on('click' , "a , h1" , function() {
-    	// $('#uploads').contents().find('iframe').contents().find('#element');
-           // $(this).addClass('selected_div');
-           $(this).toggleClass('selected_div');
-           console.log($(this));  
+    $('#template-html').on('click', function() {
+           
+           //rm activeElement class
+           $('body').contents().find('iframe').contents().find('.htmlRow').find('.activeElement').removeClass('activeElement');
 
+           var active = $('.CodeMirror-activeline').text();
+           var css = $('#template-css').text();
+           
+
+           if (active.indexOf("class") >= 0) {
+           	  // get element by line click
+           	  var myString = active.split('"');
+           	  var element = myString[1]
+           	  var elementDiv = ('.'+element+'');
+           	  var item = $('body').contents().find('iframe').contents().find('.htmlRow').find(elementDiv);
+           	  item.addClass('activeElement');
+              
+             
+           	  if (css.indexOf(element) >= 0) {
+           	    console.log('yes');
+           	  }
+
+           	  myCodeMirrorCss.getSearchCursor(element);
+           }
+           else if (active.indexOf("id") >= 0) {
+           	  // get element by line click
+           	  var myString = active.split('"');
+           	  var element = myString[1]
+           	  var elementDiv = ('#'+element+'');
+           	  var item = $('body').contents().find('iframe').contents().find('.htmlRow').find(elementDiv);
+           	  item.addClass('activeElement');
+           }
+
+           
+
+           // mark text
+    	   // myCodeMirrorCss.markText({line: 2, ch: 2}, {line: 5, ch: 8}, {className: "styled-background"});
+
+         
     });
 
+    
+
+  
 
 	
 

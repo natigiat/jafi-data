@@ -15,18 +15,18 @@ var User = require('../modules/user.js');
 
 
 /* GET scanner page. */
-// router.get('/', ensureAuthenticated,  function(req, res, next) {
-//   var userName =  req.user.name;
-//   userName = userName.replace(/\s/g, '');
+router.get('/', ensureAuthenticated,  function(req, res, next) {
+  var userName =  req.user.name;
+  userName = userName.replace(/\s/g, '');
 
-//   res.render('scanner', { title: 'Scanner' , user: req.user , name: userName }); //, name: req.user.name
-// });
-
-/* GET scanner page. */
-router.get('/',  function(req, res, next) {
-
-    res.render('scanner', { title: 'Scanner' }); //, name: req.user.name
+  res.render('scanner', { title: 'Scanner' , user: req.user , name: userName }); //, name: req.user.name
 });
+
+// /* GET scanner page. */
+// router.get('/',  function(req, res, next) {
+
+//     res.render('scanner', { title: 'Scanner' }); //, name: req.user.name
+// });
 
 
 /* GET scanner edit from account page. */
@@ -141,8 +141,8 @@ router.post('/', function(req, res, next) {
 // save element
 router.post('/element', function(req, res, next) {
 	
-	var userId = req.user.id;
-	// var userId = '234234';  //for dev
+	// var userId = req.user.id;
+	var userId = '234234';  //for dev
 	var elmentName = req.body.elmentName;
 	var elementHtml = req.body.elementHtml;
 	var elementCss = req.body.elementCss;

@@ -86,6 +86,14 @@ ul.rrssb-buttons.clearfix {
 }
 
 
+/*.CodeMirror-selectedtext {
+    background-color: red!important;
+}*/
+
+.styled-background {
+    background-color: red!important;
+}
+
 
 
 .iframe-wrap.account{
@@ -322,6 +330,10 @@ li.active{
 }
 
 
+
+ .CodeMirror-activeline-background {
+    background: none repeat scroll 0% 0% rgba(229, 119, 52, 0.15)!important;
+}
 
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
  max-height: 300%!important;
@@ -1220,3 +1232,4 @@ padding: 20px;}
     -moz-border-radius: 0;
     padding: 20px;
 }
+
