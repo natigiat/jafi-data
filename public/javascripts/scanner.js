@@ -177,7 +177,8 @@ jQuery(document).ready(function($) {
 	  mode:  "text/css",
 	  theme: "ambiance",
 	  lineNumbers: true,
-	  styleSelectedText: true,
+	  // styleSelectedText: true,
+	  styleActiveLine: true,
 	  scrollbarStyle: "simple",
 	  gutter: true,
 	  extraKeys: {"Ctrl-Space": "autocomplete"},
@@ -412,13 +413,17 @@ jQuery(document).ready(function($) {
            	  var elementDiv = ('.'+element+'');
            	  var item = $('body').contents().find('iframe').contents().find('.htmlRow').find(elementDiv);
            	  item.addClass('activeElement');
-              
-             
-           	  if (css.indexOf(element) >= 0) {
-           	    console.log('yes');
-           	  }
 
-           	  myCodeMirrorCss.getSearchCursor(element);
+           	  // myCodeMirrorCss.lastLine(element);
+           	  // myCodeMirrorCss.replaceRange("foo\n", {line: Infinity});
+           	  //append name of element to css editor
+              
+           	  
+              if (!(css.indexOf(element) >= 0))
+               {
+           	  	 myCodeMirrorCss.replaceRange("\n."+element+"{\n}", {line: Infinity});
+           	   }
+           	  
            }
            else if (active.indexOf("id") >= 0) {
            	  // get element by line click
@@ -427,15 +432,19 @@ jQuery(document).ready(function($) {
            	  var elementDiv = ('#'+element+'');
            	  var item = $('body').contents().find('iframe').contents().find('.htmlRow').find(elementDiv);
            	  item.addClass('activeElement');
+           	  //append name of element to css edito
+           	  if (!(css.indexOf(element) >= 0))
+               {
+           	  	 myCodeMirrorCss.replaceRange("\n#"+element+"{\n}", {line: Infinity});
+           	   }
+           	  
            }
-
-           
-
-           // mark text
-    	   // myCodeMirrorCss.markText({line: 2, ch: 2}, {line: 5, ch: 8}, {className: "styled-background"});
-
          
     });
+
+    
+
+
 
     
 

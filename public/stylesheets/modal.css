@@ -1363,3 +1363,100 @@ i.fa.fa-chevron-right.saveElement , {
     cursor: pointer;
     top: 10px;
 }
+
+
+
+
+#htmlMudole .modal-dialog{
+    width: 58%;
+    margin: 40px 0px 0px 0px;
+    float: right;
+}
+
+#htmlMudole .modal-body{
+  padding: 0px!important;
+}
+
+
+
+.steps{
+    height: 390px;
+}
+
+.steps input[type=checkbox] {
+  display: none;
+}
+
+.steps input[type=submit]{
+  background: #f1783c;
+  border: none;
+  padding: 0px;
+  margin: 0 auto;
+  width: 100%;
+  height: 55px;
+  border-radius: 0px 0px 3px 3px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  outline: none;
+}
+
+.steps input[type=submit]:hover{
+  background: #8fde9c;
+}
+
+.steps label{
+  background: #393D40;
+  height: 63px;
+  line-height: 69px;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #44494e;
+  color: #889199;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-indent: 52px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0px!important;
+}
+
+.steps label:before{
+  content:"";
+  width: 12px;
+  height: 12px;
+  border: 2px solid #25292e;
+  display: block;
+  position: absolute;
+  margin: 26px 0px 0px 18px;
+  border-radius: 100%;
+  transition: border 0.7s ease
+}
+
+.steps label[for=genger]{
+  border-radius: 3px 3px 0px 0px;
+}
+
+.steps label:hover{
+  background: #2B2E30;
+  color: #46b7e5
+}
+
+.steps label:hover:before{
+  border: 2px solid #46b7e5;
+}
+
+#genger:checked ~ label[for=genger]:before,
+#measurements:checked ~ label[for=measurements]:before,
+#family:checked ~ label[for=family]:before,
+#activity:checked ~ label[for=activity]:before,
+#results:checked ~ label[for=results]:before{
+  border: 2px solid #96c93c;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAYAAAA1WQxeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNpinHLMhgEHKADia0xQThIQs6JJ9gPxZhYQAcS6QHwDiI8hSYJAC0gBPxDLAvFcIJ6JJJkDxFNBVtgBcQ8Qa6BLghgwN4A4a9ElQYAFSj8C4mwg3o8sCQIAAQYA78QTYqnPZuEAAAAASUVORK5CYII=') no-repeat center center;
+}

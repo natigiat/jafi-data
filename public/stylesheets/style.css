@@ -130,6 +130,7 @@ iframe.webform-frame {
 
 .publishNav li {
     cursor: pointer;
+    text-align: left;
 }
 
 .saveEditElement {
@@ -330,6 +331,38 @@ li.active{
 }
 
 
+.headerPanel {
+    background: #202020;
+    color: #D4D2D1;
+    text-transform: uppercase;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 17pt;
+    text-align: center;
+    vertical-align: bottom;
+    display: block;
+}
+
+.panelSetting {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    padding: 0px!important;
+    cursor: pointer;
+}
+
+.ui-layout-resizer-south {
+    background: #3494E5!important;
+    height: 10px!important;
+    border: none!important;
+}
+
+#template-html , #template-css ,#template-js{
+    border: none!important;
+}
+
+.ui-layout-pane{
+border: none!important;
+}
 
  .CodeMirror-activeline-background {
     background: none repeat scroll 0% 0% rgba(229, 119, 52, 0.15)!important;
@@ -348,11 +381,17 @@ li.active{
 }
 
 .CodeMirror-simplescroll-vertical div {
-    background: #666!important;
+    background: #9C7D68!important;
+    border: none!important;
 }
 
 .CodeMirror-gutter.CodeMirror-linenumbers {
     background-color: #202020;
+}
+
+#template-html .CodeMirror-simplescroll-vertical , #template-css .CodeMirror-simplescroll-vertical{
+    right: 14px!important;
+    background: transparent!important;
 }
 
 i.fa.fa-folder-open-o.fa-5x.faNewProgect {
@@ -1233,3 +1272,15 @@ padding: 20px;}
     padding: 20px;
 }
 
+.margin-right{
+    margin-right: 15px;
+}
+
+.no-padding{
+    padding: 0px!important;
+}
+
+.autocomplete-container-7a26d {
+    border: 1px solid #ccc!important;
+    padding: 0px!important;
+}
