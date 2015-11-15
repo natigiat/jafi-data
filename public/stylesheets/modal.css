@@ -1379,10 +1379,6 @@ i.fa.fa-chevron-right.saveElement , {
 
 
 
-.steps{
-    height: 390px;
-}
-
 .steps input[type=checkbox] {
   display: none;
 }
@@ -1393,7 +1389,7 @@ i.fa.fa-chevron-right.saveElement , {
   padding: 0px;
   margin: 0 auto;
   width: 100%;
-  height: 55px;
+  height: 43px;
   border-radius: 0px 0px 3px 3px;
   color: white;
   text-transform: uppercase;
@@ -1411,15 +1407,17 @@ i.fa.fa-chevron-right.saveElement , {
 
 .steps label{
   background: #393D40;
-  height: 63px;
-  line-height: 69px;
-  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  width: 20%;
+  float: left;
   display: block;
   border-bottom: 1px solid #44494e;
   color: #889199;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 11px;
+  border-right: 1px solid;
   letter-spacing: 1px;
   text-indent: 52px;
   cursor: pointer;
@@ -1434,13 +1432,9 @@ i.fa.fa-chevron-right.saveElement , {
   border: 2px solid #25292e;
   display: block;
   position: absolute;
-  margin: 26px 0px 0px 18px;
+  margin: 12px 0px 0px 18px;
   border-radius: 100%;
   transition: border 0.7s ease
-}
-
-.steps label[for=genger]{
-  border-radius: 3px 3px 0px 0px;
 }
 
 .steps label:hover{

@@ -12,8 +12,8 @@ jQuery(document).ready(function($) {
     
     //add intro 
 	// introJs().start();
-	$( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
+	// $( "#sortable" ).sortable();
+ //    $( "#sortable" ).disableSelection();
 
 	foo();
 	
@@ -125,11 +125,11 @@ jQuery(document).ready(function($) {
 	});
 
 
-	$('.add').one('click' , function( ) {
+	// $('.add').one('click' , function( ) {
  	 
-		  $('side-bar').find('menu').after(add);
-		  foo();
-	});
+	// 	  $('side-bar').find('menu').after(add);
+	// 	  foo();
+	// });
 
     
     //add text area 
@@ -256,7 +256,7 @@ jQuery(document).ready(function($) {
 
 		    $('.inputwidth').text(style.width);
 		    $('.inputheight').text(style.height);
-		    $('.inputfillOpacity').text(style.fillOpacity);
+		    $('.inputfillOpacity').text(style.opacity);
 
 		    
 		    $('.inputbsckgroundColor').text(style.backgroundColor);

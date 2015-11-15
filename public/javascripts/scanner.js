@@ -17,9 +17,12 @@ jQuery(document).ready(function($) {
 	var myLayout = $('body').layout();
 	$('body').layout({ applyDefaultStyles: true });
 	var state = myLayout.state;
-	myLayout.sizePane("west", 600);
-    myLayout.close( "west");
-    myLayout.sizePane("south", 290);
+	myLayout.sizePane("west", "50%");
+	myLayout.sizePane("east", "50%");
+	myLayout.sizePane("south", 290);
+    myLayout.close("west");
+    myLayout.close("east");
+    
 
 
      
@@ -35,14 +38,17 @@ jQuery(document).ready(function($) {
 
 
 	//navbar icone for code and style active ******************************************
-	var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
-	var codeClick = state.west.isClosed ? $('.codeB').find('a').removeClass('bactive') : $('.codeB').find('a').addClass('bactive');
+	var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive')  : $('.styleB').find('a').addClass('bactive');
+	var codeClick = state.south.isClosed ? $('.codeB').find('a').removeClass('bactive')   : $('.codeB').find('a').addClass('bactive');
+	var drawrow = state.east.isClosed    ? $('.drawrow').find('a').removeClass('bactive') : $('.drawrow').find('a').addClass('bactive');
+	var drawrow = state.east.isClosed    ? console.log('close') : console.log('open');
 
 	
 	$('.navbar').on('click', function() {
 		
-		var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive') : $('.styleB').find('a').addClass('bactive');
-		var codeClick = state.west.isClosed ? $('.codeB').find('a').removeClass('bactive') : $('.codeB').find('a').addClass('bactive');
+		var styleClick = state.west.isClosed ? $('.styleB').find('a').removeClass('bactive')  : $('.styleB').find('a').addClass('bactive');
+		var codeClick = state.south.isClosed ? $('.codeB').find('a').removeClass('bactive')   : $('.codeB').find('a').addClass('bactive');
+		var drawrow = state.east.isClosed    ? $('.drawrow').find('a').removeClass('bactive') : $('.drawrow').find('a').addClass('bactive');
 		
 	});
 
@@ -56,9 +62,14 @@ jQuery(document).ready(function($) {
 	//close and open layouts from nav link ******************************************
 	$('.styleB').on('click', function() {	
 		// $('.ui-layout-resizer').hide();
-		myLayout.toggle("west");
+		myLayout.toggle("east");
 	});
 
+	$('.drawrow').on('click', function() {	
+		// $('.ui-layout-resizer').hide();
+		myLayout.toggle("west");
+		myLayout.close("south");
+	});
 
 	$('.codeB').on('click', function() {	
 		myLayout.toggle("south");
@@ -78,13 +89,12 @@ jQuery(document).ready(function($) {
 		$('.ui-layout-resizer').hide();
 		$('.ui-layout-container').append('<nav role="navigation" class="navbar scannerNav navbar-static-top previewModeNav"> <div class="navbar-header"><a class="navbar-brand editorBack">EDITOR</a></div> <div id="bs-example-navbar-collapse-8" class="collapse navbar-collapse"> <ul class="nav navbar-nav navSmartphones"> <li class="active"><a class="hint--bottom mobile" data-hint="Desktop View"><span class="icon-display fs1"></span></a></li></ul><ul class="nav navbar-nav navbar-right publishNav"><li><a class="bactive">Preview Mode</a></li></ul> </div> </nav>');
 		$('.ui-layout-center').css('top', '20px!important');
-		if(!($('.rangSmartphones').length)){
-			$('.navSmartphones').after('<div class="rangSmartphones col-sm-6 col-sm-offset-2"><div class="range"> <input type="range" min="1" max="7" steps="1" value="1"> </div> <ul class="range-labels"> <li class="active selected">Iphone</li> <li>Samsong</li> <li>HTC</li> <li>LG</li> <li>Ipad Mini</li> <li>Ipad</li> <li>Laptop</li> </ul></div>');
-	    }
+		
 	});
 
 	$('.mobile').on('click', function() {
-		$('iframe').addClass('mobileView');
+		$('iframe').addClass('mobileView');  
+		$('.ui-layout-center').addClass('backcenter');
 	});
 	
 
@@ -98,6 +108,7 @@ jQuery(document).ready(function($) {
 		$('.ui-layout-resizer').show();
 		$('.previewModeNav').remove();
 		$('iframe').removeClass('mobileView');
+		$('.ui-layout-center').removeClass('backcenter');
 	});
      
     /*----------  range script  ----------*/
@@ -443,12 +454,200 @@ jQuery(document).ready(function($) {
     });
 
     
+    //drow row functionalitty
+    $(".rowManage2,.rowManage3,.rowManage4,.rowManage5").hide();
+    $('.panelText').hide();
+
+    $('.steps').on('click', '.row1', function(event) {
+    	$(".rowManage2,.rowManage3,.rowManage4,.rowManage5").hide(1200); 
+    	$('.panelText').hide();
+    	$('.panelMain').show();
+    	$(".rowManage1").show(1200);     
+    	/* Act on the event */
+    }); 
+
+   $('.steps').on('click', '.row2', function(event) {
+        $(".rowManage2,.rowManage3,.rowManage4,.rowManage5").hide(1200); 
+        $('.panelMain').hide();
+        $('.panelText').show();
+          
+        /* Act on the event */
+    });
 
 
+    $('.steps').on('click', '.row3', function(event) {
+        $(".rowManage1,.rowManage2, .rowManage4 ,.rowManage5").hide(1200); 
+        $(".rowManage3").show(1200);     
+        /* Act on the event */
+    });
+
+    $('.steps').on('click', '.row4', function(event) {
+    	$(".rowManage1,.rowManage2,.rowManage3,.rowManage5").hide(1200); 
+    	$(".rowManage4").show(1200);     
+    	/* Act on the event */
+    }); 
+
+
+    $('.steps').on('click', '.row5', function(event) {
+    	$(".rowManage1,.rowManage2,.rowManage3,.rowManage4").hide(1200); 
+    	$(".rowManage5").show(1200);     
+    	/* Act on the event */
+    }); 
 
     
+    
+    //defin selectable resiazble selecteble
+    $(".draggable").draggable({cursor: "move", containment: ".divcontainer", scroll: false});
+    $(".resizable").resizable({containment: "parent", handles: "ne,nw,se,sw,n,w,e,s"});
+    $( ".makeitmove" ).selectable();
+    
+    $('.ui-layout-west').on('click', function(event) {
+        
+    });
+    
 
-  
+    $('.ui-layout-west').on('click' , '.makeitmove , layer-item' , function() {
+		var layerIndex = $(this).index();
+		//Remove all
+   		$('.selected_div').removeClass('selected_div');
+		$('.makeitmove:eq('+ layerIndex+' )').addClass('selected_div');
+		$('layer-item:eq('+ layerIndex+' )').addClass('selected_div');
+
+		$('.makeitmove:eq('+ layerIndex+' )').draggable({cursor: true, containment: ".divcontainer", scroll: false});
+        $('.makeitmove:eq('+ layerIndex+' )').resizable({containment: "parent", handles: "ne,nw,se,sw,n,w,e,s"});
+
+	});
+
+    
+    //get backgrond color
+	$('.ui-layout-west').on('mousemove' , function() {
+	    
+	    var item = $('.rows').find('.selected_div');
+	    if(item.length){
+		    var style = item.getStyleObject();
+		    console.log(style);
+            
+            //get element with by precent
+   //          var width = style.width;
+			// var parentWidth = item.offsetParent().width();
+			// var percent = 100*width/parentWidth;   
+		  
+            // console.log(percent);
+            $("#canvaso").ImageColorPicker({
+				afterColorSelected: function(event, color){
+				 $(item).css("background" , color); 
+				}
+			});
+
+
+		    $('.inputwidth').text(style.width);
+		    $('.inputheight').text(style.height);
+		    $('.inputfillOpacity').text(style.fillOpacity);
+
+		    
+		    $('.inputbsckgroundColor').text(style.backgroundColor);
+		    $('.inputbsckgroundImage').text(style.height);
+		    $('.inputbackgroundSize').text(style.backgroundSize);
+		    $('.inputbackgroundRepeat').text(style.backgroundRepeat);
+
+	    }
+
+    });
+    
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+
+    var layer = "<layer-item class=''><icon class='eye active'></icon><icon class='lock'></icon><input spellcheck='false'></layer-item>";
+    // panels start
+    
+    $('.ui-layout-west').on('click', '.addOne , .add', function(event) {
+
+    	$('.divcontainer').append('<div class="makeitmove ui-widget-content "></div>')
+    	$('layer-item:last-child').after(layer); 
+
+    });
+
+    
+    //main menu Add
+    //remove selected div
+    $('.ui-layout-west').on('click' , '.remove' , function() {
+		$('.selected_div').remove();
+	});
+
+	//remove selected div
+    $('.ui-layout-west').on('click' , '.clone' , function() {
+		var copyAdd = $('.rows').find('.selected_div').clone();
+
+		$('.divcontainer').append(copyAdd)
+    	$('layer-item:last-child').after(layer); 
+	});
+
+	$('.ui-layout-west').on('click' , '.up' , function() {
+		var layerIndex = $('#sortable').find('.selected_div').index();
+		var layerIndexUp = layerIndex + -1 ;
+		//Remove all
+   		$('.makeitmove:eq('+ layerIndex+' )').removeClass('selected_div');
+		$('layer-item:eq('+ layerIndex+' )').removeClass('selected_div');
+
+		$('.makeitmove:eq('+ layerIndexUp+' )').addClass('selected_div');
+		$('layer-item:eq('+ layerIndexUp+' )').addClass('selected_div');
+		
+	});
+    
+    $('.ui-layout-west').on('click' , '.down' , function() {
+		var layerIndex = $('#sortable').find('.selected_div').index();
+		var layerIndexUp = layerIndex + +1 ;
+		//Remove all
+   		$('.makeitmove:eq('+ layerIndex+' )').removeClass('selected_div');
+		$('layer-item:eq('+ layerIndex+' )').removeClass('selected_div');
+
+		$('.makeitmove:eq('+ layerIndexUp+' )').addClass('selected_div');
+		$('layer-item:eq('+ layerIndexUp+' )').addClass('selected_div');
+		
+	});
+
+	$('.ui-layout-west').on('click' , '.eye' , function() {
+           var layerIndex = $(this).parent().index();
+           $(this).toggleClass( "active" );
+           
+           var element =  $('.makeitmove:eq('+ layerIndex+' )');
+           if((element).is(':visible')){
+              element.hide();
+             
+           }else{
+           	  element.show();
+           }
+	});
+
+	$('.ui-layout-west').on('click' , '.lock' , function() {
+           var layerIndex = $(this).parent().index();
+           
+           if ($(this).hasClass('active')){
+           	 $(this).removeClass( "active" );
+           	 var element =  $('.makeitmove:eq('+ layerIndex+' )');
+             element.draggable( 'enable' );
+             element.resizable( 'enable' );
+           }else{
+
+           	 $(this).addClass( "active" );
+           	 var element =  $('.makeitmove:eq('+ layerIndex+' )');
+             element.draggable( 'disable' );
+             element.resizable( 'disable' );
+
+           }
+           
+
+           
+           
+
+	});
+
+
+
+
+
+
+	
 
 	
 

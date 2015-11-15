@@ -132,35 +132,15 @@ html
                    
 
              //-########################## draw row
-            li(class="hint--bottom" data-hint="Draw Row").api
-              a(data-toggle="modal" data-target="#htmlMudole") <i class="fa fa-th"></i>
-                 div#htmlMudole.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                  .modal-dialog(role='document')
-                    .modal-content 
-                      .modal-body
-                          div.col-sm-3.no-padding
-                              .steps
-                                input#genger(name='genger', type='checkbox', checked='')
-                                label(for='genger') your genger
-                                input#measurements(name='measurements', type='checkbox')
-                                label(for='measurements') your measurements
-                                input#family(name='family', type='checkbox')
-                                label(for='family') your family history
-                                input#activity(name='activity', type='checkbox')
-                                label(for='activity') your activity level
-                                input#results(name='results', type='checkbox')
-                                label(for='results') your results
-                                input#submit(type='submit', value='get started')
-                          
-                   
-
+            li.drawrow
+              a(class="hint--bottom" data-hint="Draw Row") <i class="fa fa-th"></i>            
 
             //-########################## insperation
             li.styleB
               a(class="hint--bottom" data-hint="Open Sketch") <i class="fa fa-file-image-o"></i>
             //-########################## open editors
-            li.codeB(class="hint--bottom" data-hint="Open Editor") 
-              a <i class="fa fa-code"></i>
+            li.codeB 
+              a(class="hint--bottom" data-hint="Open Editor") <i class="fa fa-code"></i>
             //-##########################preview mode
             li.preview
               a(class="hint--bottom" data-hint="Preview Mode")  Preview
@@ -268,6 +248,7 @@ html
     script(src='/bower/bootstrap-modal/js/bootstrap-modalmanager.js')
     script(src='/javascripts/folders/autocomplete-0.3.0.min.js')
     script(src='/javascripts/modal1.1.min.js')
+
       
       
 
