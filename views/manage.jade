@@ -2,12 +2,13 @@ extends layout
 
 block content
      
-    .col-sm-10.col-sm-offset-1.setting.mainWrapper
+    .col-sm-10.col-sm-offset-1.setting.mainWrapper.manage
       .mainWrapper
         .col-sm-4
           section.box.widget.locations
             .avatar
-              img.temImage(src='/images/screenshots/'+userId+progectName+'.png' class="projectImage")
+              //- img.temImage(src='/images/screenshots/'+userId+progectName+'.png' class="projectImage")
+              iframe(src="/progect/"+id +"/" +progectName class="manage-frame" style="margin: 0 auto; transform-origin: top left;" allowtransparency="true" width="100%" height="400px" frameborder="0" scrolling="no" align="center")
            
             .details
               h2 #{progectName}
@@ -149,49 +150,52 @@ block content
 
             .manage2
                 .wrapperTable
-                  .tableManage
-                    .rowManage.header.blue
-                      .cellManage 
-                        | Cuntry 
-                      .cellManage 
-                        | City
-                      .cellManage
-                        | Date
-                      .cellManage
-                        | Flag #{leeds}
-                    each val, index in leeds
-                      .rowManage
-                        .cellManage
-                          =val.name
-                        .cellManage
-                          =val.email
-                        .cellManage
-                           
-                        .cellManage
-                           span(class="flag-icon")
+                     each val, index in elements
+                       li.templateLi
+                          div.col-sm-4.row.listProgect
+                            div.text-center.col-sm-12progectName= val.name
+                            div.col-sm-12
+                              div(class="templatesWebsite")
+                              div(class="iframe-wrap manage")
+                                iframe(src="/progect/element/"+val._id +"/" +val.name class="webform-frame" style="margin: 0 auto; transform-origin: top left;" allowtransparency="true" width="100%" height="120px" frameborder="0" scrolling="no" align="center")
+                            div.col-sm-12.ratingTemplates
+                              div.col-sm-6
+                                p.templatesPrice Price : Free
+                              div.col-sm-6.pull-right
+                                 a(class="watch" name="watch")<i class="fa fa-eye"></i>
+                                   span.eyesValue(val="3") 3
+                                 a(class="single-stat comments")<i class="fa fa-heart-o"></i></i> 3
+                            div.col-sm-12.temlatesButtons               
+                                 a.btn.btn-primary.btn-sm.fixed-bottom.box-shadow--2dp.col-sm-6(href="/scanner/edit/#{userId}").progectLink= "Edit"
+                                 a.btn.btn-success.btn-sm.fixed-bottom.box-shadow--4dp.col-sm-6.sec(href="/progect/element/"+val._id +"/" +val.name ).progectLinkView= "View"
 
             .manage3
-                .wrapperTable
-                  .tableManage
-                    .rowManage.header.blue
-                      .cellManage 
-                        | Cuntry 
-                      .cellManage 
-                        | City
-                      .cellManage
-                        | Date
-                      .cellManage
-                        | Flag #{leeds}
-                    each val, index in leeds
-                      .rowManage
-                        .cellManage
-                          =val.name
-                        .cellManage
-                          =val.email
-                        .cellManage
-                           
-                        .cellManage
-                           span(class="flag-icon")
+                if (leeds)
+                  .wrapperTable
+                    .tableManage
+                      .rowManage.header.blue
+                            .cellManage 
+                              | Cuntry 
+                            .cellManage 
+                              | City
+                            .cellManage
+                              | Date
+                            .cellManage
+                              | Flag 
+                          each val, index in leeds
+                            .rowManage
+                              .cellManage
+                                =val.text1
+                              .cellManage
+                                =val.email1
+                              .cellManage
+                                 
+                              .cellManage
+                                 span(class="flag-icon")
+               
+                  h1 To add leeds
+                  p.description you can add this toturial
+
 
             .manage6
                 .wrapperTable
@@ -204,6 +208,8 @@ block content
                       .cellManage
                         | Date
                       .cellManage
+                        | Ip
+                      .cellManage
                         | Flag
                     each val, index in progectManage
                       .rowManage
@@ -213,6 +219,8 @@ block content
                            =val.userCity
                         .cellManage.mangeDate
                            =val.userDate
+                        .cellManage
+                           =val.userIp
                         .cellManage
                            span(class="flag-icon")
                     

@@ -474,6 +474,7 @@ thead tr {
 .setting .avatar {
     max-width: 100%!important;
     margin: 0 auto!important;
+    height: 200px;
 }
 
 .setting #reset:active{
@@ -528,6 +529,7 @@ thead tr {
 .cellManage {
   padding: 6px 12px;
   display: table-cell;
+  text-align: center;
 }
 @media screen and (max-width: 580px) {
   .cellManage {

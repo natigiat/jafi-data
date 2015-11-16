@@ -1,3 +1,176 @@
+/*drow row*/
+.mainDrawrow , .drawrowMenu{
+    margin-top: 10px;
+}
+
+.divcontainer {
+  border: 1px solid lightgray;
+  width: 500px;
+  height: 400vh;
+  margin: 0 auto;
+  padding: 0px;
+  background-image: linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),  linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),  linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px),  linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+.makeitmove {
+  background: #EEE;
+  width: 100%;
+  height: 120px;
+  /* opacity: 0.7; */
+  border: none!important;
+}
+
+/*first panel*/
+.drowrowAddDiv {
+    position: absolute;
+    bottom: 0;
+    background: #F1783C;
+}
+
+.btn-add {
+    background: #393D40;
+    color: #fff;
+}
+
+.col-text{
+    background: #525252;
+    height: 30px;
+}
+
+.col-text-element{
+    font-size: 15px!important;
+    line-height: 2em!important;
+    font-weight: 100;
+}
+
+.col-text-element:not(:last-child){
+     border-right: 1px solid;
+
+}
+
+.col-text-select{
+   padding: 6px 0px!important; 
+}
+
+    
+/*scanner pallete********************************************************/
+#workspace { position:relative }
+canvas { margin:21px 0 0 21px; background-color:#fff }
+canvas.grid {
+    background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position:-1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    background-image:
+        linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px);
+}
+
+/* ruler styles */
+.ruler {
+    position:absolute;
+    background:#333435;
+    background-size:100px 100px;
+    background-position:-1px -1px;
+}
+.ruler:after {
+    content:'';
+    display:block;
+    position:absolute;
+    background-size:10px 10px;
+    background-position:-1px -1px;
+}
+#horizontalRuler {
+    height:20px; width:300px;
+    top:0; left:21px;
+    background-image:linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px);
+}
+#horizontalRuler:after {
+    top:50%; left:0;
+    width:100%; height:50%;
+    background-image:linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
+}
+#verticalRuler {
+    height:200px; width:20px;
+    top:21px; left:0;
+    background-image:linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px);
+}
+#verticalRuler:after {
+    top:0; left:50%;
+    width:50%; height:100%;
+    background-image:linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px);
+}
+#workspace ul { list-style:none; padding:0; margin:0; color:#999 }
+.ruler li { position:absolute }
+#horizontalRuler li { top:-1px }
+#horizontalRuler li:first-child { display:none }
+#verticalRuler li { right:0; margin-top:-12px }
+.ruler .marker {
+    position:absolute;
+    top:0; left:0;
+    display:block;
+    background:rgba(0,255,255,.8);
+}
+#hMarker { width:1px; height:100% }
+#vMarker { width:100%; height:1px }
+
+/* tools styles */
+.tool-box {
+    color:#ccc;
+    display:inline-block;
+    background:#434445;
+    border-radius:2px;
+    border:1px solid #535655;
+}
+.tool-box label { padding:0 .5em }
+#set_cSize {
+    width:300px;
+    margin-left:21px;
+    padding:3px 8px;
+    margin-bottom:5px;
+    font-size:1.3em;
+}
+#set_cSize input[type='number'] {
+    background:transparent;
+    color:#ddd;
+    width:60px;
+    border:1px solid #666;
+    text-align:center;
+    border-radius:4px;
+    -webkit-transition:all .2s linear;
+            transition:all .2s linear;
+}
+#set_cSize input:hover { background:#222 }
+#set_cSize input:focus { color:#fff }
+#set_cSize input[type='checkbox'] {
+    position:relative;
+    top:1px;
+}
+#set_cSize label { padding-left:1em }
+
+#statusBar {
+    display:block;
+    width:480px; height:16px;
+    border-radius:0 0 2px 2px;
+    border-top:none;
+    margin:-4px 0 0 21px;
+    line-height:16px;
+}
+
+#toolBox {
+    display:block;
+    width:60px; height:430px;
+    position:absolute;
+    top:10px; left:515px;
+}
+.tool-group { margin-bottom:8px }
+.tools { padding-left:1px }
+
+
+/*scanner palatte finish*/
+
 .container {
   margin:20px;
   display:inline-block;
@@ -51,14 +224,14 @@
 
 }
 
- .ui-resizable-ne,
- .ui-resizable-se,
- .ui-resizable-nw,
- .ui-resizable-sw,
- .ui-resizable-n,
- .ui-resizable-s,
- .ui-resizable-w,
- .ui-resizable-e{
+ .editerWraper .ui-resizable-ne,
+ .editerWraper .ui-resizable-se,
+ .editerWraper .ui-resizable-nw,
+ .editerWraper .ui-resizable-sw,
+ .editerWraper .ui-resizable-n,
+ .editerWraper .ui-resizable-s,
+ .editerWraper .ui-resizable-w,
+ .editerWraper .ui-resizable-e{
   border: 1px solid #6BB0EC;
   width: 9px !important;
   height: 9px !important;
@@ -86,7 +259,7 @@
     top: 0% !important;
     height: 100%!important;
     background: #3494E5!important;
-    width: 25px!important;
+    width: 20px!important;
     margin-top: 0px !important;
 }
 
@@ -113,18 +286,25 @@ div#drow {
 
 .mobileView
 {
-    width: 30%;
-    border: 2px solid #9B9191;
     display: block;
     margin: 0 auto;
+    position: absolute;
 }
 
 #selectable .selected_div {
     border: 1px dashed #6BB0EC!important;
     cursor: move;
-    background: red;
+    background: #fff;
 }
 
+
+.no-display{
+    display:none;
+}
+
+.backcenter{
+  background: #232425!important;
+}
 
 .ui-resizable-e{
    cursor: url(/images/cursor/dragr.png) 18 15, progress !important;
@@ -144,16 +324,18 @@ a.navbar-brand.editorBack {
 
 
 panel {
-    border-bottom: 1px solid #222;
     position: relative;
     font-size: 12px;
     display: block;
     color: #DDD
+
+
+
+
+
 }
 panel legend {
-    background: -webkit-gradient(linear, left top, left bottom, from(#262626), to(#222));
-    background: -webkit-linear-gradient(#262626, #222);
-    background: linear-gradient(#262626, #222);
+    background: #393D40;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid #111;
     display: block;
@@ -164,7 +346,7 @@ panel legend {
     font-weight: 700;
     font-size: 12px;
     padding: 5px;
-    margin:0px; 
+    margin:0px;
     color: #fff;
 }
 panel reset,
@@ -568,22 +750,11 @@ layer.hidden {
 /*tabs*/
 
 side-bar {
-    -webkit-animation: show-side-bar 1s 0.5s backwards;
-    animation: show-side-bar 1s 0.5s backwards;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    border-left: 1px solid #292929;
-    -webkit-transition: right 320ms;
-    transition: right 320ms;
-    background: #333;
-    position: absolute;
-    z-index: 1000;
-    width: 20%;
+    background: #393D40;
+    width: 100%;
     bottom: 0;
     right: 0;
-    top: 60px;
 }
 side-bar>div {
     position: absolute;
@@ -651,7 +822,6 @@ side-bar tab[name=layers] menu menu-item:not(:first-child) {
     border-left: 1px solid #333
 }
 side-bar tab[name=layers] menu menu-item:hover:after {
-    content: attr(action);
     top: -27px;
     left: 50%;
     -webkit-transform: translateX(-50%);

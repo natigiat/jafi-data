@@ -28,8 +28,32 @@ module.exports.SelectAllElements = function(callback){ //
 	
 	var query = {};
 
-    Element.find(query, callback);
+    Element.find(query, callback).limit(6);
 }
+
+//select all progect for templates page
+module.exports.SelectAllElementsSkip = function(elementSum ,callback){ //
+	
+	var query = {};
+
+    Element.find(query, callback).skip(elementSum).limit(6);
+}
+
+//select all progect for templates page
+module.exports.SelectElementsPaginat = function(element , elementSum ,callback){ //
+	
+	if(element ==="all"){
+		var query = {};
+	}else{
+		var query = {"name" : {$regex : ".*"+element+".*"}};
+	}
+	
+	
+
+    Element.find(query, callback).skip(elementSum).limit(6);
+}
+
+
 
 //select progect for view in account and templates page
 module.exports.SelectElement = function(Id , name , callback){
@@ -42,6 +66,12 @@ module.exports.SelectElement = function(Id , name , callback){
 module.exports.SelectElementByKind = function(name , callback){
 
 	var query = {"name" : {$regex : ".*"+name+".*"}};
+	Element.find(query , callback);
+}
+
+//check if progect exsist by id
+module.exports.SelectElementsByUser = function(userId , callback){
+	var query = {userId : userId};
 	Element.find(query , callback);
 }
 

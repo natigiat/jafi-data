@@ -68,7 +68,42 @@ ul.rrssb-buttons.clearfix {
     height: 0;
     padding-top: 56.25%;
     overflow: hidden;
+    height: 300px;
 }
+
+.iframe-wrap.added{
+    position: relative;
+    height: 0;
+    padding-top: 60.25%;
+    /*overflow: hidden;*/
+}
+
+.iframe-wrap.manage{
+    position: relative;
+    height: 0;
+    padding-top: 60.25%;
+    /*overflow: hidden;*/
+}
+
+
+/*.CodeMirror-selectedtext {
+    background-color: red!important;
+}*/
+
+.styled-background {
+    background-color: red!important;
+}
+
+
+
+.iframe-wrap.account{
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+    height: 172px;
+}
+
     
 iframe.webform-frame {
 
@@ -91,6 +126,42 @@ iframe.webform-frame {
     transition: opacity 0.4s ease;
 
     
+}
+
+.publishNav li {
+    cursor: pointer;
+    text-align: left;
+}
+
+.saveEditElement {
+    margin-top: 2px;
+}
+.manage-frame{
+    visibility: visible;
+    opacity: 1;
+    width: 201%;
+    border: 0;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
+}
+
+.listProgect iframe.webform-frame {
+
+width: 334%!important;
+
+height: 300%!important;
+
+-webkit-transform: scale(0.3)!important;
+
+-ms-transform: scale(0.3)!important;
+
+transform: scale(0.3)!important;
 }
 
 
@@ -260,6 +331,42 @@ li.active{
 }
 
 
+.headerPanel {
+    background: #202020;
+    color: #D4D2D1;
+    text-transform: uppercase;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 17pt;
+    text-align: center;
+    vertical-align: bottom;
+    display: block;
+}
+
+.panelSetting {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    padding: 0px!important;
+    cursor: pointer;
+}
+
+.ui-layout-resizer-south {
+    background: #3494E5!important;
+    height: 10px!important;
+    border: none!important;
+}
+
+#template-html , #template-css ,#template-js{
+    border: none!important;
+}
+
+.ui-layout-pane{
+border: none!important;
+}
+
+ .CodeMirror-activeline-background {
+    background: none repeat scroll 0% 0% rgba(229, 119, 52, 0.15)!important;
+}
 
 .CodeMirror.cm-s-ambiance.CodeMirror-simplescroll {
  max-height: 300%!important;
@@ -274,11 +381,17 @@ li.active{
 }
 
 .CodeMirror-simplescroll-vertical div {
-    background: #666!important;
+    background: #9C7D68!important;
+    border: none!important;
 }
 
 .CodeMirror-gutter.CodeMirror-linenumbers {
     background-color: #202020;
+}
+
+#template-html .CodeMirror-simplescroll-vertical , #template-css .CodeMirror-simplescroll-vertical{
+    right: 14px!important;
+    background: transparent!important;
 }
 
 i.fa.fa-folder-open-o.fa-5x.faNewProgect {
@@ -312,7 +425,7 @@ li.active {
 }
 
 a.buttonNewProgect {
-    border: 1px solid #6EAAE2!important;;
+    border: 1px solid #6EAAE2!important;
 }
 
 
@@ -337,6 +450,29 @@ a.buttonNewProgec {
   text-align: center;
   line-height: 250%;
 }
+
+.prevElement , .prevProgect{
+  border: 1px solid #6EAAE2!important;
+  position: absolute;
+  top: 16px;
+  right: 150px;
+  bottom: 0;
+  margin: auto;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #6BB0EC;
+  border-radius: 8px;
+  height: 2.5em;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  color: #6BB0EC;
+  -webkit-transition: color 0.3s 0.1s ease-out;
+          transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  line-height: 250%;
+}
+
 a.buttonNewProgec::before {
   position: absolute;
   top: 0;
@@ -424,10 +560,15 @@ li.progectLi {
 
 .templateLi{
     background-color: rgb(248, 248, 248);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 50px;
     list-style: none;
 }
+
+.filteTemplate{
+    margin-top: 40px!important;
+}
+
 .listProgect{
     margin: 0px!important;
 }
@@ -1129,4 +1270,17 @@ padding: 20px;}
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     -moz-border-radius: 0;
     padding: 20px;
+}
+
+.margin-right{
+    margin-right: 15px;
+}
+
+.no-padding{
+    padding: 0px!important;
+}
+
+.autocomplete-container-7a26d {
+    border: 1px solid #ccc!important;
+    padding: 0px!important;
 }

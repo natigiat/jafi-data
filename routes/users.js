@@ -3,8 +3,10 @@ var router = express.Router();
 var path = require('path');
 var multer  = require('multer');
 var bcrypt  = require('bcrypt-nodejs');
-var nodemailer = require('nodemailer');
-var upload = multer({ dest: '../uploads/' });
+
+// var nodemailer = require('nodemailer');
+// var upload = multer({ dest: '../uploads/' });
+
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;

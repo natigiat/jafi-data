@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
     
 
     $('.box.nav').on('click', '.startM1', function(event) {
-    	$(".manage7,.manage6").hide(1200); 
+    	$(".manage7,.manage6,.manage2,.manage7").hide(1200); 
     	$(".manage1").show(1200);     
     	/* Act on the event */
     }); 
@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 
 
     $('.box.nav').on('click', '.startM3', function(event) {
-        $(".manage1,.manage7, .manage6").hide(1200); 
+        $(".manage1,.manage7, .manage6 ,.manage2").hide(1200); 
         $(".manage3").show(1200);     
         /* Act on the event */
     });

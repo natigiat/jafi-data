@@ -130,18 +130,18 @@ html
            $('.htmljs').find('script').html(js);
 
 
-           //start heatmaps
-            var heatmapInstance = h337.create({
-              container: document.querySelector('.heatmap'),
-              radius: 10
-            });
-            document.querySelector('.demo-wrapper').onclick = function(ev) {
-              heatmapInstance.addData({
-                x: ev.layerX,
-                y: ev.layerY,
-                value: 1
-              });
-            };
+           //- //start heatmaps
+           //-  var heatmapInstance = h337.create({
+           //-    container: document.querySelector('.heatmap'),
+           //-    radius: 10
+           //-  });
+            //- document.querySelector('.demo-wrapper').onclick = function(ev) {
+            //-   heatmapInstance.addData({
+            //-     x: ev.layerX,
+            //-     y: ev.layerY,
+            //-     value: 1
+            //-   });
+            //- };
 
            });
        
@@ -154,21 +154,26 @@ html
                 var url      = window.location.href; 
                 var pieces = url.split("/");
                 var progectId = pieces[pieces.length - 2];
+            
+
+                if(!($('.manage').length > 0)){
+
+                    console.log("equel");
+                    userIp   = data.ip_address;
+                    userDate = data.request_date;
+                    userPositionLat = data.position.latitude;
+                    userPositionLong = data.position.longitude;
+                    userCountry = data.country.name;
+                    userCity = data.country.name;
+
+                    
+
+                    var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
+                    $.post( '/progect', parameters, function(data) {
+                       
+                    });
+                }
                 
-
-                userIp   = data.ip_address;
-                userDate = data.request_date;
-                userPositionLat = data.position.latitude;
-                userPositionLong = data.position.longitude;
-                userCountry = data.country.name;
-                userCity = data.country.name;
-
-                
-
-                var parameters = { progectId:progectId ,userIp:userIp , userDate:userDate, userPositionLat:userPositionLat , userPositionLong:userPositionLong ,userCountry:userCountry, userCity:userCity};
-                $.post( '/progect', parameters, function(data) {
-                   
-                });
 
             });
 

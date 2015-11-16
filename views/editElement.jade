@@ -1,0 +1,60 @@
+extends headEdit
+
+block content
+    div.editElement
+    script(type='text/javascript').
+       jQuery(document).ready(function($) {
+          
+           var progect =!{JSON.stringify(element)};
+           var html = progect[0].html;
+           var css = progect[0].css;
+           var js = progect[0].js;
+
+           var projectId = progect[0]._id;
+
+          
+           //set progect id to div 
+           $('.progectId').val(projectId)
+
+           //- var builtWith = "<div class='github-fork-ribbon-wrapper left'> <div class='github-fork-ribbon'> <a href='https://github.com/simonwhitaker/github-fork-ribbon-css'>Build With Lando</a> </div> </div>";
+           $('.dataHtml').val(html);
+           $('.dataCss').val(css);
+           $('.dataJs').val(js);
+
+           
+                    
+           
+       });
+
+    if (user)
+        input(type="hidden" , value="#{user}")
+    if (element)
+        input(type="hidden" , class="dataHtml")
+        input(type="hidden" , class="dataCss")
+        input(type="hidden" , class="dataJs")
+    
+    //-************************center*******************************
+    .ui-layout-center
+
+          iframe(width='100%', height="2000px" frameborder='no', scrolling="no", class="mainContainer" src='/result') 
+
+        
+
+    //-************************top*******************************          
+    .ui-layout-north North
+
+    //-************************botyom******************************* 
+    .ui-layout-south 
+       div.editerWraper
+
+                   
+          #template-html.editor.ui-widget-content.zoomTarget
+          #template-css.editor.ui-widget-content
+          #template-js.editor.ui-widget-content
+    
+    //-************************left******************************* 
+    .ui-layout-west
+     
+
+     input.progectId(type="hidden")
+

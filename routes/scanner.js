@@ -61,24 +61,6 @@ router.get('/edit/:progect/:userId', ensureAuthenticated,  function(req, res, ne
 });
 
 
-// /* GET scanner edit from account page. */
-// router.get('/:id/:progect', ensureAuthenticated,  function(req, res, next) {
-//   var userId = req.user.id;
-//   var progectid = req.params.id;
-//   var progect = req.params.progect;
-
-//   Progect.SelectProgect(progectid , progect , function(err , progect){
-//   	if(progect){
-// 	    console.log(typeof(progect));
-// 		res.render('scanner', {  title: 'Account' , progect:progect });
-// 	}
-//   });
-// });
-
-
-
-
-
 
 router.post('/', function(req, res, next) {
 	
@@ -159,8 +141,8 @@ router.post('/', function(req, res, next) {
 // save element
 router.post('/element', function(req, res, next) {
 	
-	// var userId = req.user.id;
-	var userId = '234234';  //for dev
+	var userId = req.user.id;
+	// var userId = '234234';  //for dev
 	var elmentName = req.body.elmentName;
 	var elementHtml = req.body.elementHtml;
 	var elementCss = req.body.elementCss;
@@ -211,7 +193,7 @@ router.post('/elements/:kind', function(req, res, next) {
   	var kind = req.params.kind;
   	console.log(kind);
 
-  	if (kind === 'element') {
+  	if (kind === 'element' || kind === 'all') {
   		Element.SelectAllElements(function(err , elements){
     		res.contentType('json');
 			res.send(elements);		

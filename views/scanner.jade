@@ -134,7 +134,6 @@ block content
 
           iframe(width='100%', height="2000px" frameborder='no', scrolling="no", class="mainContainer" src='/result') 
 
-        
 
     //-************************top*******************************          
     .ui-layout-north North
@@ -145,16 +144,191 @@ block content
 
                    
           #template-html.editor.ui-widget-content.zoomTarget
+            div.headerPanel 
+              div.col-sm-3.pull-right.panelSetting
+                
+                i.fa.fa-th.margin-right
+                i.fa.fa-cog
+              div html
           #template-css.editor.ui-widget-content
+            div.headerPanel 
+              div.col-sm-3.pull-right.panelSetting
+                i.fa.fa-paint-brush.margin-right
+                i.fa.fa-cog
+              div  css
           #template-js.editor.ui-widget-content
-    
+            div.headerPanel 
+              div.col-sm-1.pull-right.panelSetting
+                i.fa.fa-cog
+              div js
+
+     
+
+
     //-************************left******************************* 
     .ui-layout-west
+      div.col-sm-12.no-padding.drawrowMenu
+        .steps
+          input#genger(name='genger', type='checkbox', checked='')
+          label(for='genger' class="row1") Rows
+
+          input#measurements(name='measurements', type='checkbox')
+          label(for='measurements' class="row2") Text
+          input#family(name='family', type='checkbox')
+
+          label(for='family' class="row3") Colemns
+          input#activity(name='activity', type='checkbox')
+
+          label(for='activity' class="row4") Text
+          input#results(name='results', type='checkbox')
+
+          label(for='results' class="row5") Elements
+          input#submit(type='submit', value='get started')
+      
+      div.col-sm-12.no-padding.mainDrawrow
+
+        div.col-sm-3.no-padding
+          .steps.info
+            side-bar
+                //-layers
+                tab.active(name='layers')
+                  
+                  panel(name='layers')
+                      legend Layers
+                      menu
+                        menu-item.up(action='up')
+                        menu-item.down(action='down')
+                        menu-item.remove(action='remove')
+                        menu-item.add(action='add')
+                        menu-item.clone(action='clone')
+                      
+                      ul#sortable
+                        layer-item
+                          icon.eye.selected.active
+                          icon.lock
+                          input(spellcheck='false')
+
+                  panel(name='basic' class="panelMain")
+                      legend Basic
+                      field(type='input' )
+                          input-number(class="inputwidth" , label='width:') 
+                      field(type='input' )
+                          input-number( class="inputheight" , label='Height:') 
+                      field(type='input')
+                          input-number(class="inputfillOpacity" , label='opacity:') 
+                      //- field(type="select")
+                      //-   label overflow
+                      //-   select 
+                      //-     option(value="visible") visible
+                      //-     option(value="hidden") hidden
+                      //-     option(value="scroll") scroll
+                      //-     option(value="auto") auto
+
+                      legend Background
+
+                      field(type='input')
+                          input-number(class="inputbsckgroundColor" ,label='bg:')
+                      
+                      legend Background Image
+                      field(type='input')
+                          input-number(class="inputbsckgroundImage" ,label='bg image:')
+                      field(type='input')
+                          input-number(class="inputbackgroundSize" ,label='bg size:')
+                      field(type='input')
+                          input-number(class="inputbackgroundRepeat" ,label='bg repeat:')
+
+
+                  panel(name='text' class="panelText")
+                      legend Align
+                      .col-sm-12.col-text.no-padding
+                        i(class="glyphicon glyphicon-align-left col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-align-center col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-align-right  col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-align-justify col-sm-3 col-text-element")
+                
+
+                      legend Direction
+                      .col-sm-12.col-text.no-padding
+                        i(class="glyphicon glyphicon-chevron-left col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-chevron-right col-sm-3 col-text-element")
+                        i(class=" glyphicon glyphicon-indent-left  col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-indent-right col-sm-3 col-text-element")
+
+
+                      legend Effect
+                      .col-sm-12.col-text.no-padding
+                        i(class="fa fa-list col-sm-3 col-text-element")
+                        i(class="fa fa-list-ol col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-italic col-sm-3 col-text-element")
+                        i(class="glyphicon glyphicon-bold col-sm-3 col-text-element")
+
+                      legend Font
+                      .col-sm-12.col-text.no-padding
+                        select(class="col-sm-3 col-text-select")
+                          option(value="8" selected="selected") 8
+                          option(value="9") 9
+                          option(value="10") 10
+                          option(value="11") 11
+                          option(value="12") 12
+                          option(value="14") 14
+                          option(value="16") 16
+                          option(value="18") 18
+                          option(value="20") 20
+                          option(value="22") 22
+                          option(value="24") 24
+                          option(value="26") 26
+                          option(value="28") 28
+                          option(value="38") 38
+                          option(value="46") 46
+                          option(value="72") 72
+
+                        select(class="col-sm-9 col-text-select")
+                          option(value="Georgia") Georgia
+                          option(value="serif") serif
+                          option(value="Times New Roman" selected="selected") Times New Roman
+                          option(value="Arial") Arial
+                          option(value="Comic Sans MS") Comic Sans MS
+                          option(value="Impact") Impact
+                          option(value="Lucida Sans Unicode") Lucida Sans Unicode
+                          option(value="Tahoma") Tahoma
+                          option(value="Trebuchet MS") Trebuchet MS
+                          option(value="Verdana") Verdana
+                          option(value="Courier New") Courier New
+                          option(value="Lucida Console") Lucida Console
+                         
+                       
+                                               
+
+                      
+
+                     
+              
+
+
+         div.col-sm-9.no-padding
+          .rows
+            div.rowManage1
+              ul.divcontainer#selectable
+                li.makeitmove.draggable.resizable.ui-widget-content 
+        
+
+            div.rowManage2 
+            div.rowManage3 Manage3
+            div.rowManage4 Manage4
+            div.rowManage5 Manage5
+
+         
+
+
+
+
+    .ui-layout-east
       div.imageBlock
-        img.img-responsive.zoomTarget(src='/images/landing.png' , id="canvas")
+        img.img-responsive.zoomTarget(src='/images/landing.png' , id="canvaso")
         
         form(action="...", method="post", enctype="multipart/form-data")
           input(type="file", name="displayImage")
+
 
      input.progectId(type="hidden") 
 

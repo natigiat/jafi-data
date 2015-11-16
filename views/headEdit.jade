@@ -30,9 +30,9 @@ html
     link(rel="stylesheet" href="/bower/CodeMirror/addon/hint/show-hint.css")        
     link(rel="stylesheet" href="/bower/CodeMirror/addon/dialog/dialog.css")        
     
-
     //- hint tooltip 
     link(rel='stylesheet', href='/bower/hint.css/hint.css')
+
 
     //-font awesome  
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
@@ -61,7 +61,7 @@ html
     
   body.scanner
     nav.navbar.scannerNav.navbar-static-top(role='navigation')
-      //- Brand and toggle get grouped for better mobile display
+      // Brand and toggle get grouped for better mobile display
       div
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-8')
           span.sr-only Toggle navigation
@@ -74,7 +74,7 @@ html
         |               
         a(href='/')
           img.Navbar-brand(src='/images/4444.png')
-      //- Collect the nav links, forms, and other content for toggling
+      // Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-8.collapse.navbar-collapse
         ul.nav.navbar-nav
           //- li.active.desktop
@@ -84,102 +84,40 @@ html
           li
             a(class="hint--bottom mobile" data-hint="Mobile View")
               //- i(class="fa fa-mobile fa-2x")
-              span.icon-phone.fs1     
+              span.icon-tablet.fs1         
           
 
-          
+        .saveB
+          section.elementSave.saveEditElement(style='display: block;')
+              .button
+                input.elementName(type='text', placeholder='Element Name')
+              |  
+              .cover
+                .innie
+                |  
+                .spine
+                |  
+                .outie
+              |  
+              .shadow
+            i.fa.fa-chevron-right.saveElementEdit(style='display: block;')
+ 
 
-        ul.nav.navbar-nav.navbar-right.publishNav
+         ul.nav.navbar-nav.navbar-right.publishNav
             //- li.drowB
             //-   a <i class="fa fa-crop"></i>
-
-
-                           
-              
-            //-########################## api
-            li(class="hint--bottom" data-hint="Api").api
-              a(data-toggle="modal" data-target="#myApi") <i class="fa fa-book"></i>
-                 div#myApi.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                  .modal-dialog(role='document')
-                    .modal-content 
-                      .modal-body
-                          .col-md-3.pull-right(role='complementary')
-                              nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix-top
-                                ul.nav.bs-docs-sidenav
-                                  li
-                                    a(href='#glyphicons') Glyphicons
-                                    ul.nav
-                                      li
-                                        a(href='#glyphicons-glyphs') Available glyphs
-                                      li
-                                        a(href='#glyphicons-how-to-use') How to use
-                                      li
-                                        a(href='#glyphicons-examples') Examples
-                                  li
-                                    a(href='#dropdowns') Dropdowns
-                                    ul.nav
-                                      li
-                                        a(href='#dropdowns-example') Example
-                                      li
-                                        a(href='#dropdowns-alignment') Alignment
-                                      li
-                                        a(href='#dropdowns-headers') Headers
-                                      li
-                                        a(href='#dropdowns-divider') Divider
-                                      li
-                                        a(href='#dropdowns-disabled') Disabled menu items
+          
                           
                    
 
-             //-########################## draw row
-            li.drawrow
-              a(class="hint--bottom" data-hint="Draw Row") <i class="fa fa-th"></i>            
-
-            //-########################## insperation
-            li.styleB
-              a(class="hint--bottom" data-hint="Open Sketch") <i class="fa fa-file-image-o"></i>
-            //-########################## open editors
-            li.codeB 
-              a(class="hint--bottom" data-hint="Open Editor") <i class="fa fa-code"></i>
-            //-##########################preview mode
-            li.preview
-              a(class="hint--bottom" data-hint="Preview Mode")  Preview
+                          
             
-            if (userId)
-              li.update 
-                 a update
-                 
-              
-            else 
-              li
-                a(data-toggle="modal" data-target="#myModal") Save
-                div#myModal.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , role='dialog', aria-labelledby='myModalLabel' ,aria-hidden="true")
-                  .modal-dialog(role='document')
-                    .modal-content 
-                      .modal-body
-                          .col-sm-12
-                            .col-sm-10.pull-left
-                              i(class="fa fa-database fa-4x saveProgect")
-                              span.textProgectOne It's time to save your work
-                              br 
-                              span.textProgectTwo and to give your website a name
-                            .col-sm-12
-                              .col-sm-10
-                                input.form-control(type='text' , name='project' , class="progectInput" , autocomplete="off", placeholder='Your site name')
-                                div#search_bar
-                              button.btn.btnProgect(type='button' class="col-sm-2") Success
-                              .col-sm-10
-                                div.progectRow http://landing/#{name}/#[b.progectName]
-                            hr
-                            .col-sm-12
-                              ol
-                                li You can change your site name later    
-
-                                li your site is private and will only be shown to the world with your approved 
-                                  
-                                li You can publish your site
-            li
-              a Publish 
+            li.codeB
+              a(class="hint--bottom" data-hint="Open Editor")   <i class="fa fa-code"></i>
+            li.preview 
+              a(class="hint--bottom" data-hint="Preview Mode") Preview
+             
+   
 
             //-fileupload 
             div#upload.modal.fade(tabindex='-1', class="modal newspaper unfold-3d" , aria-labelledby='myModalLabel' ,aria-hidden="true")
@@ -238,9 +176,6 @@ html
     script(src="/bower/CodeMirror/addon/search/search.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
     script(src="/bower/CodeMirror/addon/dialog/dialog.js" type="text/javascript" charset="utf-8")
-    script(src="/bower/CodeMirror/addon/selection/active-line.js" type="text/javascript" charset="utf-8")
-    script(src="/bower/CodeMirror/addon/search/searchcursor.js" type="text/javascript" charset="utf-8")
-    script(src="/bower/CodeMirror/addon/selection/mark-selection.js" type="text/javascript" charset="utf-8")
     script(src='/bower/intro.js/intro.js')
     script(src='/bower/bower-tinymce-amd/tinymce/tinymce.js')
     script(src='/bower/tinycolorpicker/lib/jquery.tinycolorpicker.js')
@@ -248,7 +183,6 @@ html
     script(src='/bower/bootstrap-modal/js/bootstrap-modalmanager.js')
     script(src='/javascripts/folders/autocomplete-0.3.0.min.js')
     script(src='/javascripts/modal1.1.min.js')
-
       
       
 

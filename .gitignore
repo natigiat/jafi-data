@@ -2,3 +2,5 @@ node_modules
 public/bower
 public/images
 .bowerrc
+Procfile
+.bowerrc

@@ -12,9 +12,10 @@ html
     link(rel='stylesheet', href='/stylesheets/flages.css')
 
     link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
+
     
     //- bower styles*********************************************
-    link(rel='stylesheet', href='/bower/slick.js/slick/slick.css')
+    link(rel='stylesheet', href='/bower/slick.js/slick/slick.css') 
     link(rel='stylesheet', href='/bower/slick.js/slick/slick-theme.css')
     //-font awesome  
     link(rel='stylesheet', href='/bower/fontawesome/css/font-awesome.min.css')
@@ -27,7 +28,7 @@ html
     //- hint tooltip 
     link(rel='stylesheet', href='/bower/hint.css/hint.css')
 
-
+   
 
 
     //- bower scripts
@@ -37,6 +38,8 @@ html
     script(src='/bower/toastr/toastr.js')
     script(src='/bower/list.js/dist/list.min.js')
 
+    //-bootstrap 
+    script(src='/bower/bootstrap/dist/js/bootstrap.min.js')
     //-icheck for checkboxes
     script(src='/bower/icheck/icheck.js')
 
@@ -53,7 +56,9 @@ html
 
     script(src='/bower/moment/min/moment-with-locales.min.js')
 
-
+    //- waypoints
+    script(src='/javascripts/waypoints/waypoint.js')
+    script(src='/javascripts/waypoints/shortcuts/infinite.js')
 
     
   body
@@ -74,9 +79,9 @@ html
                'Account' ? 'active' : ''))
                 a(href='/account/') My Sites
               li(class=(title == 'Lando - Templates' ? 'active' : ''))
-                a(href='/templates') Templates
+                a(href='/templates/1') Templates
               li(class=(title == 'Lando - Elements' ? 'active' : ''))
-                a(href='/elements') Elements
+                a(href='/elements/1') Elements
               li(class=(title == 'Support' ? 'active' : ''))
                 a(href='/support') Support
 
@@ -207,4 +212,4 @@ html
       .clearfix
 
 
-script(src='/bower/bootstrap/dist/js/bootstrap.min.js')
+
